@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+/// я оставил это решение, но предлагаю использовать стандартную тему flutter
 class AppColors {
   static const red = Color(0xFFEF4123);
   static const white = Color(0xFFFFFFFF);

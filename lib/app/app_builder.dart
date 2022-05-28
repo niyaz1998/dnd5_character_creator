@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gin_app_runner/gin_app_runner.dart';
@@ -11,7 +9,8 @@ import 'presentation/theme/theme.dart';
 /// Основная конфигурация нашего приложения.
 class MainAppBuilder extends MaterialAppBuilder {
   MainAppBuilder()
-      : super(MaterialAppBuilderConfig(
+      : super(
+          MaterialAppBuilderConfig(
             locale: Locale('ru'),
             supportedLocales: [Locale('ru'), Locale('en')],
             localizationsDelegates: <LocalizationsDelegate>[
@@ -21,8 +20,7 @@ class MainAppBuilder extends MaterialAppBuilder {
             themeMode: ThemeMode.light,
             title: "AppName",
             theme: lightThemeData,
-            home: RootScreen()));
-
-  @override
-  String get translationsPath => 'res/translations';
+            home: RootScreen(),
+          ),
+        );
 }
