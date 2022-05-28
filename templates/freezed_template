@@ -1,0 +1,11 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
+
+part '.freezed.dart';
+
+@freezed
+class x with _$x {
+  const factory x({
+    @Default(null) dynamic error,
+    @Default(false) bool isLoading,
+  }) = _x;
+}

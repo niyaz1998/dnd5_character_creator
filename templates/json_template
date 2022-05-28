@@ -1,0 +1,19 @@
+import 'package:json_annotation/json_annotation.dart';
+
+part '.g.dart';
+
+@JsonSerializable()
+class x {
+
+  @JsonKey(name: '')
+  final String? field;
+
+  x({
+    required this.field,
+  });
+
+  factory x.fromJson(Map<String, dynamic> json) =>
+      _$xFromJson(json);
+
+  Map<String, dynamic> toJson() => _$xToJson(this);
+}
