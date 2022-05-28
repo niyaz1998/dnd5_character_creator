@@ -19,8 +19,11 @@ dependencies:
   cupertino_icons: ^1.0.4
   injectable: ^1.5.3
   easy_localization: ^3.0.1
+  get_it: ^7.2.0
 
 dev_dependencies:
+  injectable_generator: ^1.5.3
+  build_runner: ^2.1.11
   flutter_test:
     sdk: flutter
 
