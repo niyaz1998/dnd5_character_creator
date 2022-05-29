@@ -1,5 +1,6 @@
 import 'package:injectable/injectable.dart';
 
+/// TODO: Firebase remote config
 abstract class EnvConfig {
   String get host;
 }
