@@ -10,3 +10,11 @@ var logger = Logger(
     printTime: false,
   ),
 );
+
+void logException(dynamic e, StackTrace s) {
+  logger.log(Level.error, e, s);
+}
+
+void logJust(dynamic message) {
+  logger.log(Level.info, message);
+}

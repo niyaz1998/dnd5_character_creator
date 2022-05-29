@@ -16,6 +16,8 @@ dependencies:
 
   gin_app_runner:
     path: plugins/gin_app_runner
+  gin_app_logger:
+    path: plugins/gin_app_logger
   cupertino_icons: ^1.0.4
   injectable: ^1.5.3
   easy_localization: ^3.0.1
