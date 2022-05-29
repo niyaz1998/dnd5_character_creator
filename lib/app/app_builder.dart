@@ -7,7 +7,7 @@ import 'presentation/screens/root_screen.dart';
 import 'presentation/theme/theme.dart';
 
 /// Основная конфигурация нашего приложения.
-class MainAppBuilder extends MaterialAppBuilder {
+class MainAppBuilder extends MaterialAppBuilder with DevicePreviewBuilder {
   MainAppBuilder()
       : super(
           MaterialAppBuilderConfig(
@@ -21,6 +21,7 @@ class MainAppBuilder extends MaterialAppBuilder {
             title: "AppName",
             theme: lightThemeData,
             home: RootScreen(),
+            devicePreviewEnabled: false,
           ),
         );
 }
