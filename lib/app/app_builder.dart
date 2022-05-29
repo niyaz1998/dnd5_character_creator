@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gin_app_runner/gin_app_runner.dart';
 
 import 'presentation/screens/root_screen.dart';
@@ -22,4 +23,14 @@ class MainAppBuilder extends MaterialAppBuilder with DevicePreviewBuilder {
             devicePreviewEnabled: false,
           ),
         );
+
+  @override
+  Widget buildApp({MaterialAppBuilderConfig? overriddenConfig}) {
+    return MultiBlocProvider(
+      providers: const [],
+      child: super.buildApp(
+        overriddenConfig: overriddenConfig,
+      ),
+    );
+  }
 }
