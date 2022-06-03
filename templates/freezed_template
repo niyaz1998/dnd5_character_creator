@@ -1,0 +1,11 @@
+import 'package:dnd5_character_creator/app/domain/model/async_field.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+
+part '.freezed.dart';
+
+@freezed
+class x with _$x {
+  const factory x({
+    @Default(AsyncField<dynamic>.nothing()) AsyncField<dynamic> field,
+  }) = _x;
+}
