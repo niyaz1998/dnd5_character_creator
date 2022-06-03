@@ -28,6 +28,7 @@ dependencies:
   json_annotation: ^4.5.0
   freezed_annotation: ^2.0.3
   auto_route: ^4.0.1
+  provider: ^6.0.3
 
 dev_dependencies:
   auto_route_generator: ^4.0.0

@@ -3,14 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gin_app_runner/gin_app_runner.dart';
 
-import 'presentation/screens/root_screen.dart';
+import 'presentation/router/app_router_mixin.dart';
 import 'presentation/theme/theme.dart';
 
 /// Основная конфигурация нашего приложения.
-class MainAppBuilder extends MaterialAppBuilder with DevicePreviewBuilder {
+class MainAppBuilder extends MaterialAppBuilder
+    with AppRouterMixin, DevicePreviewBuilder {
   MainAppBuilder()
       : super(
-          MaterialAppBuilderConfig(
+          config: MaterialAppBuilderConfig(
             locale: const Locale('ru'),
             supportedLocales: [const Locale('ru'), const Locale('en')],
             localizationsDelegates: <LocalizationsDelegate>[
@@ -19,18 +20,21 @@ class MainAppBuilder extends MaterialAppBuilder with DevicePreviewBuilder {
             themeMode: ThemeMode.light,
             title: "AppName",
             theme: lightThemeData,
-            home: const RootScreen(),
-            devicePreviewEnabled: false,
           ),
+          useCustomRouter: true,
         );
 
   @override
   Widget buildApp({MaterialAppBuilderConfig? overriddenConfig}) {
+    var newConfig = overriddenConfig ?? config;
     return MultiBlocProvider(
       providers: const [],
       child: super.buildApp(
-        overriddenConfig: overriddenConfig,
+        overriddenConfig: newConfig,
       ),
     );
   }
+
+  @override
+  bool get enabledDevicePreviewBuilder => false;
 }

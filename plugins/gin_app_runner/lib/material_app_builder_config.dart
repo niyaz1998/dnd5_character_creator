@@ -1,10 +1,18 @@
 part of 'gin_app_runner.dart';
 
 class MaterialAppBuilderConfig {
-  final bool devicePreviewEnabled;
+  final GlobalKey<NavigatorState>? navigatorKey;
   final GlobalKey<ScaffoldMessengerState>? scaffoldMessengerKey;
-  final RouteInformationParser<Object> routeInformationParser;
-  final RouterDelegate<Object> routerDelegate;
+  final Widget? home;
+  final Map<String, WidgetBuilder>? routes;
+  final String? initialRoute;
+  final RouteFactory? onGenerateRoute;
+  final InitialRouteListFactory? onGenerateInitialRoutes;
+  final RouteFactory? onUnknownRoute;
+  final List<NavigatorObserver>? navigatorObservers;
+  final RouteInformationProvider? routeInformationProvider;
+  final RouteInformationParser<Object>? routeInformationParser;
+  final RouterDelegate<Object>? routerDelegate;
   final BackButtonDispatcher? backButtonDispatcher;
   final TransitionBuilder? builder;
   final String? title;
@@ -34,11 +42,19 @@ class MaterialAppBuilderConfig {
   MaterialAppBuilderConfig({
     required this.locale,
     required this.supportedLocales,
-    this.devicePreviewEnabled = false,
+    this.navigatorKey,
     this.scaffoldMessengerKey,
+    this.home,
     this.scrollBehavior,
-    required this.routeInformationParser,
-    required this.routerDelegate,
+    this.routes,
+    this.initialRoute,
+    this.onGenerateRoute,
+    this.onGenerateInitialRoutes,
+    this.onUnknownRoute,
+    this.navigatorObservers,
+    this.routeInformationProvider,
+    this.routeInformationParser,
+    this.routerDelegate,
     this.backButtonDispatcher,
     this.builder,
     this.title,
@@ -64,8 +80,17 @@ class MaterialAppBuilderConfig {
   });
 
   MaterialAppBuilderConfig copyWith({
-    bool? devicePreviewEnabled,
+    ScrollBehavior? scrollBehavior,
+    GlobalKey<NavigatorState>? navigatorKey,
     GlobalKey<ScaffoldMessengerState>? scaffoldMessengerKey,
+    Widget? home,
+    Map<String, WidgetBuilder>? routes,
+    String? initialRoute,
+    RouteFactory? onGenerateRoute,
+    InitialRouteListFactory? onGenerateInitialRoutes,
+    RouteFactory? onUnknownRoute,
+    List<NavigatorObserver>? navigatorObservers,
+    RouteInformationProvider? routeInformationProvider,
     RouteInformationParser<Object>? routeInformationParser,
     RouterDelegate<Object>? routerDelegate,
     BackButtonDispatcher? backButtonDispatcher,
@@ -92,11 +117,21 @@ class MaterialAppBuilderConfig {
     Map<Type, Action<Intent>>? actions,
     String? restorationScopeId,
     bool? debugShowMaterialGrid,
-    ScrollBehavior? scrollBehavior,
   }) {
     return MaterialAppBuilderConfig(
-      devicePreviewEnabled: devicePreviewEnabled ?? this.devicePreviewEnabled,
+      scrollBehavior: scrollBehavior ?? this.scrollBehavior,
+      navigatorKey: navigatorKey ?? this.navigatorKey,
       scaffoldMessengerKey: scaffoldMessengerKey ?? this.scaffoldMessengerKey,
+      home: home ?? this.home,
+      routes: routes ?? this.routes,
+      initialRoute: initialRoute ?? this.initialRoute,
+      onGenerateRoute: onGenerateRoute ?? this.onGenerateRoute,
+      onGenerateInitialRoutes:
+          onGenerateInitialRoutes ?? this.onGenerateInitialRoutes,
+      onUnknownRoute: onUnknownRoute ?? this.onUnknownRoute,
+      navigatorObservers: navigatorObservers ?? this.navigatorObservers,
+      routeInformationProvider:
+          routeInformationProvider ?? this.routeInformationProvider,
       routeInformationParser:
           routeInformationParser ?? this.routeInformationParser,
       routerDelegate: routerDelegate ?? this.routerDelegate,
@@ -134,7 +169,6 @@ class MaterialAppBuilderConfig {
       restorationScopeId: restorationScopeId ?? this.restorationScopeId,
       debugShowMaterialGrid:
           debugShowMaterialGrid ?? this.debugShowMaterialGrid,
-      scrollBehavior: scrollBehavior ?? this.scrollBehavior,
     );
   }
 }
