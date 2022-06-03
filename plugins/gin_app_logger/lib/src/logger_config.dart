@@ -1,5 +1,6 @@
 part of gin_app_logger;
 
+// ignore_for_file: unused_element
 class LoggerConfig {
   const LoggerConfig._(
     this.enabledTypes, {
