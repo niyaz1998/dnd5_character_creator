@@ -18,7 +18,6 @@ class MainAppRunner extends AppRunner {
 
   @override
   void handleZonedException(error, stackTrace) {
-    print(error);
-    print(stackTrace);
+    logException(error, stackTrace);
   }
 }
