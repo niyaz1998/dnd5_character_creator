@@ -1,36 +1,34 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gin_app_runner/gin_app_runner.dart';
 
-import 'presentation/screens/root_screen.dart';
+import 'presentation/router/app_router_mixin.dart';
 import 'presentation/theme/theme.dart';
 
 /// Основная конфигурация нашего приложения.
-class MainAppBuilder extends MaterialAppBuilder with DevicePreviewBuilder {
+class MainAppBuilder extends MaterialAppBuilder
+    with AppRouterMixin, DevicePreviewBuilder {
   MainAppBuilder()
       : super(
-          MaterialAppBuilderConfig(
-            locale: const Locale('ru'),
-            supportedLocales: [const Locale('ru'), const Locale('en')],
+          config: MaterialAppBuilderConfig(
+            locale: const Locale('en'),
+            supportedLocales: [const Locale('en')],
             localizationsDelegates: <LocalizationsDelegate>[
               DefaultCupertinoLocalizations.delegate,
             ],
             themeMode: ThemeMode.light,
             title: "AppName",
             theme: lightThemeData,
-            home: const RootScreen(),
-            devicePreviewEnabled: false,
           ),
+          useCustomRouter: true,
         );
 
   @override
   Widget buildApp({MaterialAppBuilderConfig? overriddenConfig}) {
-    return MultiBlocProvider(
-      providers: const [],
-      child: super.buildApp(
-        overriddenConfig: overriddenConfig,
-      ),
-    );
+    var resultConfig = overriddenConfig ?? config;
+    return super.buildApp(overriddenConfig: resultConfig);
   }
+
+  @override
+  bool get enabledDevicePreviewBuilder => false;
 }

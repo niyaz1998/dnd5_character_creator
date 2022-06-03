@@ -1,7 +1,6 @@
 part of 'gin_app_runner.dart';
 
 class MaterialAppBuilderConfig {
-  final bool devicePreviewEnabled;
   final GlobalKey<NavigatorState>? navigatorKey;
   final GlobalKey<ScaffoldMessengerState>? scaffoldMessengerKey;
   final Widget? home;
@@ -39,12 +38,12 @@ class MaterialAppBuilderConfig {
   final String? restorationScopeId;
   final bool debugShowMaterialGrid;
   final ScrollBehavior? scrollBehavior;
+  final bool useInheritedMediaQuery;
 
   MaterialAppBuilderConfig({
     required this.locale,
     required this.supportedLocales,
     this.navigatorKey,
-    this.devicePreviewEnabled = false,
     this.scaffoldMessengerKey,
     this.home,
     this.scrollBehavior,
@@ -57,6 +56,7 @@ class MaterialAppBuilderConfig {
     this.routeInformationProvider,
     this.routeInformationParser,
     this.routerDelegate,
+    this.useInheritedMediaQuery = false,
     this.backButtonDispatcher,
     this.builder,
     this.title,
@@ -82,8 +82,6 @@ class MaterialAppBuilderConfig {
   });
 
   MaterialAppBuilderConfig copyWith({
-    ScrollBehavior? scrollBehavior,
-    bool? devicePreviewEnabled,
     GlobalKey<NavigatorState>? navigatorKey,
     GlobalKey<ScaffoldMessengerState>? scaffoldMessengerKey,
     Widget? home,
@@ -120,10 +118,10 @@ class MaterialAppBuilderConfig {
     Map<Type, Action<Intent>>? actions,
     String? restorationScopeId,
     bool? debugShowMaterialGrid,
+    ScrollBehavior? scrollBehavior,
+    bool? useInheritedMediaQuery,
   }) {
     return MaterialAppBuilderConfig(
-      scrollBehavior: scrollBehavior ?? this.scrollBehavior,
-      devicePreviewEnabled: devicePreviewEnabled ?? this.devicePreviewEnabled,
       navigatorKey: navigatorKey ?? this.navigatorKey,
       scaffoldMessengerKey: scaffoldMessengerKey ?? this.scaffoldMessengerKey,
       home: home ?? this.home,
@@ -173,6 +171,9 @@ class MaterialAppBuilderConfig {
       restorationScopeId: restorationScopeId ?? this.restorationScopeId,
       debugShowMaterialGrid:
           debugShowMaterialGrid ?? this.debugShowMaterialGrid,
+      scrollBehavior: scrollBehavior ?? this.scrollBehavior,
+      useInheritedMediaQuery:
+          useInheritedMediaQuery ?? this.useInheritedMediaQuery,
     );
   }
 }

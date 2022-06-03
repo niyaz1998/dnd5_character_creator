@@ -1,4 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:gin_app_logger/gin_app_logger.dart';
 import 'package:gin_app_runner/gin_app_runner.dart';
 
 import '../di/injectable.dart';
@@ -13,5 +14,10 @@ class MainAppRunner extends AppRunner {
     super.preloadData();
     await EasyLocalization.ensureInitialized();
     configureDependencies(env);
+  }
+
+  @override
+  void handleZonedException(error, stackTrace) {
+    logException(error, stackTrace);
   }
 }
