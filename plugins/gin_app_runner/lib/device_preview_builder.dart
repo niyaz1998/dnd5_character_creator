@@ -11,16 +11,15 @@ mixin DevicePreviewBuilder on MaterialAppBuilder {
         availableLocales: resultConfig.supportedLocales,
         builder: (context) {
           return super.buildApp(
-            overriddenConfig:
-                resultConfig.copyWith(builder: DevicePreview.appBuilder),
+            overriddenConfig: resultConfig.copyWith(
+              builder: DevicePreview.appBuilder,
+              useInheritedMediaQuery: true,
+            ),
           );
         },
       );
     } else {
-      return super.buildApp(
-        overriddenConfig:
-            resultConfig.copyWith(builder: DevicePreview.appBuilder),
-      );
+      return super.buildApp(overriddenConfig: resultConfig);
     }
   }
 }

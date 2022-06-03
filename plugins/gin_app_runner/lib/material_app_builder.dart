@@ -21,6 +21,7 @@ class MaterialAppBuilder extends AppBuilder<MaterialAppBuilderConfig> {
     final resultConfig = overriddenConfig ?? config;
     if (!useCustomRouter) {
       return MaterialApp(
+        useInheritedMediaQuery: resultConfig.useInheritedMediaQuery,
         scrollBehavior: resultConfig.scrollBehavior,
         navigatorKey: resultConfig.navigatorKey,
         scaffoldMessengerKey: resultConfig.scaffoldMessengerKey,
@@ -59,6 +60,7 @@ class MaterialAppBuilder extends AppBuilder<MaterialAppBuilderConfig> {
       );
     } else {
       return MaterialApp.router(
+        useInheritedMediaQuery: resultConfig.useInheritedMediaQuery,
         scrollBehavior: resultConfig.scrollBehavior,
         scaffoldMessengerKey: resultConfig.scaffoldMessengerKey,
         builder: resultConfig.builder,

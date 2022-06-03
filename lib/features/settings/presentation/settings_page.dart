@@ -5,7 +5,6 @@ class SettingsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print('SettingsPage');
     return Scaffold(
       body: Center(
         child: Text(

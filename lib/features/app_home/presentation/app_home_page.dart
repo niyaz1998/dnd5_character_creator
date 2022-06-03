@@ -8,7 +8,6 @@ class AppHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print('AppHomePage');
     return Container(
       color: Colors.yellow,
       child: AutoTabsScaffold(

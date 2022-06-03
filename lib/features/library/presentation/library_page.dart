@@ -5,7 +5,6 @@ class LibraryPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print('LibraryPage');
     return Scaffold(
       body: Center(
         child: Text(

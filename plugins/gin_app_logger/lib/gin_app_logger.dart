@@ -11,7 +11,7 @@ var logger = Logger(
   ),
 );
 
-void logException(dynamic e, StackTrace s) {
+void logException(dynamic e, dynamic s) {
   logger.log(Level.error, e, s);
 }
 

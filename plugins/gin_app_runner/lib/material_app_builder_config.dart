@@ -38,6 +38,7 @@ class MaterialAppBuilderConfig {
   final String? restorationScopeId;
   final bool debugShowMaterialGrid;
   final ScrollBehavior? scrollBehavior;
+  final bool useInheritedMediaQuery;
 
   MaterialAppBuilderConfig({
     required this.locale,
@@ -55,6 +56,7 @@ class MaterialAppBuilderConfig {
     this.routeInformationProvider,
     this.routeInformationParser,
     this.routerDelegate,
+    this.useInheritedMediaQuery = false,
     this.backButtonDispatcher,
     this.builder,
     this.title,
@@ -80,7 +82,6 @@ class MaterialAppBuilderConfig {
   });
 
   MaterialAppBuilderConfig copyWith({
-    ScrollBehavior? scrollBehavior,
     GlobalKey<NavigatorState>? navigatorKey,
     GlobalKey<ScaffoldMessengerState>? scaffoldMessengerKey,
     Widget? home,
@@ -117,9 +118,10 @@ class MaterialAppBuilderConfig {
     Map<Type, Action<Intent>>? actions,
     String? restorationScopeId,
     bool? debugShowMaterialGrid,
+    ScrollBehavior? scrollBehavior,
+    bool? useInheritedMediaQuery,
   }) {
     return MaterialAppBuilderConfig(
-      scrollBehavior: scrollBehavior ?? this.scrollBehavior,
       navigatorKey: navigatorKey ?? this.navigatorKey,
       scaffoldMessengerKey: scaffoldMessengerKey ?? this.scaffoldMessengerKey,
       home: home ?? this.home,
@@ -169,6 +171,9 @@ class MaterialAppBuilderConfig {
       restorationScopeId: restorationScopeId ?? this.restorationScopeId,
       debugShowMaterialGrid:
           debugShowMaterialGrid ?? this.debugShowMaterialGrid,
+      scrollBehavior: scrollBehavior ?? this.scrollBehavior,
+      useInheritedMediaQuery:
+          useInheritedMediaQuery ?? this.useInheritedMediaQuery,
     );
   }
 }

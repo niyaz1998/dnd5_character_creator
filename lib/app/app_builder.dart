@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gin_app_runner/gin_app_runner.dart';
 
 import 'presentation/router/app_router_mixin.dart';
@@ -12,8 +11,8 @@ class MainAppBuilder extends MaterialAppBuilder
   MainAppBuilder()
       : super(
           config: MaterialAppBuilderConfig(
-            locale: const Locale('ru'),
-            supportedLocales: [const Locale('ru'), const Locale('en')],
+            locale: const Locale('en'),
+            supportedLocales: [const Locale('en')],
             localizationsDelegates: <LocalizationsDelegate>[
               DefaultCupertinoLocalizations.delegate,
             ],
@@ -26,13 +25,8 @@ class MainAppBuilder extends MaterialAppBuilder
 
   @override
   Widget buildApp({MaterialAppBuilderConfig? overriddenConfig}) {
-    var newConfig = overriddenConfig ?? config;
-    return MultiBlocProvider(
-      providers: const [],
-      child: super.buildApp(
-        overriddenConfig: newConfig,
-      ),
-    );
+    var resultConfig = overriddenConfig ?? config;
+    return super.buildApp(overriddenConfig: resultConfig);
   }
 
   @override
