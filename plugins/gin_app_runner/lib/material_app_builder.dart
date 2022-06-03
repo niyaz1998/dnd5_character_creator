@@ -9,18 +9,9 @@ class MaterialAppBuilder extends AppBuilder<MaterialAppBuilderConfig> {
   @override
   Widget buildApp({MaterialAppBuilderConfig? overriddenConfig}) {
     final resultConfig = overriddenConfig ?? config;
-    return MaterialApp(
+    return MaterialApp.router(
       scrollBehavior: resultConfig.scrollBehavior,
-      navigatorKey: resultConfig.navigatorKey,
       scaffoldMessengerKey: resultConfig.scaffoldMessengerKey,
-      home: resultConfig.home,
-      routes: resultConfig.routes ?? const <String, WidgetBuilder>{},
-      initialRoute: resultConfig.initialRoute,
-      onGenerateRoute: resultConfig.onGenerateRoute,
-      onGenerateInitialRoutes: resultConfig.onGenerateInitialRoutes,
-      onUnknownRoute: resultConfig.onUnknownRoute,
-      navigatorObservers:
-          resultConfig.navigatorObservers ?? const <NavigatorObserver>[],
       builder: resultConfig.builder,
       title: resultConfig.title ?? '',
       onGenerateTitle: resultConfig.onGenerateTitle,
@@ -44,6 +35,8 @@ class MaterialAppBuilder extends AppBuilder<MaterialAppBuilderConfig> {
       shortcuts: resultConfig.shortcuts,
       actions: resultConfig.actions,
       restorationScopeId: resultConfig.restorationScopeId,
+      routerDelegate: resultConfig.routerDelegate,
+      routeInformationParser: resultConfig.routeInformationParser,
     );
   }
 }
