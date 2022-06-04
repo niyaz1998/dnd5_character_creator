@@ -9,4 +9,5 @@ analyzer:
 linter:
   rules:
     prefer_relative_imports: true
+    directives_ordering: true
 

@@ -1,7 +1,7 @@
-// ignore_for_file: prefer_relative_imports
 
-import 'package:dnd5_character_creator/app/data/models/base/description_base_model.dart';
 import 'package:json_annotation/json_annotation.dart';
+
+import '../../../app/data/models/base/description_base_model.dart';
 
 part 'language_model.g.dart';
 
