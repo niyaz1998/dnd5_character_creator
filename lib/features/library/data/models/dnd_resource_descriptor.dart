@@ -20,18 +20,12 @@ class DndResourceDescriptor<T extends ReferenceBaseModel> {
     required this.localeKey,
     required this.jsonParser,
   });
+
+  static List<DndResourceDescriptor> get resourceDescriptors =>
+      _resourceDescriptors;
 }
 
-Map<Type, String> dnd5eResourcePaths = {
-  AbilityScoreModel: 'ability-scores',
-  AlignmentModel: 'alignments',
-  BackgroundModel: 'backgrounds',
-  LanguageModel: 'languages',
-  ProficiencyModel: 'proficiencies',
-  SkillModel: 'skills',
-};
-
-List<DndResourceDescriptor> resourceDescriptors = [
+final List<DndResourceDescriptor> _resourceDescriptors = [
   DndResourceDescriptor<AbilityScoreModel>(
     localeKey: 'ability-scores',
     path: 'ability-scores',
