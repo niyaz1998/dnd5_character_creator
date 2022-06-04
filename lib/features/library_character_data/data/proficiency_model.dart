@@ -1,11 +1,12 @@
 import 'package:json_annotation/json_annotation.dart';
 
 import '../../../app/data/models/base/reference_base_model.dart';
+import '../../../app/data/models/resource_name_mixin.dart';
 
 part 'proficiency_model.g.dart';
 
 @JsonSerializable()
-class ProficiencyModel extends ReferenceBaseModel {
+class ProficiencyModel extends ReferenceBaseModel  with ResourceNameMixin {
   /// The general category of the proficiency
   final String type;
   /// Classes that start with this proficiency
@@ -30,4 +31,7 @@ class ProficiencyModel extends ReferenceBaseModel {
 
   @override
   Map<String, dynamic> toJson() => _$ProficiencyModelToJson(this);
+
+  @override
+  String get resourceName => 'proficiencies';
 }

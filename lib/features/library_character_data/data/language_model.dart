@@ -1,12 +1,12 @@
-
 import 'package:json_annotation/json_annotation.dart';
 
 import '../../../app/data/models/base/description_base_model.dart';
+import '../../../app/data/models/resource_name_mixin.dart';
 
 part 'language_model.g.dart';
 
 @JsonSerializable()
-class LanguageModel extends DescribedBaseModel {
+class LanguageModel extends DescribedBaseModel with ResourceNameMixin {
   /// enum Standard, Exotic
   final String type;
 
@@ -32,4 +32,7 @@ class LanguageModel extends DescribedBaseModel {
 
   @override
   Map<String, dynamic> toJson() => _$LanguageModelToJson(this);
+
+  @override
+  String get resourceName => 'languages';
 }
