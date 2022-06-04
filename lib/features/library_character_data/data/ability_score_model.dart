@@ -11,7 +11,7 @@ class AbilityScoreModel extends DescribedBaseModel {
   @JsonKey(name: 'skills')
   final String? skills;
 
-  AbilityScoreModel({
+  const AbilityScoreModel({
     required this.fullName,
     required this.skills,
     required super.url,

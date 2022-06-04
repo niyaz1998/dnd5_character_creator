@@ -14,7 +14,7 @@ class ReferenceBaseModel {
   /// адрес куда можно обратиться за детальной информацией
   final String url;
 
-  ReferenceBaseModel({
+  const ReferenceBaseModel({
     required this.index,
     required this.name,
     required this.url,

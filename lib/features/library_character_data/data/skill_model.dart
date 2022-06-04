@@ -10,7 +10,7 @@ class SkillModel extends DescribedBaseModel  {
   @JsonKey(name: 'ability_score')
   final ReferenceBaseModel abilityScore;
 
-  SkillModel({
+  const SkillModel({
     required this.abilityScore,
     required super.url,
     required super.index,

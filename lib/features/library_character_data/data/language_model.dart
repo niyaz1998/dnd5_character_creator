@@ -16,7 +16,7 @@ class LanguageModel extends DescribedBaseModel  {
   @JsonKey(name: 'typical_speakers')
   final List<String> typicalSpeakers;
 
-  LanguageModel({
+  const LanguageModel({
     required this.type,
     required this.script,
     required this.typicalSpeakers,

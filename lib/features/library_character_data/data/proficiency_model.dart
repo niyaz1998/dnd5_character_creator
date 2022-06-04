@@ -18,7 +18,7 @@ class ProficiencyModel extends ReferenceBaseModel {
   /// reference to the full description of the related resource.
   final ReferenceBaseModel reference;
 
-  ProficiencyModel({
+  const ProficiencyModel({
     required this.type,
     required this.classes,
     required this.races,

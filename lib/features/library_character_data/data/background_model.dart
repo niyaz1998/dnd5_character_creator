@@ -15,7 +15,7 @@ class BackgroundModel extends ReferenceBaseModel  {
   /// bonds
   /// flaws
 
-  BackgroundModel({
+  const BackgroundModel({
     required super.url,
     required super.index,
     required super.name,
