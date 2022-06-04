@@ -13,9 +13,6 @@ ResourceListModel<T> _$ResourceListModelFromJson<T extends ReferenceBaseModel>(
     ResourceListModel<T>(
       count: json['count'] as int,
       result: (json['result'] as List<dynamic>).map(fromJsonT).toList(),
-      url: json['url'] as String,
-      index: json['index'] as String,
-      name: json['name'] as String,
     );
 
 Map<String, dynamic> _$ResourceListModelToJson<T extends ReferenceBaseModel>(
@@ -23,9 +20,6 @@ Map<String, dynamic> _$ResourceListModelToJson<T extends ReferenceBaseModel>(
   Object? Function(T value) toJsonT,
 ) =>
     <String, dynamic>{
-      'index': instance.index,
-      'name': instance.name,
-      'url': instance.url,
       'count': instance.count,
       'result': instance.result.map(toJsonT).toList(),
     };

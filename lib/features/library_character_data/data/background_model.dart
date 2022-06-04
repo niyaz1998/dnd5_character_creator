@@ -1,12 +1,11 @@
 import 'package:json_annotation/json_annotation.dart';
 
 import '../../../app/data/models/base/reference_base_model.dart';
-import '../../../app/data/models/resource_name_mixin.dart';
 
 part 'background_model.g.dart';
 
 @JsonSerializable()
-class BackgroundModel extends ReferenceBaseModel with ResourceNameMixin {
+class BackgroundModel extends ReferenceBaseModel  {
   /// TODO: starting_proficiencies when proficiencies is done
   /// starting_equipment and starting_equipment_options when items are done
   /// language_options
@@ -28,6 +27,4 @@ class BackgroundModel extends ReferenceBaseModel with ResourceNameMixin {
   @override
   Map<String, dynamic> toJson() => _$BackgroundModelToJson(this);
 
-  @override
-  String get resourceName => 'backgrounds';
 }
