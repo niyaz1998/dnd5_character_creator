@@ -21,39 +21,41 @@ class DndResourceDescriptor<T extends ReferenceBaseModel> {
     required this.jsonParser,
   });
 
-  static List<DndResourceDescriptor> get resourceDescriptors =>
-      _resourceDescriptors;
+  static List<DndResourceDescriptor> get resourceDescriptors => [
+        DndResourceDescriptor<AbilityScoreModel>(
+          localeKey: 'ability-scores',
+          path: 'ability-scores',
+          jsonParser: (Map<String, dynamic> json) =>
+              AbilityScoreModel.fromJson(json),
+        ),
+        DndResourceDescriptor<AlignmentModel>(
+          localeKey: 'alignments',
+          path: 'alignments',
+          jsonParser: (Map<String, dynamic> json) =>
+              AlignmentModel.fromJson(json),
+        ),
+        DndResourceDescriptor<BackgroundModel>(
+          localeKey: 'backgrounds',
+          path: 'backgrounds',
+          jsonParser: (Map<String, dynamic> json) =>
+              BackgroundModel.fromJson(json),
+        ),
+        DndResourceDescriptor<LanguageModel>(
+          localeKey: 'languages',
+          path: 'languages',
+          jsonParser: (Map<String, dynamic> json) =>
+              LanguageModel.fromJson(json),
+        ),
+        DndResourceDescriptor<ProficiencyModel>(
+          localeKey: 'proficiencies',
+          path: 'proficiencies',
+          jsonParser: (Map<String, dynamic> json) =>
+              ProficiencyModel.fromJson(json),
+        ),
+        DndResourceDescriptor<SkillModel>(
+          localeKey: 'skills',
+          path: 'skills',
+          jsonParser: (Map<String, dynamic> json) => SkillModel.fromJson(json),
+        ),
+      ];
 }
-
-final List<DndResourceDescriptor> _resourceDescriptors = [
-  DndResourceDescriptor<AbilityScoreModel>(
-    localeKey: 'ability-scores',
-    path: 'ability-scores',
-    jsonParser: (Map<String, dynamic> json) => AbilityScoreModel.fromJson(json),
-  ),
-  DndResourceDescriptor<AlignmentModel>(
-    localeKey: 'alignments',
-    path: 'alignments',
-    jsonParser: (Map<String, dynamic> json) => AlignmentModel.fromJson(json),
-  ),
-  DndResourceDescriptor<BackgroundModel>(
-    localeKey: 'backgrounds',
-    path: 'backgrounds',
-    jsonParser: (Map<String, dynamic> json) => BackgroundModel.fromJson(json),
-  ),
-  DndResourceDescriptor<LanguageModel>(
-    localeKey: 'languages',
-    path: 'languages',
-    jsonParser: (Map<String, dynamic> json) => LanguageModel.fromJson(json),
-  ),
-  DndResourceDescriptor<ProficiencyModel>(
-    localeKey: 'proficiencies',
-    path: 'proficiencies',
-    jsonParser: (Map<String, dynamic> json) => ProficiencyModel.fromJson(json),
-  ),
-  DndResourceDescriptor<SkillModel>(
-    localeKey: 'skills',
-    path: 'skills',
-    jsonParser: (Map<String, dynamic> json) => SkillModel.fromJson(json),
-  ),
-];
