@@ -1,5 +1,4 @@
 import 'package:dnd5_character_creator/app/data/models/base/description_base_model.dart';
-import 'package:dnd5_character_creator/app/data/models/base/reference_base_model.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'language_model.g.dart';
