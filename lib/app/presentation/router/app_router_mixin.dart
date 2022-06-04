@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_relative_imports
+
 import 'package:dnd5_character_creator/app/presentation/router/app_router.dart';
 import 'package:dnd5_character_creator/di/service_locator.dart';
 import 'package:flutter/material.dart';

@@ -8,4 +8,5 @@ analyzer:
 
 linter:
   rules:
+    prefer_relative_imports: true
 
