@@ -11,10 +11,6 @@ typedef JsonParser<T extends ReferenceBaseModel> = T Function(
 );
 
 class DndResourceDescriptor<T extends ReferenceBaseModel> {
-  final String path;
-  final String localeKey;
-  final JsonParser<T> jsonParser;
-
   const DndResourceDescriptor({
     required this.path,
     required this.localeKey,
@@ -53,6 +49,10 @@ class DndResourceDescriptor<T extends ReferenceBaseModel> {
           jsonParser: SkillModel.fromJson,
         ),
       };
+
+  final String path;
+  final String localeKey;
+  final JsonParser<T> jsonParser;
 
   T fromJsonT(Object? json) => jsonParser(json as Map<String, dynamic>);
 }

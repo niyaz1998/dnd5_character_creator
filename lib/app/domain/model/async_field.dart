@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../presentation/widgets/common/gin_error_builder.dart';
+import '../../presentation/widgets/common/error_builder.dart';
 import '../../presentation/widgets/common/gin_loader.dart';
 import 'gin_error.dart';
 
@@ -79,7 +79,7 @@ class AsyncField<T> {
     Widget Function()? inProgress,
   }) {
     if (hasError) {
-      return GinErrorBuilder(
+      return ErrorBuilder(
         onRefreshPressed: onRefreshPressed,
         refreshReasonKey: error!.rawError.toString(),
       );

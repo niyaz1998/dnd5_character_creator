@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 
-class GinErrorBuilder extends StatelessWidget {
-  final VoidCallback onRefreshPressed;
-  final String refreshReasonKey;
-  final String buttonTextKey;
-  final MainAxisSize mainAxisSize;
-
-  const GinErrorBuilder({
+class ErrorBuilder extends StatelessWidget {
+  const ErrorBuilder({
     Key? key,
     required this.refreshReasonKey,
     required this.onRefreshPressed,
     this.buttonTextKey = 'Обновить',
     this.mainAxisSize = MainAxisSize.max,
   }) : super(key: key);
+
+  final VoidCallback onRefreshPressed;
+  final String refreshReasonKey;
+  final String buttonTextKey;
+  final MainAxisSize mainAxisSize;
 
   @override
   Widget build(BuildContext context) {

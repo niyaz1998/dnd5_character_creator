@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import '../../domain/entities/library_category_entity.dart';
 
 class CategoryCard extends StatelessWidget {
-  final LibraryCategoryEntity libraryCategoryEntity;
-
   const CategoryCard({
     Key? key,
     required this.libraryCategoryEntity,
   }) : super(key: key);
+
+  final LibraryCategoryEntity libraryCategoryEntity;
 
   @override
   Widget build(BuildContext context) {

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 class GinLoader extends StatelessWidget {
-  final Alignment alignment;
-
   const GinLoader({
     Key? key,
     this.alignment = Alignment.center,
   }) : super(key: key);
+
+  final Alignment alignment;
 
   @override
   Widget build(BuildContext context) {
