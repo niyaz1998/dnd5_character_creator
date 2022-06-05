@@ -1,10 +1,10 @@
 import '../../../../app/data/models/base/reference_base_model.dart';
-import '../../../library_character_data/data/ability_score_model.dart';
-import '../../../library_character_data/data/alignment_model.dart';
-import '../../../library_character_data/data/background_model.dart';
-import '../../../library_character_data/data/language_model.dart';
-import '../../../library_character_data/data/proficiency_model.dart';
-import '../../../library_character_data/data/skill_model.dart';
+import '../../../library_character_data/data/models/ability_score_model.dart';
+import '../../../library_character_data/data/models/alignment_model.dart';
+import '../../../library_character_data/data/models/background_model.dart';
+import '../../../library_character_data/data/models/language_model.dart';
+import '../../../library_character_data/data/models/proficiency_model.dart';
+import '../../../library_character_data/data/models/skill_model.dart';
 
 typedef JsonParser<T extends ReferenceBaseModel> = T Function(
   Map<String, dynamic> json,
