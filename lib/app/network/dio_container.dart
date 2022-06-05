@@ -1,5 +1,11 @@
+import 'dart:convert';
+
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
+
+import '../../features/library/data/models/dnd_resource_descriptor.dart';
+import '../data/models/base/reference_base_model.dart';
+import '../data/models/resource_list_model.dart';
 
 @LazySingleton()
 class DioContainer {
@@ -23,5 +29,35 @@ class DioContainer {
   void deleteInterceptor(Type interceptorType) {
     dio.interceptors
         .removeWhere((element) => element.runtimeType == interceptorType);
+  }
+}
+
+extension DnD5eAPI on Dio {
+  Future<ResourceListModel<T>> dndRequestList<T extends ReferenceBaseModel>(
+    String path, {
+    data,
+    Map<String, dynamic>? queryParameters,
+    CancelToken? cancelToken,
+    Options? options,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    DndResourceDescriptor<T> descriptor = DndResourceDescriptor
+        .resourceDescriptors[T]! as DndResourceDescriptor<T>;
+    var response = await request(
+      path,
+      data: data,
+      queryParameters: queryParameters,
+      cancelToken: cancelToken,
+      options: options,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+    Map<String, dynamic> json = jsonDecode(response.data as String);
+    ResourceListModel<T> result = ResourceListModel.fromJson(
+      json,
+      descriptor.fromJsonT,
+    );
+    return result;
   }
 }

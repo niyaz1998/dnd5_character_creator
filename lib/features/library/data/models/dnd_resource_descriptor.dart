@@ -21,41 +21,38 @@ class DndResourceDescriptor<T extends ReferenceBaseModel> {
     required this.jsonParser,
   });
 
-  static Map<Type, DndResourceDescriptor> get resourceDescriptors => {
+  static Map<Type, DndResourceDescriptor> get resourceDescriptors => const {
         AbilityScoreModel: DndResourceDescriptor<AbilityScoreModel>(
           localeKey: 'ability-scores',
           path: 'ability-scores',
-          jsonParser: (Map<String, dynamic> json) =>
-              AbilityScoreModel.fromJson(json),
+          jsonParser: AbilityScoreModel.fromJson,
         ),
         AlignmentModel: DndResourceDescriptor<AlignmentModel>(
           localeKey: 'alignments',
           path: 'alignments',
-          jsonParser: (Map<String, dynamic> json) =>
-              AlignmentModel.fromJson(json),
+          jsonParser: AlignmentModel.fromJson,
         ),
         BackgroundModel: DndResourceDescriptor<BackgroundModel>(
           localeKey: 'backgrounds',
           path: 'backgrounds',
-          jsonParser: (Map<String, dynamic> json) =>
-              BackgroundModel.fromJson(json),
+          jsonParser: BackgroundModel.fromJson,
         ),
         LanguageModel: DndResourceDescriptor<LanguageModel>(
           localeKey: 'languages',
           path: 'languages',
-          jsonParser: (Map<String, dynamic> json) =>
-              LanguageModel.fromJson(json),
+          jsonParser: LanguageModel.fromJson,
         ),
         ProficiencyModel: DndResourceDescriptor<ProficiencyModel>(
           localeKey: 'proficiencies',
           path: 'proficiencies',
-          jsonParser: (Map<String, dynamic> json) =>
-              ProficiencyModel.fromJson(json),
+          jsonParser: ProficiencyModel.fromJson,
         ),
         SkillModel: DndResourceDescriptor<SkillModel>(
           localeKey: 'skills',
           path: 'skills',
-          jsonParser: (Map<String, dynamic> json) => SkillModel.fromJson(json),
+          jsonParser: SkillModel.fromJson,
         ),
       };
+
+  T fromJsonT(Object? json) => jsonParser(json as Map<String, dynamic>);
 }

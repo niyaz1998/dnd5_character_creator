@@ -10,6 +10,10 @@ import 'package:injectable/injectable.dart' as _i2;
 import '../app/enviroment/env_config.dart' as _i5;
 import '../app/network/dio_container.dart' as _i4;
 import '../app/presentation/router/app_router.dart' as _i3;
+import '../features/library/data/repositories/library_category_repo_impl.dart'
+    as _i7;
+import '../features/library/domain/repositories/library_category_repo.dart'
+    as _i6;
 
 const String _dev = 'dev';
 const String _prod = 'prod';
@@ -23,5 +27,7 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.lazySingleton<_i4.DioContainer>(() => _i4.DioContainer());
   gh.factory<_i5.EnvConfig>(() => _i5.DevEnvConfig(), registerFor: {_dev});
   gh.factory<_i5.EnvConfig>(() => _i5.ProdEnvConfig(), registerFor: {_prod});
+  gh.lazySingleton<_i6.LibraryCategoryRepo>(
+      () => _i7.LibraryCategoryRepoImpl());
   return get;
 }

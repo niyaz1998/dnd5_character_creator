@@ -4,7 +4,7 @@ import 'package:injectable/injectable.dart';
 
 import '../../../features/app_home/presentation/app_home_page.dart';
 import '../../../features/character_builder/presentation/character_builder_page.dart';
-import '../../../features/library/presentation/library_page.dart';
+import '../../../features/library/presentation/pages/library_page.dart';
 import '../../../features/settings/presentation/settings_page.dart';
 
 part 'app_router.gr.dart';

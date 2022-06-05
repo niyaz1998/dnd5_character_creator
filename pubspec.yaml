@@ -18,12 +18,12 @@ dependencies:
     path: plugins/gin_app_runner
   gin_app_logger:
     path: plugins/gin_app_logger
-  cupertino_icons: ^1.0.4
+  cupertino_icons: ^1.0.5
   injectable: ^1.5.3
   easy_localization: ^3.0.1
   get_it: ^7.2.0
   flutter_bloc: ^8.0.1
-  bloc: ^8.0.1
+  bloc: ^8.0.3
   dio: ^4.0.6
   json_serializable: ^6.2.0
   json_annotation: ^4.5.0
