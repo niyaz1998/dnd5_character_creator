@@ -17,8 +17,8 @@ part 'app_router.gr.dart';
       page: AppHomePage,
       initial: true,
       children: [
-        AutoRoute(page: CharacterBuilderPage, initial: true),
-        AutoRoute(page: LibraryPage),
+        AutoRoute(page: CharacterBuilderPage),
+        AutoRoute(page: LibraryPage, initial: true),
         AutoRoute(page: SettingsPage),
       ],
     ),
