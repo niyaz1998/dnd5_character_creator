@@ -31,33 +31,3 @@ class DioContainer {
         .removeWhere((element) => element.runtimeType == interceptorType);
   }
 }
-
-extension DnD5eAPI on Dio {
-  Future<ResourceListModel<T>> dndRequestList<T extends ReferenceBaseModel>(
-    String path, {
-    data,
-    Map<String, dynamic>? queryParameters,
-    CancelToken? cancelToken,
-    Options? options,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
-    DndResourceDescriptor<T> descriptor = DndResourceDescriptor
-        .resourceDescriptors[T]! as DndResourceDescriptor<T>;
-    var response = await request(
-      path,
-      data: data,
-      queryParameters: queryParameters,
-      cancelToken: cancelToken,
-      options: options,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
-    Map<String, dynamic> json = jsonDecode(response.data as String);
-    ResourceListModel<T> result = ResourceListModel.fromJson(
-      json,
-      descriptor.fromJsonT,
-    );
-    return result;
-  }
-}
