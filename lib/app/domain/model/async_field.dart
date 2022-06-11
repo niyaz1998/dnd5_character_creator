@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gin_app_logger/gin_app_logger.dart';
 
 import '../../presentation/widgets/common/error_builder.dart';
 import '../../presentation/widgets/common/gin_loader.dart';
@@ -43,7 +44,8 @@ class AsyncField<T> {
       var data = await task;
       updater(AsyncField.data(data));
       return data;
-    } catch (error) {
+    } catch (error, s) {
+      logException(error, s);
       updater(AsyncField.error(GinError(rawError: error)));
     }
     return null;
@@ -79,9 +81,12 @@ class AsyncField<T> {
     Widget Function()? inProgress,
   }) {
     if (hasError) {
-      return ErrorBuilder(
-        onRefreshPressed: onRefreshPressed,
-        refreshReasonKey: error!.rawError.toString(),
+      return Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: ErrorBuilder(
+          onRefreshPressed: onRefreshPressed,
+          refreshReasonKey: error!.rawError.toString(),
+        ),
       );
     }
     if (hasData) {

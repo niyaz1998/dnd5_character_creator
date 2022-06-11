@@ -13,7 +13,7 @@ class CharacterDataRepoImpl extends CharacterDataRepo {
 
   @override
   Future<List<ReferenceBaseModel>> fetchScoreModels() =>
-      api.dndRequestList('/api/ability-scores').then((value) => value.result);
+      api.dndRequestList('/api/ability-scores');
 
   @override
   Future<AbilityScoreModel> fetchScoreModel(String name) {

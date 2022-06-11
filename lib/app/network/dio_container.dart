@@ -1,11 +1,5 @@
-import 'dart:convert';
-
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
-
-import '../../features/library/data/models/dnd_resource_descriptor.dart';
-import '../data/models/base/reference_base_model.dart';
-import '../data/models/resource_list_model.dart';
 
 @LazySingleton()
 class DioContainer {

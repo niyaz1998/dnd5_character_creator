@@ -7,19 +7,19 @@ part of 'resource_list_model.dart';
 // **************************************************************************
 
 ResourceListModel<T> _$ResourceListModelFromJson<T extends ReferenceBaseModel>(
-  Map<String, dynamic> json,
-  T Function(Object? json) fromJsonT,
-) =>
+        Map<String, dynamic> json) =>
     ResourceListModel<T>(
       count: json['count'] as int,
-      result: (json['result'] as List<dynamic>).map(fromJsonT).toList(),
+      results: (json['results'] as List<dynamic>)
+          .map((e) => ResourceListModelConverter<T>()
+              .fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$ResourceListModelToJson<T extends ReferenceBaseModel>(
-  ResourceListModel<T> instance,
-  Object? Function(T value) toJsonT,
-) =>
+        ResourceListModel<T> instance) =>
     <String, dynamic>{
       'count': instance.count,
-      'result': instance.result.map(toJsonT).toList(),
+      'results':
+          instance.results.map(ResourceListModelConverter<T>().toJson).toList(),
     };

@@ -1,25 +1,24 @@
 import 'package:json_annotation/json_annotation.dart';
 
 import 'base/reference_base_model.dart';
+import 'reference_model_converter.dart';
 
 part 'resource_list_model.g.dart';
 
-@JsonSerializable(genericArgumentFactories: true)
+@JsonSerializable()
 class ResourceListModel<T extends ReferenceBaseModel> {
   final int count;
-  final List<T> result;
+
+  @ResourceListModelConverter()
+  final List<T> results;
 
   ResourceListModel({
     required this.count,
-    required this.result,
+    required this.results,
   });
 
-  factory ResourceListModel.fromJson(
-    Map<String, dynamic> json,
-    T Function(Object? json) fromJsonT,
-  ) =>
-      _$ResourceListModelFromJson(json, fromJsonT);
+  factory ResourceListModel.fromJson(Map<String, dynamic> json) =>
+      _$ResourceListModelFromJson(json);
 
-  Map<String, dynamic> toJson(Object? Function(T value) toJsonT) =>
-      _$ResourceListModelToJson(this, toJsonT);
+  Map<String, dynamic> toJson() => _$ResourceListModelToJson(this);
 }
