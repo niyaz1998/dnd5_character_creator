@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ErrorBuilder extends StatelessWidget {
-  const ErrorBuilder({
+class GinErrorBuilder extends StatelessWidget {
+  const GinErrorBuilder({
     Key? key,
     required this.refreshReasonKey,
     required this.onRefreshPressed,
