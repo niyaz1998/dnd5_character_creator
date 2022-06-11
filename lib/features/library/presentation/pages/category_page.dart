@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -31,6 +32,7 @@ class CategoryPage extends GinBasePage {
   @override
   Widget buildPageContent(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(leading: const AutoLeadingButton()),
       body: SafeArea(
         child: AsyncFieldBuilder<LibraryCategoryCubit, LibraryCategoryState,
             List<ReferenceBaseModel>>(
