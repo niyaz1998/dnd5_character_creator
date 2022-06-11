@@ -1,4 +1,4 @@
-import '../../../../app/network/errors.dart';
+import '../../../../app/domain/model/gin_error.dart';
 import '../../data/models/dnd_resource_descriptor.dart';
 
 class LibraryCategoryEntity {
@@ -16,8 +16,8 @@ class LibraryCategoryEntity {
         localeKey: remote.localeKey,
         path: remote.path,
       );
-    } catch (e, s) {
-      throw JsonParseError(e, s);
+    } catch (e) {
+      throw GinError(rawError: e);
     }
   }
 }
