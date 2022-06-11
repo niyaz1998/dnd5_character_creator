@@ -27,6 +27,8 @@ class ResourceListModelConverter<T extends ReferenceBaseModel>
         return ProficiencyModel.fromJson(json) as T;
       case SkillModel:
         return SkillModel.fromJson(json) as T;
+
+      /// должно быть последним
       case ReferenceBaseModel:
         return ReferenceBaseModel.fromJson(json) as T;
     }
