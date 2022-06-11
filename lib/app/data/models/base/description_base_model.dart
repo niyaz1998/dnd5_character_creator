@@ -8,7 +8,7 @@ part 'description_base_model.g.dart';
 @JsonSerializable()
 class DescribedBaseModel extends ReferenceBaseModel {
   @JsonKey(name: 'desc')
-  final String description;
+  final List<String> description;
 
   const DescribedBaseModel({
     required this.description,

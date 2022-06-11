@@ -8,7 +8,8 @@ part of 'description_base_model.dart';
 
 DescribedBaseModel _$DescribedBaseModelFromJson(Map<String, dynamic> json) =>
     DescribedBaseModel(
-      description: json['desc'] as String,
+      description:
+          (json['desc'] as List<dynamic>).map((e) => e as String).toList(),
       index: json['index'] as String,
       name: json['name'] as String,
       url: json['url'] as String,

@@ -16,7 +16,8 @@ LanguageModel _$LanguageModelFromJson(Map<String, dynamic> json) =>
       url: json['url'] as String,
       index: json['index'] as String,
       name: json['name'] as String,
-      description: json['desc'] as String,
+      description:
+          (json['desc'] as List<dynamic>).map((e) => e as String).toList(),
     );
 
 Map<String, dynamic> _$LanguageModelToJson(LanguageModel instance) =>
