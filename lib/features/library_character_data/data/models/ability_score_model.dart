@@ -4,11 +4,9 @@ import '../../../../app/data/models/base/description_base_model.dart';
 
 part 'ability_score_model.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(fieldRename: FieldRename.snake)
 class AbilityScoreModel extends DescribedBaseModel {
-  @JsonKey(name: 'full_name')
   final String? fullName;
-  @JsonKey(name: 'skills')
   final String? skills;
 
   const AbilityScoreModel({

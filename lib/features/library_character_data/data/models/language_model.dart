@@ -4,7 +4,7 @@ import '../../../../app/data/models/base/description_base_model.dart';
 
 part 'language_model.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(fieldRename: FieldRename.snake)
 class LanguageModel extends DescribedBaseModel  {
   /// enum Standard, Exotic
   final String type;
@@ -13,7 +13,6 @@ class LanguageModel extends DescribedBaseModel  {
   final String script;
 
   /// List of races that tend to speak the language.
-  @JsonKey(name: 'typical_speakers')
   final List<String> typicalSpeakers;
 
   const LanguageModel({

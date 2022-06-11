@@ -5,9 +5,8 @@ import '../../../../app/data/models/base/reference_base_model.dart';
 
 part 'skill_model.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(fieldRename: FieldRename.snake)
 class SkillModel extends DescribedBaseModel  {
-  @JsonKey(name: 'ability_score')
   final ReferenceBaseModel abilityScore;
 
   const SkillModel({
