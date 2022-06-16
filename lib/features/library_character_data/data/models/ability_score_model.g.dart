@@ -8,8 +8,10 @@ part of 'ability_score_model.dart';
 
 AbilityScoreModel _$AbilityScoreModelFromJson(Map<String, dynamic> json) =>
     AbilityScoreModel(
-      fullName: json['full_name'] as String?,
-      skills: json['skills'] as String?,
+      fullName: json['full_name'] as String,
+      skills: (json['skills'] as List<dynamic>)
+          .map((e) => ReferenceBaseModel.fromJson(e as Map<String, dynamic>))
+          .toList(),
       url: json['url'] as String,
       index: json['index'] as String,
       name: json['name'] as String,

@@ -1,16 +1,14 @@
 import '../../../library/domain/entities/base/description_base_entity.dart';
 import '../../../library/domain/entities/base/reference_base_entity.dart';
 
-class AbilityScoreEntity extends DescribedBaseEntity {
-  const AbilityScoreEntity({
-    required this.fullName,
-    required this.skills,
+class SkillModel extends DescribedBaseEntity {
+  const SkillModel({
+    required this.abilityScore,
     required super.url,
     required super.index,
     required super.name,
     required super.description,
   });
 
-  final String fullName;
-  final List<ReferenceBaseEntity> skills;
+  final ReferenceBaseEntity abilityScore;
 }
