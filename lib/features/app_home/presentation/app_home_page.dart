@@ -13,7 +13,7 @@ class AppHomePage extends StatelessWidget {
       child: AutoTabsScaffold(
         routes: const [
           CharacterBuilderRoute(),
-          LibraryRoute(),
+          LibraryContainerRoute(),
           SettingsRoute(),
         ],
         bottomNavigationBuilder: (_, tabsRouter) {

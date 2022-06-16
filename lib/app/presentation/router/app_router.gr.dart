@@ -25,13 +25,25 @@ class _$AppRouter extends RootStackRouter {
       return MaterialPageX<dynamic>(
           routeData: routeData, child: const CharacterBuilderPage());
     },
-    LibraryRoute.name: (routeData) {
+    LibraryContainerRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
-          routeData: routeData, child: const LibraryPage());
+          routeData: routeData, child: const LibraryContainerPage());
     },
     SettingsRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
           routeData: routeData, child: const SettingsPage());
+    },
+    LibraryRoute.name: (routeData) {
+      return MaterialPageX<dynamic>(
+          routeData: routeData, child: const LibraryPage());
+    },
+    CategoryRoute.name: (routeData) {
+      final args = routeData.argsAs<CategoryRouteArgs>();
+      return MaterialPageX<dynamic>(
+          routeData: routeData,
+          child: CategoryPage(
+              key: args.key,
+              libraryCategoryEntity: args.libraryCategoryEntity));
     }
   };
 
@@ -39,9 +51,16 @@ class _$AppRouter extends RootStackRouter {
   List<RouteConfig> get routes => [
         RouteConfig(AppHomeRoute.name, path: '/', children: [
           RouteConfig(CharacterBuilderRoute.name,
-              path: '', parent: AppHomeRoute.name),
-          RouteConfig(LibraryRoute.name,
-              path: 'library-page', parent: AppHomeRoute.name),
+              path: 'character-builder-page', parent: AppHomeRoute.name),
+          RouteConfig(LibraryContainerRoute.name,
+              path: '',
+              parent: AppHomeRoute.name,
+              children: [
+                RouteConfig(LibraryRoute.name,
+                    path: '', parent: LibraryContainerRoute.name),
+                RouteConfig(CategoryRoute.name,
+                    path: 'category-page', parent: LibraryContainerRoute.name)
+              ]),
           RouteConfig(SettingsRoute.name,
               path: 'settings-page', parent: AppHomeRoute.name)
         ])
@@ -60,17 +79,19 @@ class AppHomeRoute extends PageRouteInfo<void> {
 /// generated route for
 /// [CharacterBuilderPage]
 class CharacterBuilderRoute extends PageRouteInfo<void> {
-  const CharacterBuilderRoute() : super(CharacterBuilderRoute.name, path: '');
+  const CharacterBuilderRoute()
+      : super(CharacterBuilderRoute.name, path: 'character-builder-page');
 
   static const String name = 'CharacterBuilderRoute';
 }
 
 /// generated route for
-/// [LibraryPage]
-class LibraryRoute extends PageRouteInfo<void> {
-  const LibraryRoute() : super(LibraryRoute.name, path: 'library-page');
+/// [LibraryContainerPage]
+class LibraryContainerRoute extends PageRouteInfo<void> {
+  const LibraryContainerRoute({List<PageRouteInfo>? children})
+      : super(LibraryContainerRoute.name, path: '', initialChildren: children);
 
-  static const String name = 'LibraryRoute';
+  static const String name = 'LibraryContainerRoute';
 }
 
 /// generated route for
@@ -79,4 +100,38 @@ class SettingsRoute extends PageRouteInfo<void> {
   const SettingsRoute() : super(SettingsRoute.name, path: 'settings-page');
 
   static const String name = 'SettingsRoute';
+}
+
+/// generated route for
+/// [LibraryPage]
+class LibraryRoute extends PageRouteInfo<void> {
+  const LibraryRoute() : super(LibraryRoute.name, path: '');
+
+  static const String name = 'LibraryRoute';
+}
+
+/// generated route for
+/// [CategoryPage]
+class CategoryRoute extends PageRouteInfo<CategoryRouteArgs> {
+  CategoryRoute(
+      {Key? key, required LibraryCategoryEntity libraryCategoryEntity})
+      : super(CategoryRoute.name,
+            path: 'category-page',
+            args: CategoryRouteArgs(
+                key: key, libraryCategoryEntity: libraryCategoryEntity));
+
+  static const String name = 'CategoryRoute';
+}
+
+class CategoryRouteArgs {
+  const CategoryRouteArgs({this.key, required this.libraryCategoryEntity});
+
+  final Key? key;
+
+  final LibraryCategoryEntity libraryCategoryEntity;
+
+  @override
+  String toString() {
+    return 'CategoryRouteArgs{key: $key, libraryCategoryEntity: $libraryCategoryEntity}';
+  }
 }

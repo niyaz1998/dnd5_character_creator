@@ -1,7 +1,8 @@
-import 'package:dnd5_character_creator/app/presentation/router/app_router.dart';
-import 'package:dnd5_character_creator/di/service_locator.dart';
 import 'package:flutter/material.dart';
 import 'package:gin_app_runner/gin_app_runner.dart';
+
+import '../../../di/service_locator.dart';
+import 'app_router.dart';
 
 mixin AppRouterMixin on MaterialAppBuilder {
   @override

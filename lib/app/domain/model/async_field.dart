@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:gin_app_logger/gin_app_logger.dart';
 
+import '../../presentation/widgets/common/gin_error_builder.dart';
+import '../../presentation/widgets/common/gin_loader.dart';
 import 'gin_error.dart';
 
 typedef FieldUpdater<T> = void Function(AsyncField<T> field);
@@ -41,7 +44,8 @@ class AsyncField<T> {
       var data = await task;
       updater(AsyncField.data(data));
       return data;
-    } catch (error) {
+    } catch (error, s) {
+      logException(error, s);
       updater(AsyncField.error(GinError(rawError: error)));
     }
     return null;
@@ -69,5 +73,25 @@ class AsyncField<T> {
       return onData(data as T);
     }
     return inProgress();
+  }
+
+  Widget whenCommon({
+    required Widget Function(T data) onData,
+    required VoidCallback onRefreshPressed,
+    Widget Function()? inProgress,
+  }) {
+    if (hasError) {
+      return Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: GinErrorBuilder(
+          onRefreshPressed: onRefreshPressed,
+          refreshReasonKey: error!.rawError.toString(),
+        ),
+      );
+    }
+    if (hasData) {
+      return onData(data as T);
+    }
+    return inProgress?.call() ?? const GinLoader();
   }
 }
