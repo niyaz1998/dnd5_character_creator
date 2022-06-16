@@ -13,8 +13,7 @@ import '../app/network/dnd5e_api.dart' as _i5;
 import '../app/presentation/router/app_router.dart' as _i3;
 import '../features/library/data/repositories/library_category_repo_impl.dart'
     as _i8;
-import '../features/library/domain/repositories/library_category_repo.dart'
-    as _i7;
+import '../features/library/domain/repositories/library_repo.dart' as _i7;
 
 const String _dev = 'dev';
 const String _prod = 'prod';
@@ -29,7 +28,7 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.factory<_i5.Dnd5eApi>(() => _i5.Dnd5eApi(get<_i4.DioContainer>()));
   gh.factory<_i6.EnvConfig>(() => _i6.DevEnvConfig(), registerFor: {_dev});
   gh.factory<_i6.EnvConfig>(() => _i6.ProdEnvConfig(), registerFor: {_prod});
-  gh.lazySingleton<_i7.LibraryCategoryRepo>(
-      () => _i8.LibraryCategoryRepoImpl(get<_i5.Dnd5eApi>()));
+  gh.lazySingleton<_i7.LibraryRepo>(
+      () => _i8.LibraryRepoImpl(get<_i5.Dnd5eApi>()));
   return get;
 }

@@ -1,6 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 
 import '../../../../app/data/models/base/description_base_model.dart';
+import '../../../../app/data/models/json_parsers/description_parser.dart';
 
 part 'alignment_model.g.dart';
 

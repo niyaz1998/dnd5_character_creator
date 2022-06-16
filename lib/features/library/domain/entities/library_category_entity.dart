@@ -5,19 +5,22 @@ class LibraryCategoryEntity {
   LibraryCategoryEntity({
     required this.path,
     required this.localeKey,
+    required this.type,
   });
-
-  final String path;
-  final String localeKey;
 
   factory LibraryCategoryEntity.fromRemote(DndResourceDescriptor remote) {
     try {
       return LibraryCategoryEntity(
         localeKey: remote.localeKey,
         path: remote.path,
+        type: remote.type,
       );
     } catch (e) {
       throw GinError(rawError: e);
     }
   }
+
+  final String path;
+  final String localeKey;
+  final Type type;
 }

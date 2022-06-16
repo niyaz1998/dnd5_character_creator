@@ -3,12 +3,12 @@ import 'package:injectable/injectable.dart';
 import '../../../../app/data/models/base/reference_base_model.dart';
 import '../../../../app/network/dnd5e_api.dart';
 import '../../domain/entities/library_category_entity.dart';
-import '../../domain/repositories/library_category_repo.dart';
+import '../../domain/repositories/library_repo.dart';
 import '../models/dnd_resource_descriptor.dart';
 
-@LazySingleton(as: LibraryCategoryRepo)
-class LibraryCategoryRepoImpl extends LibraryCategoryRepo {
-  LibraryCategoryRepoImpl(this.api);
+@LazySingleton(as: LibraryRepo)
+class LibraryRepoImpl extends LibraryRepo {
+  LibraryRepoImpl(this.api);
 
   final Dnd5eApi api;
 
@@ -19,6 +19,14 @@ class LibraryCategoryRepoImpl extends LibraryCategoryRepo {
           .toList();
 
   @override
-  Future<List<ReferenceBaseModel>> fetchCategoryEntities(String path) =>
-      api.dndRequestList<ReferenceBaseModel>('/api/$path');
+  Future<List<ReferenceBaseModel>> fetchCategoryEntities(
+    LibraryCategoryEntity category,
+  ) =>
+      api.dndRequestList<ReferenceBaseModel>('/api/${category.path}');
+
+  @override
+  Future<T> fetchLibraryItem<T extends ReferenceBaseModel>(
+    ReferenceBaseModel baseLink,
+  ) =>
+      api.dndRequest(baseLink.url);
 }

@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 
@@ -32,9 +30,8 @@ class Dnd5eApi {
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
     );
-    Map<String, dynamic> json = jsonDecode(response.data);
 
-    return ResourceListModelConverter<T>().fromJson(json);
+    return ResourceListModelConverter<T>().fromJson(response.data);
   }
 
   Future<List<T>> dndRequestList<T extends ReferenceBaseModel>(

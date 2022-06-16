@@ -44,6 +44,15 @@ class _$AppRouter extends RootStackRouter {
           child: CategoryPage(
               key: args.key,
               libraryCategoryEntity: args.libraryCategoryEntity));
+    },
+    LibraryItemRoute.name: (routeData) {
+      final args = routeData.argsAs<LibraryItemRouteArgs>();
+      return MaterialPageX<dynamic>(
+          routeData: routeData,
+          child: LibraryItemPage(
+              key: args.key,
+              referenceBase: args.referenceBase,
+              libraryCategoryEntity: args.libraryCategoryEntity));
     }
   };
 
@@ -59,7 +68,10 @@ class _$AppRouter extends RootStackRouter {
                 RouteConfig(LibraryRoute.name,
                     path: '', parent: LibraryContainerRoute.name),
                 RouteConfig(CategoryRoute.name,
-                    path: 'category-page', parent: LibraryContainerRoute.name)
+                    path: 'category-page', parent: LibraryContainerRoute.name),
+                RouteConfig(LibraryItemRoute.name,
+                    path: 'library-item-page',
+                    parent: LibraryContainerRoute.name)
               ]),
           RouteConfig(SettingsRoute.name,
               path: 'settings-page', parent: AppHomeRoute.name)
@@ -133,5 +145,40 @@ class CategoryRouteArgs {
   @override
   String toString() {
     return 'CategoryRouteArgs{key: $key, libraryCategoryEntity: $libraryCategoryEntity}';
+  }
+}
+
+/// generated route for
+/// [LibraryItemPage]
+class LibraryItemRoute extends PageRouteInfo<LibraryItemRouteArgs> {
+  LibraryItemRoute(
+      {Key? key,
+      required ReferenceBaseModel referenceBase,
+      required LibraryCategoryEntity libraryCategoryEntity})
+      : super(LibraryItemRoute.name,
+            path: 'library-item-page',
+            args: LibraryItemRouteArgs(
+                key: key,
+                referenceBase: referenceBase,
+                libraryCategoryEntity: libraryCategoryEntity));
+
+  static const String name = 'LibraryItemRoute';
+}
+
+class LibraryItemRouteArgs {
+  const LibraryItemRouteArgs(
+      {this.key,
+      required this.referenceBase,
+      required this.libraryCategoryEntity});
+
+  final Key? key;
+
+  final ReferenceBaseModel referenceBase;
+
+  final LibraryCategoryEntity libraryCategoryEntity;
+
+  @override
+  String toString() {
+    return 'LibraryItemRouteArgs{key: $key, referenceBase: $referenceBase, libraryCategoryEntity: $libraryCategoryEntity}';
   }
 }
