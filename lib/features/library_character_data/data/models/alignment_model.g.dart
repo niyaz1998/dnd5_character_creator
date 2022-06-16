@@ -13,7 +13,7 @@ AlignmentModel _$AlignmentModelFromJson(Map<String, dynamic> json) =>
       index: json['index'] as String,
       name: json['name'] as String,
       description:
-          (json['desc'] as List<dynamic>).map((e) => e as String).toList(),
+          const DescriptionConverter().fromJson(json['desc'] as Object),
     );
 
 Map<String, dynamic> _$AlignmentModelToJson(AlignmentModel instance) =>
@@ -21,6 +21,6 @@ Map<String, dynamic> _$AlignmentModelToJson(AlignmentModel instance) =>
       'index': instance.index,
       'name': instance.name,
       'url': instance.url,
-      'desc': instance.description,
+      'desc': const DescriptionConverter().toJson(instance.description),
       'abbreviation': instance.abbreviation,
     };

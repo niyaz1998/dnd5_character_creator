@@ -11,7 +11,7 @@ ConditionModel _$ConditionModelFromJson(Map<String, dynamic> json) =>
       index: json['index'] as String,
       url: json['url'] as String,
       description:
-          (json['desc'] as List<dynamic>).map((e) => e as String).toList(),
+          const DescriptionConverter().fromJson(json['desc'] as Object),
       name: json['name'] as String,
     );
 
@@ -20,5 +20,5 @@ Map<String, dynamic> _$ConditionModelToJson(ConditionModel instance) =>
       'index': instance.index,
       'name': instance.name,
       'url': instance.url,
-      'desc': instance.description,
+      'desc': const DescriptionConverter().toJson(instance.description),
     };

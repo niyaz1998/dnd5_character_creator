@@ -14,7 +14,7 @@ AbilityScoreModel _$AbilityScoreModelFromJson(Map<String, dynamic> json) =>
       index: json['index'] as String,
       name: json['name'] as String,
       description:
-          (json['desc'] as List<dynamic>).map((e) => e as String).toList(),
+          const DescriptionConverter().fromJson(json['desc'] as Object),
     );
 
 Map<String, dynamic> _$AbilityScoreModelToJson(AbilityScoreModel instance) =>
@@ -22,7 +22,7 @@ Map<String, dynamic> _$AbilityScoreModelToJson(AbilityScoreModel instance) =>
       'index': instance.index,
       'name': instance.name,
       'url': instance.url,
-      'desc': instance.description,
+      'desc': const DescriptionConverter().toJson(instance.description),
       'full_name': instance.fullName,
       'skills': instance.skills,
     };

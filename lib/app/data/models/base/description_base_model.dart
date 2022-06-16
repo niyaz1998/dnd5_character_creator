@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import '../json_parsers/description_parser.dart';
 import 'reference_base_model.dart';
 
 part 'description_base_model.g.dart';
@@ -18,6 +19,7 @@ class DescribedBaseModel extends ReferenceBaseModel {
       _$DescribedBaseModelFromJson(json);
 
   @JsonKey(name: 'desc')
+  @DescriptionConverter()
   final List<String> description;
 
   @override
