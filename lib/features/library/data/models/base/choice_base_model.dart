@@ -10,10 +10,6 @@ part 'choice_base_model.g.dart';
 @JsonSerializable()
 @immutable
 class ChoiceBaseModel {
-  final int choose;
-  final String type;
-  final List<ReferenceBaseModel> from;
-
   const ChoiceBaseModel({
     required this.choose,
     required this.type,
@@ -22,6 +18,10 @@ class ChoiceBaseModel {
 
   factory ChoiceBaseModel.fromJson(Map<String, dynamic> json) =>
       _$ChoiceBaseModelFromJson(json);
+
+  final int choose;
+  final String type;
+  final List<ReferenceBaseModel> from;
 
   Map<String, dynamic> toJson() => _$ChoiceBaseModelToJson(this);
 }
