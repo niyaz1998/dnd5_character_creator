@@ -6,9 +6,6 @@ part 'ability_score_model.g.dart';
 
 @JsonSerializable(fieldRename: FieldRename.snake)
 class AbilityScoreModel extends DescribedBaseModel {
-  final String? fullName;
-  final String? skills;
-
   const AbilityScoreModel({
     required this.fullName,
     required this.skills,
@@ -20,6 +17,9 @@ class AbilityScoreModel extends DescribedBaseModel {
 
   factory AbilityScoreModel.fromJson(Map<String, dynamic> json) =>
       _$AbilityScoreModelFromJson(json);
+
+  final String? fullName;
+  final String? skills;
 
   @override
   Map<String, dynamic> toJson() => _$AbilityScoreModelToJson(this);

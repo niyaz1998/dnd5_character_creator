@@ -5,9 +5,7 @@ import '../../../../app/data/models/base/description_base_model.dart';
 part 'alignment_model.g.dart';
 
 @JsonSerializable()
-class AlignmentModel extends DescribedBaseModel  {
-  final String abbreviation;
-
+class AlignmentModel extends DescribedBaseModel {
   const AlignmentModel({
     required this.abbreviation,
     required super.url,
@@ -18,6 +16,8 @@ class AlignmentModel extends DescribedBaseModel  {
 
   factory AlignmentModel.fromJson(Map<String, dynamic> json) =>
       _$AlignmentModelFromJson(json);
+
+  final String abbreviation;
 
   @override
   Map<String, dynamic> toJson() => _$AlignmentModelToJson(this);

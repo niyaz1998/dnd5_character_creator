@@ -6,9 +6,7 @@ import '../../../../app/data/models/base/reference_base_model.dart';
 part 'skill_model.g.dart';
 
 @JsonSerializable(fieldRename: FieldRename.snake)
-class SkillModel extends DescribedBaseModel  {
-  final ReferenceBaseModel abilityScore;
-
+class SkillModel extends DescribedBaseModel {
   const SkillModel({
     required this.abilityScore,
     required super.url,
@@ -19,6 +17,8 @@ class SkillModel extends DescribedBaseModel  {
 
   factory SkillModel.fromJson(Map<String, dynamic> json) =>
       _$SkillModelFromJson(json);
+
+  final ReferenceBaseModel abilityScore;
 
   @override
   Map<String, dynamic> toJson() => _$SkillModelToJson(this);

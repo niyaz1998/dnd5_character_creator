@@ -7,9 +7,6 @@ part 'description_base_model.g.dart';
 /// большое кол-во сущностей включат в себя описани
 @JsonSerializable()
 class DescribedBaseModel extends ReferenceBaseModel {
-  @JsonKey(name: 'desc')
-  final List<String> description;
-
   const DescribedBaseModel({
     required this.description,
     required super.index,
@@ -19,6 +16,9 @@ class DescribedBaseModel extends ReferenceBaseModel {
 
   factory DescribedBaseModel.fromJson(Map<String, dynamic> json) =>
       _$DescribedBaseModelFromJson(json);
+
+  @JsonKey(name: 'desc')
+  final List<String> description;
 
   @override
   Map<String, dynamic> toJson() => _$DescribedBaseModelToJson(this);

@@ -6,18 +6,6 @@ part 'proficiency_model.g.dart';
 
 @JsonSerializable()
 class ProficiencyModel extends ReferenceBaseModel {
-  /// The general category of the proficiency
-  final String type;
-
-  /// Classes that start with this proficiency
-  final List<ReferenceBaseModel> classes;
-
-  /// Races that start with this proficiency
-  final List<ReferenceBaseModel> races;
-
-  /// reference to the full description of the related resource.
-  final ReferenceBaseModel reference;
-
   const ProficiencyModel({
     required this.type,
     required this.classes,
@@ -30,6 +18,18 @@ class ProficiencyModel extends ReferenceBaseModel {
 
   factory ProficiencyModel.fromJson(Map<String, dynamic> json) =>
       _$ProficiencyModelFromJson(json);
+
+  /// The general category of the proficiency
+  final String type;
+
+  /// Classes that start with this proficiency
+  final List<ReferenceBaseModel> classes;
+
+  /// Races that start with this proficiency
+  final List<ReferenceBaseModel> races;
+
+  /// reference to the full description of the related resource.
+  final ReferenceBaseModel reference;
 
   @override
   Map<String, dynamic> toJson() => _$ProficiencyModelToJson(this);
