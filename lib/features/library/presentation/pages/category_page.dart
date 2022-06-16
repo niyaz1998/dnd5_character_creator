@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../app/presentation/page/gin_base_page.dart';
 import '../../../../app/presentation/widgets/common/async_field_builder.dart';
 import '../../../../di/service_locator.dart';
-import '../../data/models/base/reference_base_model.dart';
+import '../../domain/entities/base/reference_base_entity.dart';
 import '../../domain/entities/library_category_entity.dart';
 import '../../domain/state/library_category/library_category_cubit.dart';
 import '../components/category_item_card.dart';
@@ -35,7 +35,7 @@ class CategoryPage extends GinBasePage {
       appBar: AppBar(leading: const AutoLeadingButton()),
       body: SafeArea(
         child: AsyncFieldBuilder<LibraryCategoryCubit, LibraryCategoryState,
-            List<ReferenceBaseModel>>(
+            List<ReferenceBaseEntity>>(
           fieldGetter: (state) => state.field,
           dataBuilder: (data) => ListView.builder(
             padding: const EdgeInsets.all(20),

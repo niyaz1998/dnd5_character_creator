@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../app/domain/cubit/gin_cubit.dart';
 import '../../../../../app/domain/model/async_field.dart';
 
-import '../../../data/models/base/reference_base_model.dart';
+import '../../entities/base/reference_base_entity.dart';
 import '../../repositories/library_repo.dart';
 import 'library_item_cubit.dart';
 export 'library_item_state.dart';
@@ -19,10 +19,10 @@ class LibraryItemCubit extends GinCubit<LibraryItemState> {
   }) : super(const LibraryItemState());
 
   final LibraryRepo libraryRepo;
-  final ReferenceBaseModel baseLink;
+  final ReferenceBaseEntity baseLink;
 
   @override
-  Future<void> init() => AsyncField.execute<ReferenceBaseModel>(
+  Future<void> init() => AsyncField.execute<ReferenceBaseEntity>(
         libraryRepo.fetchLibraryItem(baseLink),
         updater: (value) => emit(
           state.copyWith(field: value),

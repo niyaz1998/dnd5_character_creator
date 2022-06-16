@@ -2,7 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../app/presentation/router/app_router.dart';
-import '../../data/models/base/reference_base_model.dart';
+import '../../domain/entities/base/reference_base_entity.dart';
 import '../../domain/state/library_category/library_category_cubit.dart';
 
 class CategoryItemCard extends StatelessWidget {
@@ -11,7 +11,7 @@ class CategoryItemCard extends StatelessWidget {
     required this.referenceBaseModel,
   }) : super(key: key);
 
-  final ReferenceBaseModel referenceBaseModel;
+  final ReferenceBaseEntity referenceBaseModel;
 
   @override
   Widget build(BuildContext context) {
