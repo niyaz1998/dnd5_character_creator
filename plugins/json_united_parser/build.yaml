@@ -1,0 +1,15 @@
+targets:
+  $default:
+    builders:
+      json_united_parser|json_annotation:
+        enabled: true
+
+builders:
+  json_united_parser_generator:
+    target: ":json_united_parser"
+    import: "package:json_united_parser/builder.dart"
+    builder_factories: ["jsonUnitedParserGenerator"]
+    build_extensions: {".dart": [".json_united.g.part"]}
+    auto_apply: dependents
+    build_to: cache
+    applies_builders: ["source_gen|combining_builder"]

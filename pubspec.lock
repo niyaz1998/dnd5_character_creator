@@ -413,6 +413,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "6.2.0"
+  json_united_parser:
+    dependency: "direct dev"
+    description:
+      path: "plugins/json_united_parser"
+      relative: true
+    source: path
+    version: "1.0.0"
   lints:
     dependency: transitive
     description:

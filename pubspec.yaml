@@ -36,6 +36,8 @@ dev_dependencies:
   freezed: ^2.0.3+1
   injectable_generator: ^1.5.3
   build_runner: ^2.1.11
+  json_united_parser:
+    path: ./plugins/json_united_parser
   flutter_test:
     sdk: flutter
 
