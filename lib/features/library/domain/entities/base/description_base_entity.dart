@@ -1,7 +1,7 @@
-import 'reference_base_model.dart';
+import 'reference_base_entity.dart';
 
-class DescribedBaseModel extends ReferenceBaseModel {
-  const DescribedBaseModel({
+class DescribedBaseEntity extends ReferenceBaseEntity {
+  const DescribedBaseEntity({
     required this.description,
     required super.index,
     required super.name,

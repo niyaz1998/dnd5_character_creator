@@ -1,8 +1,8 @@
 import 'package:flutter/foundation.dart';
 
 @immutable
-class ReferenceBaseModel {
-  const ReferenceBaseModel({
+class ReferenceBaseEntity {
+  const ReferenceBaseEntity({
     required this.index,
     required this.name,
     required this.url,
