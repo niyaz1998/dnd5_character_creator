@@ -1,11 +1,11 @@
 import 'package:json_annotation/json_annotation.dart';
 
-import '../../../../features/library_character_data/data/models/ability_score_model.dart';
-import '../../../../features/library_character_data/data/models/alignment_model.dart';
-import '../../../../features/library_character_data/data/models/background_model.dart';
-import '../../../../features/library_character_data/data/models/language_model.dart';
-import '../../../../features/library_character_data/data/models/proficiency_model.dart';
-import '../../../../features/library_character_data/data/models/skill_model.dart';
+import '../../../../library_character_data/data/models/ability_score_model.dart';
+import '../../../../library_character_data/data/models/alignment_model.dart';
+import '../../../../library_character_data/data/models/background_model.dart';
+import '../../../../library_character_data/data/models/language_model.dart';
+import '../../../../library_character_data/data/models/proficiency_model.dart';
+import '../../../../library_character_data/data/models/skill_model.dart';
 import '../base/description_base_model.dart';
 import '../base/reference_base_model.dart';
 

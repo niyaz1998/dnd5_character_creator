@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../../../../app/data/models/base/reference_base_model.dart';
 import '../../../../../app/domain/model/async_field.dart';
+import '../../../data/models/base/reference_base_model.dart';
 
 part 'library_category_state.freezed.dart';
 

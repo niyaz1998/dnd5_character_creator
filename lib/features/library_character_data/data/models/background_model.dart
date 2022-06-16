@@ -1,6 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
-import '../../../../app/data/models/base/reference_base_model.dart';
+import '../../../library/data/models/base/reference_base_model.dart';
 
 part 'background_model.g.dart';
 

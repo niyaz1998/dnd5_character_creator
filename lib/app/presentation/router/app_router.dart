@@ -4,13 +4,13 @@ import 'package:injectable/injectable.dart';
 
 import '../../../features/app_home/presentation/app_home_page.dart';
 import '../../../features/character_builder/presentation/character_builder_page.dart';
+import '../../../features/library/data/models/base/reference_base_model.dart';
 import '../../../features/library/domain/entities/library_category_entity.dart';
 import '../../../features/library/presentation/pages/category_page.dart';
 import '../../../features/library/presentation/pages/library_container_page.dart';
 import '../../../features/library/presentation/pages/library_item_page.dart';
 import '../../../features/library/presentation/pages/library_page.dart';
 import '../../../features/settings/presentation/settings_page.dart';
-import '../../data/models/base/reference_base_model.dart';
 
 part 'app_router.gr.dart';
 
