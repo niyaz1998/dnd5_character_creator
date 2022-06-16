@@ -15,10 +15,6 @@ import '../features/library/data/repositories/library_category_repo_impl.dart'
     as _i8;
 import '../features/library/domain/repositories/library_category_repo.dart'
     as _i7;
-import '../features/library_character_data/data/repositories/character_data_repo_impl.dart'
-    as _i10;
-import '../features/library_character_data/domain/repositories/character_data_repo.dart'
-    as _i9;
 
 const String _dev = 'dev';
 const String _prod = 'prod';
@@ -35,7 +31,5 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.factory<_i6.EnvConfig>(() => _i6.ProdEnvConfig(), registerFor: {_prod});
   gh.lazySingleton<_i7.LibraryCategoryRepo>(
       () => _i8.LibraryCategoryRepoImpl(get<_i5.Dnd5eApi>()));
-  gh.lazySingleton<_i9.CharacterDataRepo>(
-      () => _i10.CharacterDataRepoImpl(get<_i5.Dnd5eApi>()));
   return get;
 }

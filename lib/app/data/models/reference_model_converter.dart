@@ -6,6 +6,7 @@ import '../../../features/library_character_data/data/models/background_model.da
 import '../../../features/library_character_data/data/models/language_model.dart';
 import '../../../features/library_character_data/data/models/proficiency_model.dart';
 import '../../../features/library_character_data/data/models/skill_model.dart';
+import 'base/description_base_model.dart';
 import 'base/reference_base_model.dart';
 
 class ResourceListModelConverter<T extends ReferenceBaseModel>
@@ -27,6 +28,8 @@ class ResourceListModelConverter<T extends ReferenceBaseModel>
         return ProficiencyModel.fromJson(json) as T;
       case SkillModel:
         return SkillModel.fromJson(json) as T;
+      case DescribedBaseModel:
+        return DescribedBaseModel.fromJson(json) as T;
       case ReferenceBaseModel:
         return ReferenceBaseModel.fromJson(json) as T;
     }
