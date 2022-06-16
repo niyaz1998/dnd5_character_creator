@@ -1,10 +1,10 @@
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 
+import '../../../../app/network/dio_container.dart';
 import '../models/base/reference_base_model.dart';
 import '../models/json_parsers/reference_model_converter.dart';
 import '../models/resource_list_model.dart';
-import '../../../../app/network/dio_container.dart';
 
 @Injectable()
 class Dnd5eApi {
