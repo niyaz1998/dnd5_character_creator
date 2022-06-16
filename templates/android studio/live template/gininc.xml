@@ -1,0 +1,29 @@
+<templateSet group="gininc">
+  <template name="ginjson" value="import 'package:flutter/foundation.dart';&#10;import 'package:json_annotation/json_annotation.dart';&#10;&#10;part '$file_name$.g.dart';&#10;&#10;@JsonSerializable(fieldRename: FieldRename.snake)&#10;@immutable&#10;class $class_name_full$ {&#10;  final String fieldName;&#10;&#10;  const $class_name_full$({&#10;    required this.fieldName,&#10;  });&#10;&#10;  factory $class_name_full$.fromJson(Map&lt;String, dynamic&gt; json) =&gt;&#10;      _$$$class_name_full$FromJson(json);&#10;&#10;  @override&#10;  Map&lt;String, dynamic&gt; toJson() =&gt; _$$$class_name_full$ToJson(this);&#10;}&#10;" description="JSON model" toReformat="false" toShortenFQNames="true">
+    <variable name="file_name" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="false" />
+    <variable name="class_name_full" expression="capitalize(camelCase(file_name))" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="DART" value="true" />
+    </context>
+  </template>
+  <template name="gincubit" value="import 'package:flutter/widgets.dart';&#10;import 'package:flutter_bloc/flutter_bloc.dart';&#10;&#10;import '../../../../../app/domain/cubit/gin_cubit.dart';&#10;import '../../../../../app/domain/model/async_field.dart';&#10;import '../../entities/library_category_entity.dart';&#10;import '../../repositories/library_category_repo.dart';&#10;&#10;import '$file_name$.dart';&#10;export '$state_file_name$.dart';&#10;&#10;class $class_name$Cubit extends Cubit&lt;$class_name$State&gt; {&#10;  static $class_name$Cubit of(BuildContext context) =&gt;&#10;      BlocProvider.of&lt;$class_name$Cubit&gt;(context);&#10;&#10;  LibraryCategoriesCubit({&#10;    required this.$repo_name_var$,&#10;  }) : super(const LibraryCategoriesState());&#10;&#10;  final $repo_name$ $repo_name_var$;&#10;&#10;  @override&#10;  Future&lt;void&gt; init() =&gt; AsyncField.execute&lt;$data_type$&gt;(&#10;        $repo_name_var$.$fecth_func_name$(),&#10;        updater: (value) =&gt; emit(&#10;          state.copyWith(&#10;            field: value,&#10;          ),&#10;        ),&#10;      );&#10;}&#10;" description="Simple AsyncField based cubit" toReformat="false" toShortenFQNames="true">
+    <variable name="file_name" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="false" />
+    <variable name="state_file_name" expression="regularExpression(file_name, &quot;cubit&quot;, &quot;state&quot;)" defaultValue="" alwaysStopAt="false" />
+    <variable name="class_name" expression="capitalize(camelCase(regularExpression(file_name, &quot;_cubit&quot;, &quot;&quot;)))" defaultValue="" alwaysStopAt="false" />
+    <variable name="repo_name_var" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="repo_name" expression="capitalize(repo_name_var)" defaultValue="" alwaysStopAt="false" />
+    <variable name="data_type" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="fecth_func_name" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="DART" value="true" />
+    </context>
+  </template>
+  <template name="ginstate" value="import 'package:freezed_annotation/freezed_annotation.dart';&#10;&#10;part '$file_name$.freezed.dart';&#10;&#10;@freezed&#10;class $class_name$ with _$$$class_name$ {&#10;  const factory $class_name$({&#10;    @Default(AsyncField&lt;$data_type$&gt;.nothing()) AsyncField&lt;$data_type$&gt; field,&#10;  }) = _$class_name$;&#10;}&#10;" description="async field based state for cubit for freezed" toReformat="false" toShortenFQNames="true">
+    <variable name="file_name" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="false" />
+    <variable name="class_name" expression="capitalize(camelCase(file_name))" defaultValue="" alwaysStopAt="false" />
+    <variable name="data_type" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="DART" value="true" />
+    </context>
+  </template>
+</templateSet>
