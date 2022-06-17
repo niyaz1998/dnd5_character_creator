@@ -11,14 +11,14 @@ import 'library_item_cubit.dart';
 export 'library_item_state.dart';
 
 class LibraryItemCubit<T extends DndBaseEntity>
-    extends GinCubit<LibraryItemState> {
+    extends GinCubit<LibraryItemState<T>> {
   static LibraryItemCubit of(BuildContext context) =>
       BlocProvider.of<LibraryItemCubit>(context);
 
   LibraryItemCubit({
     required this.libraryRepo,
     required this.baseLink,
-  }) : super(const LibraryItemState());
+  }) : super(const LibraryItemState.initial());
 
   final LibraryRepo libraryRepo;
   final ReferenceBaseEntity<T> baseLink;
