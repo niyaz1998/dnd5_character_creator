@@ -1,4 +1,5 @@
 import '../../../../library/domain/entities/base/reference_base_entity.dart';
+import '../equipment_category_entity.dart';
 import 'equipment_base_entity.dart';
 
 class EquipmentPackEntity extends EquipmentBaseEntity {
@@ -12,7 +13,6 @@ class EquipmentPackEntity extends EquipmentBaseEntity {
     required this.gearCategory,
   });
 
-  /// TODO: find entity for this
-  final ReferenceBaseEntity gearCategory;
+  final ReferenceBaseEntity<EquipmentCategoryEntity> gearCategory;
   final List<ReferenceBaseEntity<EquipmentBaseEntity>> contents;
 }

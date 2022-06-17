@@ -1,6 +1,7 @@
 import '../../../../library/domain/entities/base/choice_base_entity.dart';
 import '../../../../library/domain/entities/base/dnd_base_entity.dart';
 import '../../../../library/domain/entities/base/reference_base_entity.dart';
+import '../../../../library_equipment/domain/entities/equipment/equipment_base_entity.dart';
 import '../language_entity.dart';
 import '../proficiency_entity.dart';
 import 'background_feature.dart';
@@ -22,13 +23,13 @@ class BackgroundModel extends DndBaseEntity {
   });
 
   final List<ReferenceBaseEntity<ProficiencyEntity>> startingProficiencies;
-  final List<ReferenceBaseEntity> startingEquipment;
+  final List<ReferenceBaseEntity<EquipmentBaseEntity>> startingEquipment;
   final List<ChoiceBaseEntity> startingEquipmentOptions;
   final ChoiceBaseEntity<LanguageEntity> languageOptions;
   final BackgroundFeature feature;
 
-  /// TODO: api not documented here, obtain info by hand
-  final dynamic personalityTraits;
+  /// API not documented here
+  final Map<String, dynamic> personalityTraits;
   final ChoiceBaseEntity<BackgroundIdeal> ideals;
   final ChoiceBaseEntityString bonds;
   final ChoiceBaseEntityString flaws;
