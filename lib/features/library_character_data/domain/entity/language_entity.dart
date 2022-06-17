@@ -5,6 +5,8 @@ class LanguageEntity extends DescribedBaseEntity {
     required this.type,
     required this.script,
     required this.typicalSpeakers,
+    required super.index,
+    required super.name,
     required super.description,
   });
 

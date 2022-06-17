@@ -17,6 +17,8 @@ class BackgroundModel extends DndBaseEntity {
     required this.ideals,
     required this.bonds,
     required this.flaws,
+    required super.index,
+    required super.name,
   });
 
   final List<ReferenceBaseEntity<ProficiencyEntity>> startingProficiencies;

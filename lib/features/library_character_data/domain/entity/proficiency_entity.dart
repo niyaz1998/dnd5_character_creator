@@ -6,6 +6,8 @@ class ProficiencyEntity extends DndBaseEntity {
     required this.type,
     required this.classes,
     required this.races,
+    required super.index,
+    required super.name,
     required this.reference,
   });
 

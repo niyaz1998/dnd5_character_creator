@@ -32,6 +32,8 @@ class AbilityScoreModel extends DescribedBaseModel {
 extension AbilityScoreToEntity on AbilityScoreModel {
   AbilityScoreEntity toEntity() => AbilityScoreEntity(
         fullName: fullName,
+        index: index,
+        name: name,
         skills: skills.toEntity<SkillEntity>(),
         description: description,
       );

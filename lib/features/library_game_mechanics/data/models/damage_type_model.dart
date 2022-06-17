@@ -27,6 +27,8 @@ class DamageTypeModel extends DescribedBaseModel {
 extension DamageTypeToEntity on DamageTypeModel {
   DamageTypeEntity toEntity() => DamageTypeEntity(
         description: description,
+        index: index,
+        name: name,
       );
 }
 

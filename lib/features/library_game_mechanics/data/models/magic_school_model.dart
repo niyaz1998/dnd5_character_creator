@@ -27,6 +27,8 @@ class MagicSchoolModel extends DescribedBaseModel {
 extension MagicSchoolToEntity on MagicSchoolModel {
   MagicSchoolEntity toEntity() => MagicSchoolEntity(
         description: description,
+        index: index,
+        name: name,
       );
 }
 

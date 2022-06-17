@@ -27,6 +27,8 @@ class ConditionModel extends DescribedBaseModel {
 extension ConditionToEntity on ConditionModel {
   ConditionEntity toEntity() => ConditionEntity(
         description: description,
+        index: index,
+        name: name,
       );
 }
 

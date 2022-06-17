@@ -6,6 +6,8 @@ class AbilityScoreEntity extends DescribedBaseEntity {
   const AbilityScoreEntity({
     required this.fullName,
     required this.skills,
+    required super.index,
+    required super.name,
     required super.description,
   });
 

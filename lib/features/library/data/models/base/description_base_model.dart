@@ -28,8 +28,9 @@ class DescribedBaseModel extends ReferenceBaseModel {
 }
 
 extension DescribedBaseToEntity on DescribedBaseModel {
-  DescribedBaseEntity toEntity() =>
-      DescribedBaseEntity(
+  DescribedBaseEntity toEntity() => DescribedBaseEntity(
+        index: index,
+        name: name,
         description: description,
       );
 }

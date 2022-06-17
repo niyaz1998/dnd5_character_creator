@@ -6,6 +6,8 @@ class BackgroundIdeal extends DescribedBaseEntity {
   const BackgroundIdeal({
     required super.description,
     required this.alignments,
+    required super.index,
+    required super.name,
   });
 
   final List<ReferenceBaseEntity<AlignmentEntity>> alignments;
