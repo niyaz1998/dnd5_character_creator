@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../app/presentation/page/gin_base_page.dart';
 import '../../../../app/presentation/widgets/common/async_field_builder.dart';
 import '../../../../di/service_locator.dart';
+import '../../domain/entities/base/dnd_base_entity.dart';
 import '../../domain/entities/base/reference_base_entity.dart';
 import '../../domain/entities/library_category_entity.dart';
 import '../../domain/state/library_item/library_item_cubit.dart';
@@ -34,14 +35,13 @@ class LibraryItemPage extends GinBasePage {
   Widget buildPageContent(BuildContext context) {
     return Scaffold(
       appBar: AppBar(leading: const AutoLeadingButton()),
-      body: AsyncFieldBuilder<LibraryItemCubit, LibraryItemState,
-          ReferenceBaseEntity>(
+      body:
+          AsyncFieldBuilder<LibraryItemCubit, LibraryItemState, DndBaseEntity>(
         fieldGetter: (state) => state.field,
         dataBuilder: (data) {
           return ListView(
             children: [
               Text(data.name),
-              Text(data.url),
               Text(data.index),
             ],
           );

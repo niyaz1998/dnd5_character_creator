@@ -1,5 +1,6 @@
 import 'package:injectable/injectable.dart';
 
+import '../../domain/entities/base/dnd_base_entity.dart';
 import '../../domain/entities/base/reference_base_entity.dart';
 import '../../domain/entities/library_category_entity.dart';
 import '../../domain/repositories/library_repo.dart';
@@ -28,8 +29,8 @@ class LibraryRepoImpl extends LibraryRepo {
           .then((value) => value.toEntity());
 
   @override
-  Future<T> fetchLibraryItem<T extends ReferenceBaseEntity>(
-    ReferenceBaseEntity baseLink,
+  Future<T> fetchLibraryItem<T extends DndBaseEntity>(
+    ReferenceBaseEntity<T> baseLink,
   ) =>
       api.dndRequest(baseLink.url);
 }

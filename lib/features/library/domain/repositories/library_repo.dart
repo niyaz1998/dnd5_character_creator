@@ -1,3 +1,4 @@
+import '../entities/base/dnd_base_entity.dart';
 import '../entities/base/reference_base_entity.dart';
 import '../entities/library_category_entity.dart';
 
@@ -8,7 +9,7 @@ abstract class LibraryRepo {
     LibraryCategoryEntity category,
   );
 
-  Future<T> fetchLibraryItem<T extends ReferenceBaseEntity>(
-    ReferenceBaseEntity baseLink,
+  Future<T> fetchLibraryItem<T extends DndBaseEntity>(
+    ReferenceBaseEntity<T> baseLink,
   );
 }

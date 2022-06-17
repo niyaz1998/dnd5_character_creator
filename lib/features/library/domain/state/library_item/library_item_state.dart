@@ -7,9 +7,8 @@ import '../../entities/base/reference_base_entity.dart';
 part 'library_item_state.freezed.dart';
 
 @freezed
-class LibraryItemState with _$LibraryItemState {
+class LibraryItemState<T extends DndBaseEntity> with _$LibraryItemState {
   const factory LibraryItemState({
-    @Default(AsyncField.nothing())
-        AsyncField<ReferenceBaseEntity<DndBaseEntity>> field,
+    @Default(AsyncField.nothing()) AsyncField<T> field,
   }) = _LibraryItemState;
 }

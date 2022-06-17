@@ -92,7 +92,8 @@ class __$$_LibraryCategoryStateCopyWithImpl<$Res>
 
 class _$_LibraryCategoryState implements _LibraryCategoryState {
   const _$_LibraryCategoryState(
-      {this.field = const AsyncField<List<ReferenceBaseEntity>>.nothing()});
+      {this.field = const AsyncField<
+          List<ReferenceBaseEntity<DndBaseEntity>>>.nothing()});
 
   @override
   @JsonKey()

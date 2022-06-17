@@ -15,31 +15,30 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$LibraryItemState {
-  AsyncField<ReferenceBaseEntity<DndBaseEntity>> get field =>
-      throw _privateConstructorUsedError;
+mixin _$LibraryItemState<T extends DndBaseEntity> {
+  AsyncField<T> get field => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $LibraryItemStateCopyWith<LibraryItemState> get copyWith =>
+  $LibraryItemStateCopyWith<T, LibraryItemState<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $LibraryItemStateCopyWith<$Res> {
+abstract class $LibraryItemStateCopyWith<T extends DndBaseEntity, $Res> {
   factory $LibraryItemStateCopyWith(
-          LibraryItemState value, $Res Function(LibraryItemState) then) =
-      _$LibraryItemStateCopyWithImpl<$Res>;
-  $Res call({AsyncField<ReferenceBaseEntity<DndBaseEntity>> field});
+          LibraryItemState<T> value, $Res Function(LibraryItemState<T>) then) =
+      _$LibraryItemStateCopyWithImpl<T, $Res>;
+  $Res call({AsyncField<T> field});
 }
 
 /// @nodoc
-class _$LibraryItemStateCopyWithImpl<$Res>
-    implements $LibraryItemStateCopyWith<$Res> {
+class _$LibraryItemStateCopyWithImpl<T extends DndBaseEntity, $Res>
+    implements $LibraryItemStateCopyWith<T, $Res> {
   _$LibraryItemStateCopyWithImpl(this._value, this._then);
 
-  final LibraryItemState _value;
+  final LibraryItemState<T> _value;
   // ignore: unused_field
-  final $Res Function(LibraryItemState) _then;
+  final $Res Function(LibraryItemState<T>) _then;
 
   @override
   $Res call({
@@ -49,64 +48,65 @@ class _$LibraryItemStateCopyWithImpl<$Res>
       field: field == freezed
           ? _value.field
           : field // ignore: cast_nullable_to_non_nullable
-              as AsyncField<ReferenceBaseEntity<DndBaseEntity>>,
+              as AsyncField<T>,
     ));
   }
 }
 
 /// @nodoc
-abstract class _$$_LibraryItemStateCopyWith<$Res>
-    implements $LibraryItemStateCopyWith<$Res> {
-  factory _$$_LibraryItemStateCopyWith(
-          _$_LibraryItemState value, $Res Function(_$_LibraryItemState) then) =
-      __$$_LibraryItemStateCopyWithImpl<$Res>;
+abstract class _$$_LibraryItemStateCopyWith<T extends DndBaseEntity, $Res>
+    implements $LibraryItemStateCopyWith<T, $Res> {
+  factory _$$_LibraryItemStateCopyWith(_$_LibraryItemState<T> value,
+          $Res Function(_$_LibraryItemState<T>) then) =
+      __$$_LibraryItemStateCopyWithImpl<T, $Res>;
   @override
-  $Res call({AsyncField<ReferenceBaseEntity<DndBaseEntity>> field});
+  $Res call({AsyncField<T> field});
 }
 
 /// @nodoc
-class __$$_LibraryItemStateCopyWithImpl<$Res>
-    extends _$LibraryItemStateCopyWithImpl<$Res>
-    implements _$$_LibraryItemStateCopyWith<$Res> {
-  __$$_LibraryItemStateCopyWithImpl(
-      _$_LibraryItemState _value, $Res Function(_$_LibraryItemState) _then)
-      : super(_value, (v) => _then(v as _$_LibraryItemState));
+class __$$_LibraryItemStateCopyWithImpl<T extends DndBaseEntity, $Res>
+    extends _$LibraryItemStateCopyWithImpl<T, $Res>
+    implements _$$_LibraryItemStateCopyWith<T, $Res> {
+  __$$_LibraryItemStateCopyWithImpl(_$_LibraryItemState<T> _value,
+      $Res Function(_$_LibraryItemState<T>) _then)
+      : super(_value, (v) => _then(v as _$_LibraryItemState<T>));
 
   @override
-  _$_LibraryItemState get _value => super._value as _$_LibraryItemState;
+  _$_LibraryItemState<T> get _value => super._value as _$_LibraryItemState<T>;
 
   @override
   $Res call({
     Object? field = freezed,
   }) {
-    return _then(_$_LibraryItemState(
+    return _then(_$_LibraryItemState<T>(
       field: field == freezed
           ? _value.field
           : field // ignore: cast_nullable_to_non_nullable
-              as AsyncField<ReferenceBaseEntity<DndBaseEntity>>,
+              as AsyncField<T>,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_LibraryItemState implements _LibraryItemState {
+class _$_LibraryItemState<T extends DndBaseEntity>
+    implements _LibraryItemState<T> {
   const _$_LibraryItemState({this.field = const AsyncField.nothing()});
 
   @override
   @JsonKey()
-  final AsyncField<ReferenceBaseEntity<DndBaseEntity>> field;
+  final AsyncField<T> field;
 
   @override
   String toString() {
-    return 'LibraryItemState(field: $field)';
+    return 'LibraryItemState<$T>(field: $field)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_LibraryItemState &&
+            other is _$_LibraryItemState<T> &&
             const DeepCollectionEquality().equals(other.field, field));
   }
 
@@ -116,20 +116,20 @@ class _$_LibraryItemState implements _LibraryItemState {
 
   @JsonKey(ignore: true)
   @override
-  _$$_LibraryItemStateCopyWith<_$_LibraryItemState> get copyWith =>
-      __$$_LibraryItemStateCopyWithImpl<_$_LibraryItemState>(this, _$identity);
+  _$$_LibraryItemStateCopyWith<T, _$_LibraryItemState<T>> get copyWith =>
+      __$$_LibraryItemStateCopyWithImpl<T, _$_LibraryItemState<T>>(
+          this, _$identity);
 }
 
-abstract class _LibraryItemState implements LibraryItemState {
-  const factory _LibraryItemState(
-          {final AsyncField<ReferenceBaseEntity<DndBaseEntity>> field}) =
-      _$_LibraryItemState;
+abstract class _LibraryItemState<T extends DndBaseEntity>
+    implements LibraryItemState<T> {
+  const factory _LibraryItemState({final AsyncField<T> field}) =
+      _$_LibraryItemState<T>;
 
   @override
-  AsyncField<ReferenceBaseEntity<DndBaseEntity>> get field =>
-      throw _privateConstructorUsedError;
+  AsyncField<T> get field => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$$_LibraryItemStateCopyWith<_$_LibraryItemState> get copyWith =>
+  _$$_LibraryItemStateCopyWith<T, _$_LibraryItemState<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
