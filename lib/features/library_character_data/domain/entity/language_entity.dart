@@ -1,7 +1,7 @@
 import '../../../library/domain/entities/base/description_base_entity.dart';
 
-class LanguageModel extends DescribedBaseEntity {
-  const LanguageModel({
+class LanguageEntity extends DescribedBaseEntity {
+  const LanguageEntity({
     required this.type,
     required this.script,
     required this.typicalSpeakers,

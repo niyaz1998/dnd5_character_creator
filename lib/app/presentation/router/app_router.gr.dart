@@ -153,7 +153,7 @@ class CategoryRouteArgs {
 class LibraryItemRoute extends PageRouteInfo<LibraryItemRouteArgs> {
   LibraryItemRoute(
       {Key? key,
-      required ReferenceBaseEntity referenceBase,
+      required ReferenceBaseEntity<DndBaseEntity> referenceBase,
       required LibraryCategoryEntity libraryCategoryEntity})
       : super(LibraryItemRoute.name,
             path: 'library-item-page',
@@ -173,7 +173,7 @@ class LibraryItemRouteArgs {
 
   final Key? key;
 
-  final ReferenceBaseEntity referenceBase;
+  final ReferenceBaseEntity<DndBaseEntity> referenceBase;
 
   final LibraryCategoryEntity libraryCategoryEntity;
 

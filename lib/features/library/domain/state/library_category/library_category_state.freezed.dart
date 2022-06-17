@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$LibraryCategoryState {
-  AsyncField<List<ReferenceBaseEntity>> get field =>
+  AsyncField<List<ReferenceBaseEntity<DndBaseEntity>>> get field =>
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -29,7 +29,7 @@ abstract class $LibraryCategoryStateCopyWith<$Res> {
   factory $LibraryCategoryStateCopyWith(LibraryCategoryState value,
           $Res Function(LibraryCategoryState) then) =
       _$LibraryCategoryStateCopyWithImpl<$Res>;
-  $Res call({AsyncField<List<ReferenceBaseEntity>> field});
+  $Res call({AsyncField<List<ReferenceBaseEntity<DndBaseEntity>>> field});
 }
 
 /// @nodoc
@@ -49,7 +49,7 @@ class _$LibraryCategoryStateCopyWithImpl<$Res>
       field: field == freezed
           ? _value.field
           : field // ignore: cast_nullable_to_non_nullable
-              as AsyncField<List<ReferenceBaseEntity>>,
+              as AsyncField<List<ReferenceBaseEntity<DndBaseEntity>>>,
     ));
   }
 }
@@ -61,7 +61,7 @@ abstract class _$$_LibraryCategoryStateCopyWith<$Res>
           $Res Function(_$_LibraryCategoryState) then) =
       __$$_LibraryCategoryStateCopyWithImpl<$Res>;
   @override
-  $Res call({AsyncField<List<ReferenceBaseEntity>> field});
+  $Res call({AsyncField<List<ReferenceBaseEntity<DndBaseEntity>>> field});
 }
 
 /// @nodoc
@@ -83,7 +83,7 @@ class __$$_LibraryCategoryStateCopyWithImpl<$Res>
       field: field == freezed
           ? _value.field
           : field // ignore: cast_nullable_to_non_nullable
-              as AsyncField<List<ReferenceBaseEntity>>,
+              as AsyncField<List<ReferenceBaseEntity<DndBaseEntity>>>,
     ));
   }
 }
@@ -96,7 +96,7 @@ class _$_LibraryCategoryState implements _LibraryCategoryState {
 
   @override
   @JsonKey()
-  final AsyncField<List<ReferenceBaseEntity>> field;
+  final AsyncField<List<ReferenceBaseEntity<DndBaseEntity>>> field;
 
   @override
   String toString() {
@@ -124,11 +124,11 @@ class _$_LibraryCategoryState implements _LibraryCategoryState {
 
 abstract class _LibraryCategoryState implements LibraryCategoryState {
   const factory _LibraryCategoryState(
-          {final AsyncField<List<ReferenceBaseEntity>> field}) =
+          {final AsyncField<List<ReferenceBaseEntity<DndBaseEntity>>> field}) =
       _$_LibraryCategoryState;
 
   @override
-  AsyncField<List<ReferenceBaseEntity>> get field =>
+  AsyncField<List<ReferenceBaseEntity<DndBaseEntity>>> get field =>
       throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)

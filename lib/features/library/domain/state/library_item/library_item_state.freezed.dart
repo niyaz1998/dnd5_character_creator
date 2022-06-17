@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$LibraryItemState {
-  AsyncField<ReferenceBaseEntity> get field =>
+  AsyncField<ReferenceBaseEntity<DndBaseEntity>> get field =>
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -29,7 +29,7 @@ abstract class $LibraryItemStateCopyWith<$Res> {
   factory $LibraryItemStateCopyWith(
           LibraryItemState value, $Res Function(LibraryItemState) then) =
       _$LibraryItemStateCopyWithImpl<$Res>;
-  $Res call({AsyncField<ReferenceBaseEntity> field});
+  $Res call({AsyncField<ReferenceBaseEntity<DndBaseEntity>> field});
 }
 
 /// @nodoc
@@ -49,7 +49,7 @@ class _$LibraryItemStateCopyWithImpl<$Res>
       field: field == freezed
           ? _value.field
           : field // ignore: cast_nullable_to_non_nullable
-              as AsyncField<ReferenceBaseEntity>,
+              as AsyncField<ReferenceBaseEntity<DndBaseEntity>>,
     ));
   }
 }
@@ -61,7 +61,7 @@ abstract class _$$_LibraryItemStateCopyWith<$Res>
           _$_LibraryItemState value, $Res Function(_$_LibraryItemState) then) =
       __$$_LibraryItemStateCopyWithImpl<$Res>;
   @override
-  $Res call({AsyncField<ReferenceBaseEntity> field});
+  $Res call({AsyncField<ReferenceBaseEntity<DndBaseEntity>> field});
 }
 
 /// @nodoc
@@ -83,7 +83,7 @@ class __$$_LibraryItemStateCopyWithImpl<$Res>
       field: field == freezed
           ? _value.field
           : field // ignore: cast_nullable_to_non_nullable
-              as AsyncField<ReferenceBaseEntity>,
+              as AsyncField<ReferenceBaseEntity<DndBaseEntity>>,
     ));
   }
 }
@@ -95,7 +95,7 @@ class _$_LibraryItemState implements _LibraryItemState {
 
   @override
   @JsonKey()
-  final AsyncField<ReferenceBaseEntity> field;
+  final AsyncField<ReferenceBaseEntity<DndBaseEntity>> field;
 
   @override
   String toString() {
@@ -122,10 +122,11 @@ class _$_LibraryItemState implements _LibraryItemState {
 
 abstract class _LibraryItemState implements LibraryItemState {
   const factory _LibraryItemState(
-      {final AsyncField<ReferenceBaseEntity> field}) = _$_LibraryItemState;
+          {final AsyncField<ReferenceBaseEntity<DndBaseEntity>> field}) =
+      _$_LibraryItemState;
 
   @override
-  AsyncField<ReferenceBaseEntity> get field =>
+  AsyncField<ReferenceBaseEntity<DndBaseEntity>> get field =>
       throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)

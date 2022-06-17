@@ -1,8 +1,8 @@
 import '../../../library/data/models/base/reference_base_model.dart';
 import '../../../library/domain/entities/base/dnd_base_entity.dart';
 
-class ProficiencyModel extends DndBaseEntity {
-  const ProficiencyModel({
+class ProficiencyEntity extends DndBaseEntity {
+  const ProficiencyEntity({
     required this.type,
     required this.classes,
     required this.races,

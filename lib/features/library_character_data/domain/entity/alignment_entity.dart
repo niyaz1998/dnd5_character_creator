@@ -1,7 +1,7 @@
 import '../../../library/domain/entities/base/description_base_entity.dart';
 
-class AlignmentModel extends DescribedBaseEntity {
-  const AlignmentModel({
+class AlignmentEntity extends DescribedBaseEntity {
+  const AlignmentEntity({
     required this.abbreviation,
     required super.description,
   });

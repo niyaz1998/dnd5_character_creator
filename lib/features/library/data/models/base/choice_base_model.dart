@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 import '../../../domain/entities/base/choice_base_entity.dart';
+import '../../../domain/entities/base/dnd_base_entity.dart';
 import 'reference_base_model.dart';
 
 part 'choice_base_model.g.dart';
@@ -27,10 +28,14 @@ class ChoiceBaseModel {
   Map<String, dynamic> toJson() => _$ChoiceBaseModelToJson(this);
 }
 
-extension DomainMapper on ChoiceBaseModel {
-  ChoiceBaseEntity toEntity() => ChoiceBaseEntity(
+extension ChoiceBaseToEntity on ChoiceBaseModel {
+  ChoiceBaseEntity<T> toEntity<T extends DndBaseEntity>() => ChoiceBaseEntity(
         choose: choose,
         type: type,
-        from: from.map((e) => e.toEntity()).toList(),
+        from: from.toEntity<T>(),
       );
+}
+
+extension ChoiceBaseListToEntity on List<ChoiceBaseModel> {
+  List<ChoiceBaseEntity> toEntity() => map((e) => e.toEntity()).toList();
 }
