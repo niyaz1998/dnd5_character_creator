@@ -1,6 +1,5 @@
 import '../../../../library/domain/entities/base/choice_base_entity.dart';
 import '../../../../library/domain/entities/base/reference_base_entity.dart';
-import '../../../../library_character_data/domain/entity/language_entity.dart';
 import '../../../../library_character_data/domain/entity/proficiency_entity.dart';
 import 'race_base_interface.dart';
 
