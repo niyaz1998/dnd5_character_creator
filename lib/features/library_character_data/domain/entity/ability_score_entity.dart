@@ -1,6 +1,6 @@
 import '../../../library/domain/entities/base/description_base_entity.dart';
 import '../../../library/domain/entities/base/reference_base_entity.dart';
-import 'skill_model.dart';
+import 'skill_entity.dart';
 
 class AbilityScoreEntity extends DescribedBaseEntity {
   const AbilityScoreEntity({

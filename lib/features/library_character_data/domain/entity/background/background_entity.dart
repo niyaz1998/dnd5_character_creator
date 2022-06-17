@@ -2,6 +2,7 @@ import '../../../../library/domain/entities/base/choice_base_entity.dart';
 import '../../../../library/domain/entities/base/dnd_base_entity.dart';
 import '../../../../library/domain/entities/base/reference_base_entity.dart';
 import '../language_entity.dart';
+import '../proficiency_entity.dart';
 import 'background_feature.dart';
 import 'background_ideal.dart';
 
@@ -18,7 +19,7 @@ class BackgroundModel extends DndBaseEntity {
     required this.flaws,
   });
 
-  final List<ReferenceBaseEntity> startingProficiencies;
+  final List<ReferenceBaseEntity<ProficiencyEntity>> startingProficiencies;
   final List<ReferenceBaseEntity> startingEquipment;
   final List<ChoiceBaseEntity> startingEquipmentOptions;
   final ChoiceBaseEntity<LanguageEntity> languageOptions;

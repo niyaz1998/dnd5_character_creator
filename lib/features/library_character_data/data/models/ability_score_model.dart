@@ -4,7 +4,7 @@ import '../../../library/data/models/base/description_base_model.dart';
 import '../../../library/data/models/base/reference_base_model.dart';
 import '../../../library/data/models/json_parsers/description_parser.dart';
 import '../../domain/entity/ability_score_entity.dart';
-import '../../domain/entity/skill_model.dart';
+import '../../domain/entity/skill_entity.dart';
 
 part 'ability_score_model.g.dart';
 
