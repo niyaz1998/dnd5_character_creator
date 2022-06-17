@@ -1,7 +1,9 @@
 import 'package:flutter/foundation.dart';
 
+import 'dnd_base_entity.dart';
+
 @immutable
-class ReferenceBaseEntity {
+class ReferenceBaseEntity<T extends DndBaseEntity> {
   const ReferenceBaseEntity({
     required this.index,
     required this.name,

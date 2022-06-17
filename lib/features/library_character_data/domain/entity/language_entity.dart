@@ -5,9 +5,6 @@ class LanguageModel extends DescribedBaseEntity {
     required this.type,
     required this.script,
     required this.typicalSpeakers,
-    required super.url,
-    required super.index,
-    required super.name,
     required super.description,
   });
 

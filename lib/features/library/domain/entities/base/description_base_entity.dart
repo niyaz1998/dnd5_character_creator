@@ -1,11 +1,8 @@
-import 'reference_base_entity.dart';
+import 'dnd_base_entity.dart';
 
-class DescribedBaseEntity extends ReferenceBaseEntity {
+class DescribedBaseEntity extends DndBaseEntity {
   const DescribedBaseEntity({
     required this.description,
-    required super.index,
-    required super.name,
-    required super.url,
   });
 
   final List<String> description;

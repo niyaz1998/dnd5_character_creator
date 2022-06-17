@@ -1,11 +1,7 @@
-import '../../../library/domain/entities/base/reference_base_entity.dart';
+import '../../../library/domain/entities/base/dnd_base_entity.dart';
 
-class BackgroundModel extends ReferenceBaseEntity {
-  const BackgroundModel({
-    required super.url,
-    required super.index,
-    required super.name,
-  });
+class BackgroundModel extends DndBaseEntity {
+  const BackgroundModel();
 
   /// TODO: starting_proficiencies when proficiencies is done
   /// starting_equipment and starting_equipment_options when items are done

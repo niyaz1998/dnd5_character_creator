@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:json_annotation/json_annotation.dart';
 
+import '../../../domain/entities/base/dnd_base_entity.dart';
 import '../../../domain/entities/base/reference_base_entity.dart';
 
 part 'reference_base_model.g.dart';
@@ -31,7 +32,8 @@ class ReferenceBaseModel {
 }
 
 extension ReferenceBaseToEntity on ReferenceBaseModel {
-  ReferenceBaseEntity toEntity() => ReferenceBaseEntity(
+  ReferenceBaseEntity<T> toEntity<T extends DndBaseEntity>() =>
+      ReferenceBaseEntity<T>(
         index: index,
         name: name,
         url: url,
@@ -39,5 +41,6 @@ extension ReferenceBaseToEntity on ReferenceBaseModel {
 }
 
 extension ReferenceBaseListToEntity on List<ReferenceBaseModel> {
-  List<ReferenceBaseEntity> toEntity() => map((e) => e.toEntity()).toList();
+  List<ReferenceBaseEntity<T>> toEntity<T extends DndBaseEntity>() =>
+      map((e) => e.toEntity<T>()).toList();
 }

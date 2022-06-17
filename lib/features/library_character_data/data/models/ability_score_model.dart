@@ -4,6 +4,7 @@ import '../../../library/data/models/base/description_base_model.dart';
 import '../../../library/data/models/base/reference_base_model.dart';
 import '../../../library/data/models/json_parsers/description_parser.dart';
 import '../../domain/entity/ability_score_entity.dart';
+import '../../domain/entity/skill_model.dart';
 
 part 'ability_score_model.g.dart';
 
@@ -31,10 +32,7 @@ class AbilityScoreModel extends DescribedBaseModel {
 extension AbilityScoreToEntity on AbilityScoreModel {
   AbilityScoreEntity toEntity() => AbilityScoreEntity(
         fullName: fullName,
-        skills: skills.toEntity(),
-        url: url,
-        index: index,
-        name: name,
+        skills: skills.toEntity<SkillEntity>(),
         description: description,
       );
 }

@@ -1,23 +1,22 @@
 import '../../../library/data/models/base/reference_base_model.dart';
-import '../../../library/domain/entities/base/reference_base_entity.dart';
+import '../../../library/domain/entities/base/dnd_base_entity.dart';
 
-class ProficiencyModel extends ReferenceBaseEntity {
+class ProficiencyModel extends DndBaseEntity {
   const ProficiencyModel({
     required this.type,
     required this.classes,
     required this.races,
     required this.reference,
-    required super.url,
-    required super.index,
-    required super.name,
   });
 
   /// The general category of the proficiency
   final String type;
 
+  /// TODO: add expected type
   /// Classes that start with this proficiency
   final List<ReferenceBaseModel> classes;
 
+  /// TODO: add expected type
   /// Races that start with this proficiency
   final List<ReferenceBaseModel> races;
 
