@@ -10,20 +10,20 @@ import '../../domain/entities/base/reference_base_entity.dart';
 import '../../domain/entities/library_category_entity.dart';
 import '../../domain/state/library_item/library_item_cubit.dart';
 
-class LibraryItemPage extends GinBasePage {
+class LibraryItemPage<T extends DndBaseEntity> extends GinBasePage {
   const LibraryItemPage({
     Key? key,
     required this.referenceBase,
     required this.libraryCategoryEntity,
   }) : super(key: key);
 
-  final LibraryCategoryEntity libraryCategoryEntity;
-  final ReferenceBaseEntity referenceBase;
+  final LibraryCategoryEntity<T> libraryCategoryEntity;
+  final ReferenceBaseEntity<T> referenceBase;
 
   @override
   Widget buildProviders(Widget child) {
     return BlocProvider(
-      create: (c) => LibraryItemCubit(
+      create: (c) => LibraryItemCubit<T>(
         libraryRepo: getIt(),
         baseLink: referenceBase,
       )..init(),

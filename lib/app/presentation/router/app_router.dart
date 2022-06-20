@@ -8,9 +8,9 @@ import '../../../features/library/domain/entities/base/dnd_base_entity.dart';
 import '../../../features/library/domain/entities/base/reference_base_entity.dart';
 import '../../../features/library/domain/entities/library_category_entity.dart';
 import '../../../features/library/presentation/pages/category_page.dart';
-import '../../../features/library/presentation/pages/library_container_page.dart';
 import '../../../features/library/presentation/pages/library_item_page.dart';
 import '../../../features/library/presentation/pages/library_page.dart';
+import '../../../features/library/presentation/pages/page_containers/library_container_page.dart';
 import '../../../features/settings/presentation/settings_page.dart';
 
 part 'app_router.gr.dart';
