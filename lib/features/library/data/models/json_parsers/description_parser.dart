@@ -1,3 +1,4 @@
+import 'package:collection/collection.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 class DescriptionConverter implements JsonConverter<List<String>, Object> {
@@ -7,8 +8,8 @@ class DescriptionConverter implements JsonConverter<List<String>, Object> {
   List<String> fromJson(Object json) {
     if (json is String) {
       return [json];
-    } else if (json is List<String>) {
-      return json;
+    } else if (json is List) {
+      return json.map((e) => e is String ? e : null).whereNotNull().toList();
     }
 
     throw ArgumentError('not supported desc format by DescriptionConverter');

@@ -18,6 +18,15 @@ class DndBaseEntityInfo extends StatelessWidget {
     if (entity is AbilityScoreEntity) {
       return AbilityScoreInfoCard(abilityScore: entity);
     }
-    return Container();
+    return Column(
+      children: [
+        Text(
+          dndBaseEntity.name,
+          style: Theme.of(context).textTheme.titleSmall,
+        ),
+        const SizedBox(height: 10),
+        Text(dndBaseEntity.runtimeType.toString()),
+      ],
+    );
   }
 }

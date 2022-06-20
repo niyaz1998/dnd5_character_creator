@@ -124,8 +124,7 @@ class LibraryRoute extends PageRouteInfo<void> {
 /// [CategoryPage]
 class CategoryRoute extends PageRouteInfo<CategoryRouteArgs> {
   CategoryRoute(
-      {Key? key,
-      required LibraryCategoryEntity<DndBaseEntity> libraryCategoryEntity})
+      {Key? key, required LibraryCategoryEntity libraryCategoryEntity})
       : super(CategoryRoute.name,
             path: 'category-page',
             args: CategoryRouteArgs(
@@ -139,7 +138,7 @@ class CategoryRouteArgs {
 
   final Key? key;
 
-  final LibraryCategoryEntity<DndBaseEntity> libraryCategoryEntity;
+  final LibraryCategoryEntity libraryCategoryEntity;
 
   @override
   String toString() {

@@ -37,7 +37,10 @@ class LibraryItemPage extends GinBasePage {
           AsyncFieldBuilder<LibraryItemCubit, LibraryItemState, DndBaseEntity>(
         fieldGetter: (state) => state.field,
         dataBuilder: (data) {
-          return DndBaseEntityInfo(dndBaseEntity: data);
+          return Padding(
+            padding: const EdgeInsets.all(20),
+            child: DndBaseEntityInfo(dndBaseEntity: data),
+          );
         },
       ),
     );

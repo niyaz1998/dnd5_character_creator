@@ -1,5 +1,11 @@
+import 'package:collection/collection.dart';
 import 'package:injectable/injectable.dart';
 
+import '../../../library_character_data/data/models/ability_score_model.dart';
+import '../../../library_character_data/data/models/alignment_model.dart';
+import '../../../library_character_data/data/models/language_model.dart';
+import '../../../library_character_data/data/models/proficiency_model.dart';
+import '../../../library_character_data/data/models/skill_model.dart';
 import '../../../library_character_data/domain/entity/ability_score_entity.dart';
 import '../../../library_character_data/domain/entity/alignment_entity.dart';
 import '../../../library_character_data/domain/entity/background/background_entity.dart';
@@ -15,32 +21,37 @@ import '../models/base/reference_base_model.dart';
 
 @LazySingleton(as: LibraryRepo)
 class LibraryRepoImpl extends LibraryRepo {
-  static Map<Type, LibraryCategoryEntity> get resourceDescriptors => const {
-        AbilityScoreEntity: LibraryCategoryEntity<AbilityScoreEntity>(
+  static List<LibraryCategoryEntity> get resourceDescriptors => const [
+        LibraryCategoryEntity(
           localeKey: 'ability-scores',
           path: 'ability-scores',
+          domainType: AbilityScoreEntity,
         ),
-        AlignmentEntity: LibraryCategoryEntity<AlignmentEntity>(
+        LibraryCategoryEntity(
           localeKey: 'alignments',
           path: 'alignments',
+          domainType: AlignmentEntity,
         ),
-        BackgroundEntity: LibraryCategoryEntity<BackgroundEntity>(
-          localeKey: 'backgrounds',
-          path: 'backgrounds',
-        ),
-        LanguageEntity: LibraryCategoryEntity<LanguageEntity>(
+        LibraryCategoryEntity(
+            localeKey: 'backgrounds',
+            path: 'backgrounds',
+            domainType: BackgroundEntity),
+        LibraryCategoryEntity(
           localeKey: 'languages',
           path: 'languages',
+          domainType: LanguageEntity,
         ),
-        ProficiencyEntity: LibraryCategoryEntity<ProficiencyEntity>(
+        LibraryCategoryEntity(
           localeKey: 'proficiencies',
           path: 'proficiencies',
+          domainType: ProficiencyEntity,
         ),
-        SkillEntity: LibraryCategoryEntity<SkillEntity>(
+        LibraryCategoryEntity(
           localeKey: 'skills',
           path: 'skills',
+          domainType: SkillEntity,
         ),
-      };
+      ];
 
   LibraryRepoImpl(this.api);
 
@@ -48,20 +59,49 @@ class LibraryRepoImpl extends LibraryRepo {
 
   @override
   Future<List<LibraryCategoryEntity>> fetchCategories() async =>
-      resourceDescriptors.values.toList();
+      resourceDescriptors.toList();
 
   @override
   Future<List<ReferenceBaseEntity<T>>>
       fetchCategoryEntities<T extends DndBaseEntity>(
-    LibraryCategoryEntity<T> category,
+    LibraryCategoryEntity category,
   ) =>
           api
               .dndRequestList<ReferenceBaseModel>('/api/${category.path}')
               .then((value) => value.toEntity());
 
   @override
-  Future<T> fetchLibraryItem<T extends DndBaseEntity>(
-    ReferenceBaseEntity<T> baseLink,
-  ) =>
-      api.dndRequest(baseLink.url);
+  Future<DndBaseEntity> fetchLibraryItem(
+    ReferenceBaseEntity baseLink,
+  ) async {
+    var descriptor = resourceDescriptors.firstWhereOrNull(
+      (element) => baseLink.url.startsWith('/api/${element.path}'),
+    );
+    if (descriptor == null) {
+      throw 'not found domain to data DTO relation';
+    }
+    switch (descriptor.domainType) {
+      case AbilityScoreEntity:
+        return api
+            .dndRequest<AbilityScoreModel>(baseLink.url)
+            .then((value) => value.toEntity());
+      case AlignmentEntity:
+        return api
+            .dndRequest<AlignmentModel>(baseLink.url)
+            .then((value) => value.toEntity());
+      case LanguageEntity:
+        return api
+            .dndRequest<LanguageModel>(baseLink.url)
+            .then((value) => value.toEntity());
+      case ProficiencyEntity:
+        return api
+            .dndRequest<ProficiencyModel>(baseLink.url)
+            .then((value) => value.toEntity());
+      case SkillEntity:
+        return api
+            .dndRequest<SkillModel>(baseLink.url)
+            .then((value) => value.toEntity());
+    }
+    throw 'not found domain to data DTO relation';
+  }
 }

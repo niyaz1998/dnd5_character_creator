@@ -7,10 +7,10 @@ abstract class LibraryRepo {
 
   Future<List<ReferenceBaseEntity<T>>>
       fetchCategoryEntities<T extends DndBaseEntity>(
-    LibraryCategoryEntity<T> category,
+    LibraryCategoryEntity category,
   );
 
-  Future<T> fetchLibraryItem<T extends DndBaseEntity>(
-    ReferenceBaseEntity<T> baseLink,
+  Future<DndBaseEntity> fetchLibraryItem(
+    ReferenceBaseEntity baseLink,
   );
 }
