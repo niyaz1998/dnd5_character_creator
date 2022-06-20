@@ -11,7 +11,7 @@ class LanguageEntity extends DescribedBaseEntity {
   });
 
   /// enum Standard, Exotic
-  final String type;
+  final LanguageType type;
 
   /// script used for writing in the language.
   final String script;
@@ -19,3 +19,6 @@ class LanguageEntity extends DescribedBaseEntity {
   /// List of races that tend to speak the language.
   final List<String> typicalSpeakers;
 }
+
+// ignore: constant_identifier_names
+enum LanguageType { Standard, Exotic }

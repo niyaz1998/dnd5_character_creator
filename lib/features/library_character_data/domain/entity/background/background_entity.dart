@@ -7,8 +7,8 @@ import '../proficiency_entity.dart';
 import 'background_feature.dart';
 import 'background_ideal.dart';
 
-class BackgroundModel extends DndBaseEntity {
-  const BackgroundModel({
+class BackgroundEntity extends DndBaseEntity {
+  const BackgroundEntity({
     required this.startingProficiencies,
     required this.startingEquipment,
     required this.startingEquipmentOptions,
