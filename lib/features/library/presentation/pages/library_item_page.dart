@@ -7,23 +7,20 @@ import '../../../../app/presentation/widgets/common/async_field_builder.dart';
 import '../../../../di/service_locator.dart';
 import '../../domain/entities/base/dnd_base_entity.dart';
 import '../../domain/entities/base/reference_base_entity.dart';
-import '../../domain/entities/library_category_entity.dart';
 import '../../domain/state/library_item/library_item_cubit.dart';
 
-class LibraryItemPage<T extends DndBaseEntity> extends GinBasePage {
+class LibraryItemPage extends GinBasePage {
   const LibraryItemPage({
     Key? key,
     required this.referenceBase,
-    required this.libraryCategoryEntity,
   }) : super(key: key);
 
-  final LibraryCategoryEntity<T> libraryCategoryEntity;
-  final ReferenceBaseEntity<T> referenceBase;
+  final ReferenceBaseEntity<DndBaseEntity> referenceBase;
 
   @override
   Widget buildProviders(Widget child) {
     return BlocProvider(
-      create: (c) => LibraryItemCubit<T>(
+      create: (c) => LibraryItemCubit(
         libraryRepo: getIt(),
         baseLink: referenceBase,
       )..init(),

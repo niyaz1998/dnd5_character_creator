@@ -20,8 +20,6 @@ class CategoryItemCard extends StatelessWidget {
         AutoRouter.of(context).push(
           LibraryItemRoute(
             referenceBase: referenceBaseModel,
-            libraryCategoryEntity:
-                LibraryCategoryCubit.of(context).libraryCategoryEntity,
           ),
         );
       },

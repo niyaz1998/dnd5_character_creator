@@ -1,22 +1,13 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
+
 import '../../../../../app/domain/model/async_field.dart';
 import '../../entities/base/dnd_base_entity.dart';
 
-class LibraryItemState<T extends DndBaseEntity> {
-  final AsyncField<T> field;
+part 'library_item_state.freezed.dart';
 
-  const LibraryItemState({
-    required this.field,
-  });
-
-  const LibraryItemState.initial({
-    this.field = const AsyncField.nothing(),
-  });
-
-  LibraryItemState<T> copyWith({
-    AsyncField<T>? field,
-  }) {
-    return LibraryItemState<T>(
-      field: field ?? this.field,
-    );
-  }
+@freezed
+class LibraryItemState with _$LibraryItemState {
+  const factory LibraryItemState({
+    @Default(AsyncField<DndBaseEntity>.nothing()) AsyncField<DndBaseEntity> field,
+  }) = _LibraryItemState;
 }
