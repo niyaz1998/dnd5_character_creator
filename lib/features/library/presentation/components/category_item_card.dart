@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 import '../../../../app/presentation/router/app_router.dart';
 import '../../domain/entities/base/reference_base_entity.dart';
-import '../../domain/state/library_category/library_category_cubit.dart';
 
 class CategoryItemCard extends StatelessWidget {
   const CategoryItemCard({

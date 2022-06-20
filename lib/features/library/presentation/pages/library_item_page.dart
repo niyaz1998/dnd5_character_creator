@@ -8,6 +8,7 @@ import '../../../../di/service_locator.dart';
 import '../../domain/entities/base/dnd_base_entity.dart';
 import '../../domain/entities/base/reference_base_entity.dart';
 import '../../domain/state/library_item/library_item_cubit.dart';
+import '../components/dnd_base_entity_info.dart';
 
 class LibraryItemPage extends GinBasePage {
   const LibraryItemPage({
@@ -36,12 +37,7 @@ class LibraryItemPage extends GinBasePage {
           AsyncFieldBuilder<LibraryItemCubit, LibraryItemState, DndBaseEntity>(
         fieldGetter: (state) => state.field,
         dataBuilder: (data) {
-          return ListView(
-            children: [
-              Text(data.name),
-              Text(data.index),
-            ],
-          );
+          return DndBaseEntityInfo(dndBaseEntity: data);
         },
       ),
     );
