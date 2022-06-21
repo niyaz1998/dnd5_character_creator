@@ -20,7 +20,7 @@ dependencies:
     path: plugins/gin_app_logger
   cupertino_icons: ^1.0.5
   injectable: ^1.5.3
-  easy_localization: ^3.0.1
+  intl: ^0.17.0
   get_it: ^7.2.0
   flutter_bloc: ^8.0.1
   bloc: ^8.0.3
