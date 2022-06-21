@@ -1,14 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'skill_model.dart';
+part of 'ability_score_model.codegen.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-SkillModel _$SkillModelFromJson(Map<String, dynamic> json) => SkillModel(
-      abilityScore: ReferenceBaseModel.fromJson(
-          json['ability_score'] as Map<String, dynamic>),
+AbilityScoreModel _$AbilityScoreModelFromJson(Map<String, dynamic> json) =>
+    AbilityScoreModel(
+      fullName: json['full_name'] as String?,
+      skills: json['skills'] as String?,
       url: json['url'] as String,
       index: json['index'] as String,
       name: json['name'] as String,
@@ -16,11 +17,12 @@ SkillModel _$SkillModelFromJson(Map<String, dynamic> json) => SkillModel(
           const DescriptionConverter().fromJson(json['desc'] as Object),
     );
 
-Map<String, dynamic> _$SkillModelToJson(SkillModel instance) =>
+Map<String, dynamic> _$AbilityScoreModelToJson(AbilityScoreModel instance) =>
     <String, dynamic>{
       'index': instance.index,
       'name': instance.name,
       'url': instance.url,
       'desc': const DescriptionConverter().toJson(instance.description),
-      'ability_score': instance.abilityScore,
+      'full_name': instance.fullName,
+      'skills': instance.skills,
     };

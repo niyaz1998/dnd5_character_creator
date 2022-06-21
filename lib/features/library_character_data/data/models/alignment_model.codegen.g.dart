@@ -1,18 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'language_model.dart';
+part of 'alignment_model.codegen.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-LanguageModel _$LanguageModelFromJson(Map<String, dynamic> json) =>
-    LanguageModel(
-      type: json['type'] as String,
-      script: json['script'] as String,
-      typicalSpeakers: (json['typical_speakers'] as List<dynamic>)
-          .map((e) => e as String)
-          .toList(),
+AlignmentModel _$AlignmentModelFromJson(Map<String, dynamic> json) =>
+    AlignmentModel(
+      abbreviation: json['abbreviation'] as String,
       url: json['url'] as String,
       index: json['index'] as String,
       name: json['name'] as String,
@@ -20,13 +16,11 @@ LanguageModel _$LanguageModelFromJson(Map<String, dynamic> json) =>
           const DescriptionConverter().fromJson(json['desc'] as Object),
     );
 
-Map<String, dynamic> _$LanguageModelToJson(LanguageModel instance) =>
+Map<String, dynamic> _$AlignmentModelToJson(AlignmentModel instance) =>
     <String, dynamic>{
       'index': instance.index,
       'name': instance.name,
       'url': instance.url,
       'desc': const DescriptionConverter().toJson(instance.description),
-      'type': instance.type,
-      'script': instance.script,
-      'typical_speakers': instance.typicalSpeakers,
+      'abbreviation': instance.abbreviation,
     };

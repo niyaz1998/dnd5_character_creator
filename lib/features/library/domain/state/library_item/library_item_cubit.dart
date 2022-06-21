@@ -7,7 +7,7 @@ import '../../../../../app/domain/model/async_field.dart';
 
 import '../../repositories/library_repo.dart';
 import 'library_item_cubit.dart';
-export 'library_item_state.dart';
+export 'library_item_state.codegen.dart';
 
 class LibraryItemCubit extends GinCubit<LibraryItemState> {
   static LibraryItemCubit of(BuildContext context) =>

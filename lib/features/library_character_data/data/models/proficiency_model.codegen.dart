@@ -2,7 +2,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 import '../../../../app/data/models/base/reference_base_model.dart';
 
-part 'proficiency_model.g.dart';
+part 'proficiency_model.codegen.g.dart';
 
 @JsonSerializable()
 class ProficiencyModel extends ReferenceBaseModel {

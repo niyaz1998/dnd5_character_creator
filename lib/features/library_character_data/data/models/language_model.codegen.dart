@@ -3,7 +3,7 @@ import 'package:json_annotation/json_annotation.dart';
 import '../../../../app/data/models/base/description_base_model.dart';
 import '../../../../app/data/models/json_parsers/description_parser.dart';
 
-part 'language_model.g.dart';
+part 'language_model.codegen.g.dart';
 
 @JsonSerializable(fieldRename: FieldRename.snake)
 class LanguageModel extends DescribedBaseModel {

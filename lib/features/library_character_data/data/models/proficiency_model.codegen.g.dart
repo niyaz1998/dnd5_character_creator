@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'proficiency_model.dart';
+part of 'proficiency_model.codegen.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
