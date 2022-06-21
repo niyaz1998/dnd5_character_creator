@@ -4,8 +4,8 @@ import '../../../../library/domain/entities/base/reference_base_entity.dart';
 import '../../../../library_equipment/domain/entities/equipment/equipment_base_entity.dart';
 import '../language_entity.dart';
 import '../proficiency_entity.dart';
-import 'background_feature.dart';
-import 'background_ideal.dart';
+import 'background_feature_entity.dart';
+import 'background_ideal_entity.dart';
 
 class BackgroundEntity extends DndBaseEntity {
   const BackgroundEntity({
@@ -25,12 +25,12 @@ class BackgroundEntity extends DndBaseEntity {
   final List<ReferenceBaseEntity<ProficiencyEntity>> startingProficiencies;
   final List<ReferenceBaseEntity<EquipmentBaseEntity>> startingEquipment;
   final List<ChoiceBaseEntity> startingEquipmentOptions;
-  final ChoiceBaseEntity<LanguageEntity> languageOptions;
-  final BackgroundFeature feature;
+  final ChoiceBaseEntity<LanguageEntity>? languageOptions;
+  final BackgroundFeatureEntity feature;
 
   /// API not documented here
   final Map<String, dynamic> personalityTraits;
-  final ChoiceBaseEntity<BackgroundIdeal> ideals;
-  final ChoiceBaseEntityString bonds;
-  final ChoiceBaseEntityString flaws;
+  final ChoiceBaseEntity<BackgroundIdealEntity> ideals;
+  final ChoiceStringBaseEntity bonds;
+  final ChoiceStringBaseEntity flaws;
 }

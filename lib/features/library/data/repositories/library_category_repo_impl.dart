@@ -3,6 +3,7 @@ import 'package:injectable/injectable.dart';
 
 import '../../../library_character_data/data/models/ability_score_model.dart';
 import '../../../library_character_data/data/models/alignment_model.dart';
+import '../../../library_character_data/data/models/background_model/background_model.dart';
 import '../../../library_character_data/data/models/language_model.dart';
 import '../../../library_character_data/data/models/proficiency_model.dart';
 import '../../../library_character_data/data/models/skill_model.dart';
@@ -32,10 +33,13 @@ class LibraryRepoImpl extends LibraryRepo {
           path: 'alignments',
           domainType: AlignmentEntity,
         ),
+        /*
         LibraryCategoryEntity(
-            localeKey: 'backgrounds',
-            path: 'backgrounds',
-            domainType: BackgroundEntity),
+          localeKey: 'backgrounds',
+          path: 'backgrounds',
+          domainType: BackgroundEntity,
+        ),
+        */
         LibraryCategoryEntity(
           localeKey: 'languages',
           path: 'languages',
@@ -88,6 +92,10 @@ class LibraryRepoImpl extends LibraryRepo {
       case AlignmentEntity:
         return api
             .dndRequest<AlignmentModel>(baseLink.url)
+            .then((value) => value.toEntity());
+      case BackgroundEntity:
+        return api
+            .dndRequest<BackgroundModel>(baseLink.url)
             .then((value) => value.toEntity());
       case LanguageEntity:
         return api

@@ -11,8 +11,8 @@ abstract class ChoiceBaseInterface {
   List<Object> get from;
 }
 
-class ChoiceBaseEntityString implements ChoiceBaseInterface {
-  const ChoiceBaseEntityString({
+class ChoiceStringBaseEntity implements ChoiceBaseInterface {
+  const ChoiceStringBaseEntity({
     required this.choose,
     required this.type,
     required this.from,

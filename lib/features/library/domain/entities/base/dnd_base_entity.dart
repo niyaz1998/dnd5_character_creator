@@ -8,5 +8,5 @@ class DndBaseEntity {
   });
 
   final String name;
-  final String index;
+  final String? index;
 }

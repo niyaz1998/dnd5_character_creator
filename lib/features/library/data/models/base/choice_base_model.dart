@@ -23,9 +23,32 @@ class ChoiceBaseModel {
 
   final int choose;
   final String type;
+  @JsonKey(defaultValue: [])
   final List<ReferenceBaseModel> from;
 
   Map<String, dynamic> toJson() => _$ChoiceBaseModelToJson(this);
+}
+
+/// базовая модель dnd5e API
+/// представляет собой выбор из строк
+@JsonSerializable()
+@immutable
+class ChoiceStringBaseModel {
+  const ChoiceStringBaseModel({
+    required this.choose,
+    required this.type,
+    required this.from,
+  });
+
+  factory ChoiceStringBaseModel.fromJson(Map<String, dynamic> json) =>
+      _$ChoiceStringBaseModelFromJson(json);
+
+  final int choose;
+  final String type;
+  @JsonKey(defaultValue: [])
+  final List<String> from;
+
+  Map<String, dynamic> toJson() => _$ChoiceStringBaseModelToJson(this);
 }
 
 extension ChoiceBaseToEntity on ChoiceBaseModel {
@@ -38,4 +61,16 @@ extension ChoiceBaseToEntity on ChoiceBaseModel {
 
 extension ChoiceBaseListToEntity on List<ChoiceBaseModel> {
   List<ChoiceBaseEntity> toEntity() => map((e) => e.toEntity()).toList();
+}
+
+extension ChoiceStringBaseToEntity on ChoiceStringBaseModel {
+  ChoiceStringBaseEntity toEntity() => ChoiceStringBaseEntity(
+        choose: choose,
+        type: type,
+        from: from,
+      );
+}
+
+extension ChoiceStringBaseListToEntity on List<ChoiceStringBaseModel> {
+  List<ChoiceStringBaseEntity> toEntity() => map((e) => e.toEntity()).toList();
 }

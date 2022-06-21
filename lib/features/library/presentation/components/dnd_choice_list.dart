@@ -30,7 +30,7 @@ class DndChoiceList extends StatelessWidget {
           ),
         ],
       );
-    } else if (choiceLocal is ChoiceBaseEntityString) {
+    } else if (choiceLocal is ChoiceStringBaseEntity) {
       return Column(
         children: [
           Text(

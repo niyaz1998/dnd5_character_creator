@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../../../../app/presentation/widgets/common/gin_separated_column.dart';
 import '../../../../library/presentation/components/dnd_choice_list.dart';
-import '../../../../library/presentation/components/dnd_description_info_card.dart';
 import '../../../../library/presentation/components/dnd_reference_list.dart';
 import '../../../domain/entity/background/background_entity.dart';
 
@@ -23,8 +22,6 @@ class BackgroundInfoCard extends StatelessWidget {
           style: Theme.of(context).textTheme.titleLarge,
         ),
         const SizedBox(height: 10),
-        DndDescriptionInfoCard(described: background.feature),
-        const SizedBox(height: 10),
         DndReferenceList(
           title: 'Starting proficiencies',
           links: background.startingProficiencies,
@@ -41,8 +38,11 @@ class BackgroundInfoCard extends StatelessWidget {
               DndChoiceList(choice: background.startingEquipmentOptions[index]),
           separatorHeight: 8,
         ),
-        const SizedBox(height: 10),
-        DndChoiceList(choice: background.languageOptions),
+        if (background.languageOptions != null)
+          Padding(
+            padding: const EdgeInsets.only(top: 10),
+            child: DndChoiceList(choice: background.languageOptions!),
+          ),
         const SizedBox(height: 10),
         Text(
           'Personality',
