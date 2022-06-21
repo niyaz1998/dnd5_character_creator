@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../../../app/presentation/widgets/common/gin_separated_column.dart';
 import '../../../../library/presentation/components/dnd_base_entity_link.dart';
 import '../../../domain/entity/ability_score_entity.dart';
 
@@ -25,15 +26,13 @@ class AbilityScoreInfoCard extends StatelessWidget {
           'Is used for',
           style: Theme.of(context).textTheme.titleMedium,
         ),
-        ListView.separated(
-          shrinkWrap: true,
-          physics: const NeverScrollableScrollPhysics(),
+        GinSeparatedColumn(
+          itemCount: abilityScore.skills.length,
           itemBuilder: (context, index) => Align(
             alignment: Alignment.centerLeft,
             child: DndBaseEntityLink(dndReference: abilityScore.skills[index]),
           ),
-          separatorBuilder: (context, index) => const SizedBox(height: 0),
-          itemCount: abilityScore.skills.length,
+          separatorHeight: 0,
         ),
       ],
     );

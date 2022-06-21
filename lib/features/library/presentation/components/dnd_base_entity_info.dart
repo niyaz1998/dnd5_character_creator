@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../../../library_character_data/domain/entity/ability_score_entity.dart';
-import '../../../library_character_data/presentation/components/dnd_entity_widgets/ability_score_info_card.dart';
+import '../../../library_character_data/domain/entity/alignment_entity.dart';
+import '../../../library_character_data/presentation/components/dnd_entity_info_cards/ability_score_info_card.dart';
+import '../../../library_character_data/presentation/components/dnd_entity_info_cards/alignment_info_card.dart';
 import '../../domain/entities/base/dnd_base_entity.dart';
 
 class DndBaseEntityInfo extends StatelessWidget {
@@ -17,6 +19,8 @@ class DndBaseEntityInfo extends StatelessWidget {
     var entity = dndBaseEntity;
     if (entity is AbilityScoreEntity) {
       return AbilityScoreInfoCard(abilityScore: entity);
+    } else if (entity is AlignmentEntity) {
+      return AlignmentInfoCard(alignment: entity);
     }
     return Column(
       children: [

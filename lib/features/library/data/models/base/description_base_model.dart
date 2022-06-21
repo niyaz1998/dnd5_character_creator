@@ -19,7 +19,7 @@ class DescribedBaseModel extends ReferenceBaseModel {
   factory DescribedBaseModel.fromJson(Map<String, dynamic> json) =>
       _$DescribedBaseModelFromJson(json);
 
-  @JsonKey(name: 'desc')
+  @JsonKey(name: 'desc', defaultValue: [])
   @DescriptionConverter()
   final List<String> description;
 
