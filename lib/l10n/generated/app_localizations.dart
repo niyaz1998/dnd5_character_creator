@@ -109,7 +109,7 @@ abstract class AppLocalizations {
   /// No description provided for @library.
   ///
   /// In ru, this message translates to:
-  /// **'Библотека'**
+  /// **'Библиотека'**
   String get library;
 
   /// No description provided for @settings.

@@ -14,7 +14,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get builder => 'Персонаж';
 
   @override
-  String get library => 'Библотека';
+  String get library => 'Библиотека';
 
   @override
   String get settings => 'Настройки';
