@@ -11,7 +11,9 @@ ChoiceStringBaseModel _$ChoiceStringBaseModelFromJson(
     ChoiceStringBaseModel(
       choose: json['choose'] as int,
       type: json['type'] as String,
-      from: (json['from'] as List<dynamic>).map((e) => e as String).toList(),
+      from:
+          (json['from'] as List<dynamic>?)?.map((e) => e as String).toList() ??
+              [],
     );
 
 Map<String, dynamic> _$ChoiceStringBaseModelToJson(

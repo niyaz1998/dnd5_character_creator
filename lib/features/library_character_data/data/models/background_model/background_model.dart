@@ -1,6 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 
 import '../../../../library/data/models/base/choice_base_model.dart';
+import '../../../../library/data/models/base/choice_string_base_model.dart';
 import '../../../../library/data/models/base/reference_base_model.dart';
 import '../../../domain/entity/background/background_entity.dart';
 import 'background_feature_model.dart';
