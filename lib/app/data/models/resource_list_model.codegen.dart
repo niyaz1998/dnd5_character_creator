@@ -1,9 +1,9 @@
 import 'package:json_annotation/json_annotation.dart';
 
-import 'base/reference_base_model.dart';
+import 'base/reference_base_model.codegen.dart';
 import 'json_parsers/reference_model_converter.dart';
 
-part 'resource_list_model.g.dart';
+part 'resource_list_model.codegen.g.dart';
 
 @JsonSerializable()
 class ResourceListModel<T extends ReferenceBaseModel> {

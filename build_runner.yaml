@@ -2,18 +2,23 @@ targets:
   $default:
     builders:
       freezed|freezed:
+        enabled: true
         generate_for:
           include:
-            - "lib/**.codegen.dart"
+            - lib/**.codegen.dart
+
       injectable_generator|injectable_builder:
+        enabled: true
         generate_for:
           include:
-            - "lib/**.codegen.dart"
+            - lib/**.codegen.dart
+
       json_serializable:
         enabled: true
         generate_for:
           include:
-            - "lib/**.codegen.dart"
+            - lib/**.codegen.dart
+
         options:
           explicit_to_json: true
           include_if_null: false

@@ -1,21 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'description_base_model.dart';
+part of 'condition_model.codegen.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-DescribedBaseModel _$DescribedBaseModelFromJson(Map<String, dynamic> json) =>
-    DescribedBaseModel(
+ConditionModel _$ConditionModelFromJson(Map<String, dynamic> json) =>
+    ConditionModel(
+      index: json['index'] as String,
+      url: json['url'] as String,
       description:
           const DescriptionConverter().fromJson(json['desc'] as Object),
-      index: json['index'] as String,
       name: json['name'] as String,
-      url: json['url'] as String,
     );
 
-Map<String, dynamic> _$DescribedBaseModelToJson(DescribedBaseModel instance) =>
+Map<String, dynamic> _$ConditionModelToJson(ConditionModel instance) =>
     <String, dynamic>{
       'index': instance.index,
       'name': instance.name,

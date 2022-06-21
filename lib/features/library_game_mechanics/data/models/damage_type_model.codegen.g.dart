@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'condition_model.dart';
+part of 'damage_type_model.codegen.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-ConditionModel _$ConditionModelFromJson(Map<String, dynamic> json) =>
-    ConditionModel(
+DamageTypeModel _$DamageTypeModelFromJson(Map<String, dynamic> json) =>
+    DamageTypeModel(
       index: json['index'] as String,
       url: json['url'] as String,
       description:
@@ -15,7 +15,7 @@ ConditionModel _$ConditionModelFromJson(Map<String, dynamic> json) =>
       name: json['name'] as String,
     );
 
-Map<String, dynamic> _$ConditionModelToJson(ConditionModel instance) =>
+Map<String, dynamic> _$DamageTypeModelToJson(DamageTypeModel instance) =>
     <String, dynamic>{
       'index': instance.index,
       'name': instance.name,

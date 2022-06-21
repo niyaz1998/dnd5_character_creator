@@ -9,6 +9,7 @@ part of 'alignment_model.codegen.dart';
 AlignmentModel _$AlignmentModelFromJson(Map<String, dynamic> json) =>
     AlignmentModel(
       abbreviation: json['abbreviation'] as String,
+      abbreviation1: json['abbreviation1'] as String,
       url: json['url'] as String,
       index: json['index'] as String,
       name: json['name'] as String,
@@ -23,4 +24,5 @@ Map<String, dynamic> _$AlignmentModelToJson(AlignmentModel instance) =>
       'url': instance.url,
       'desc': const DescriptionConverter().toJson(instance.description),
       'abbreviation': instance.abbreviation,
+      'abbreviation1': instance.abbreviation1,
     };

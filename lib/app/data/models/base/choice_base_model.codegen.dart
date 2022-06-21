@@ -1,9 +1,9 @@
 import 'package:flutter/foundation.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-import 'reference_base_model.dart';
+import 'reference_base_model.codegen.dart';
 
-part 'choice_base_model.g.dart';
+part 'choice_base_model.codegen.g.dart';
 
 /// базовая модель dnd5e API
 /// представляет собой выбор из каких то сущностей

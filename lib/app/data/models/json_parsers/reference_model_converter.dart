@@ -6,8 +6,8 @@ import '../../../../features/library_character_data/data/models/background_model
 import '../../../../features/library_character_data/data/models/language_model.codegen.dart';
 import '../../../../features/library_character_data/data/models/proficiency_model.codegen.dart';
 import '../../../../features/library_character_data/data/models/skill_model.codegen.dart';
-import '../base/description_base_model.dart';
-import '../base/reference_base_model.dart';
+import '../base/description_base_model.codegen.dart';
+import '../base/reference_base_model.codegen.dart';
 
 class ResourceListModelConverter<T extends ReferenceBaseModel>
     implements JsonConverter<T, Map<String, dynamic>> {
