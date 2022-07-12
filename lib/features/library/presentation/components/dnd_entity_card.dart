@@ -4,10 +4,12 @@ import '../../../library_character_data/domain/entity/ability_score_entity.dart'
 import '../../../library_character_data/domain/entity/alignment_entity.dart';
 import '../../../library_character_data/domain/entity/language_entity.dart';
 import '../../../library_character_data/domain/entity/proficiency_entity.dart';
+import '../../../library_character_data/domain/entity/skill_entity.dart';
 import '../../../library_character_data/presentation/components/dnd_entity_info_cards/ability_score_info_card.dart';
 import '../../../library_character_data/presentation/components/dnd_entity_info_cards/alignment_info_card.dart';
 import '../../../library_character_data/presentation/components/dnd_entity_info_cards/language_info_card.dart';
 import '../../../library_character_data/presentation/components/dnd_entity_info_cards/proficiency_info_card.dart';
+import '../../../library_character_data/presentation/components/dnd_entity_info_cards/skill_info_card.dart';
 import '../../domain/entities/base/dnd_base_entity.dart';
 
 class DndEntityCard extends StatelessWidget {
@@ -29,6 +31,8 @@ class DndEntityCard extends StatelessWidget {
       return LanguageInfoCard(languageEntity: entity);
     } else if (entity is ProficiencyEntity) {
       return ProficiencyInfoCard(proficiencyEntity: entity);
+    } else if (entity is SkillEntity) {
+      return SkillInfoCard(skillEntity: entity);
     }
     return Column(
       children: [

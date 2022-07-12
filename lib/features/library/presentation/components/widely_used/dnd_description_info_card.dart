@@ -17,6 +17,7 @@ class DndDescriptionInfoCard extends StatelessWidget {
       itemCount: described.description.length,
       itemBuilder: (context, index) => Text(
         described.description[index],
+        style: Theme.of(context).textTheme.bodyMedium,
       ),
       separatorHeight: 4,
     );

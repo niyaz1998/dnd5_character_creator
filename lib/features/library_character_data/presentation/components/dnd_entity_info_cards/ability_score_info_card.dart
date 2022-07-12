@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../../app/presentation/widgets/common/gin_separated_column.dart';
 import '../../../../library/presentation/components/widely_used/dnd_base_entity_link.dart';
+import '../../../../library/presentation/components/widely_used/dnd_description_info_card.dart';
 import '../../../domain/entity/ability_score_entity.dart';
 
 class AbilityScoreInfoCard extends StatelessWidget {
@@ -17,6 +18,8 @@ class AbilityScoreInfoCard extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
+        DndDescriptionInfoCard(described: abilityScore),
+        const SizedBox(height: 30),
         Text(
           'Is used for',
           style: Theme.of(context).textTheme.titleMedium,
