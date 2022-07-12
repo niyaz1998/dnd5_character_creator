@@ -17,11 +17,6 @@ class BackgroundInfoCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text(
-          background.name,
-          style: Theme.of(context).textTheme.titleLarge,
-        ),
-        const SizedBox(height: 10),
         DndReferenceList(
           title: 'Starting proficiencies',
           links: background.startingProficiencies,

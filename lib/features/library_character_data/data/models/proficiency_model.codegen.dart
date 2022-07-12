@@ -39,8 +39,8 @@ class ProficiencyModel extends ReferenceBaseModel {
 extension ProficiencyToEntity on ProficiencyModel {
   ProficiencyEntity toEntity() => ProficiencyEntity(
         type: type,
-        classes: classes,
-        races: races,
+        classes: classes.toEntity(),
+        races: races.toEntity(),
         index: index,
         name: name,
         reference: reference,

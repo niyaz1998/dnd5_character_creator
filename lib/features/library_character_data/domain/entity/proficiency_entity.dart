@@ -1,5 +1,7 @@
 import '../../../library/data/models/base/reference_base_model.codegen.dart';
 import '../../../library/domain/entities/base/dnd_base_entity.dart';
+import '../../../library/domain/entities/base/reference_base_entity.dart';
+import '../../../library_races/domain/entities/race/race_entity.dart';
 
 class ProficiencyEntity extends DndBaseEntity {
   const ProficiencyEntity({
@@ -16,11 +18,11 @@ class ProficiencyEntity extends DndBaseEntity {
 
   /// TODO: add expected type
   /// Classes that start with this proficiency
-  final List<ReferenceBaseModel> classes;
+  final List<ReferenceBaseEntity> classes;
 
   /// TODO: add expected type
   /// Races that start with this proficiency
-  final List<ReferenceBaseModel> races;
+  final List<ReferenceBaseEntity<RaceEntity>> races;
 
   /// reference to the full description of the related resource.
   final ReferenceBaseModel reference;

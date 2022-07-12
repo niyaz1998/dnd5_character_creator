@@ -16,11 +16,6 @@ class AlignmentInfoCard extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Text(
-          alignment.name,
-          style: Theme.of(context).textTheme.titleLarge,
-        ),
-        const SizedBox(height: 20),
         DndDescriptionInfoCard(described: alignment),
         const SizedBox(height: 10),
         Text(

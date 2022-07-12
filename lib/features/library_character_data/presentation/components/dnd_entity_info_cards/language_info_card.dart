@@ -17,11 +17,6 @@ class LanguageInfoCard extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Text(
-          languageEntity.name,
-          style: Theme.of(context).textTheme.titleLarge,
-        ),
-        const SizedBox(height: 20),
         DndDescriptionInfoCard(described: languageEntity),
         const SizedBox(height: 20),
         Text(

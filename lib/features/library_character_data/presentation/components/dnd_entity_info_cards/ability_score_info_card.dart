@@ -18,11 +18,6 @@ class AbilityScoreInfoCard extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Text(
-          abilityScore.fullName,
-          style: Theme.of(context).textTheme.titleLarge,
-        ),
-        const SizedBox(height: 20),
-        Text(
           'Is used for',
           style: Theme.of(context).textTheme.titleMedium,
         ),

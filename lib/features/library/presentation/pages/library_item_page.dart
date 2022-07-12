@@ -32,7 +32,10 @@ class LibraryItemPage extends GinBasePage {
   @override
   Widget buildPageContent(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(leading: const AutoLeadingButton()),
+      appBar: AppBar(
+        leading: const AutoLeadingButton(),
+        title: Text(referenceBase.name),
+      ),
       body:
           AsyncFieldBuilder<LibraryItemCubit, LibraryItemState, DndBaseEntity>(
         fieldGetter: (state) => state.field,
