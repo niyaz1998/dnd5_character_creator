@@ -1,4 +1,3 @@
-
 class LibraryCategoryEntity {
   const LibraryCategoryEntity({
     required this.path,

@@ -1,16 +1,16 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../../app/domain/cubit/gin_cubit.dart';
+import '../../../../../app/domain/cubit/gin_base_cubit.dart';
 import '../../../../../app/domain/model/async_field.dart';
 
 import '../../entities/base/dnd_base_entity.dart';
 import '../../entities/base/reference_base_entity.dart';
 import '../../repositories/library_repo.dart';
 import 'library_item_cubit.dart';
-export 'library_item_state.dart';
+export 'library_item_state.codegen.dart';
 
-class LibraryItemCubit extends GinCubit<LibraryItemState> {
+class LibraryItemCubit extends GinBaseCubit<LibraryItemState> {
   static LibraryItemCubit of(BuildContext context) =>
       BlocProvider.of<LibraryItemCubit>(context);
 

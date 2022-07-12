@@ -1,4 +1,4 @@
-import '../../../library/data/models/base/reference_base_model.dart';
+import '../../../library/data/models/base/reference_base_model.codegen.dart';
 import '../../../library/domain/entities/base/dnd_base_entity.dart';
 
 class ProficiencyEntity extends DndBaseEntity {

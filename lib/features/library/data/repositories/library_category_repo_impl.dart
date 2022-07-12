@@ -1,12 +1,12 @@
 import 'package:collection/collection.dart';
 import 'package:injectable/injectable.dart';
 
-import '../../../library_character_data/data/models/ability_score_model.dart';
-import '../../../library_character_data/data/models/alignment_model.dart';
-import '../../../library_character_data/data/models/background_model/background_model.dart';
-import '../../../library_character_data/data/models/language_model.dart';
-import '../../../library_character_data/data/models/proficiency_model.dart';
-import '../../../library_character_data/data/models/skill_model.dart';
+import '../../../library_character_data/data/models/ability_score_model.codegen.dart';
+import '../../../library_character_data/data/models/alignment_model.codegen.dart';
+import '../../../library_character_data/data/models/background_model/background_model.codegen.dart';
+import '../../../library_character_data/data/models/language_model.codegen.dart';
+import '../../../library_character_data/data/models/proficiency_model.codegen.dart';
+import '../../../library_character_data/data/models/skill_model.codegen.dart';
 import '../../../library_character_data/domain/entity/ability_score_entity.dart';
 import '../../../library_character_data/domain/entity/alignment_entity.dart';
 import '../../../library_character_data/domain/entity/background/background_entity.dart';
@@ -18,7 +18,7 @@ import '../../domain/entities/base/reference_base_entity.dart';
 import '../../domain/entities/library_category_entity.dart';
 import '../../domain/repositories/library_repo.dart';
 import '../api/dnd5e_api.dart';
-import '../models/base/reference_base_model.dart';
+import '../models/base/reference_base_model.codegen.dart';
 
 @LazySingleton(as: LibraryRepo)
 class LibraryRepoImpl extends LibraryRepo {

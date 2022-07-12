@@ -2,12 +2,14 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 import '../../../app/presentation/router/app_router.dart';
+import '../../../app/utils/app_context.dart';
 
 class AppHomePage extends StatelessWidget {
   const AppHomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final locale = context.appLocale;
     return Container(
       color: Colors.yellow,
       child: AutoTabsScaffold(
@@ -20,18 +22,18 @@ class AppHomePage extends StatelessWidget {
           return BottomNavigationBar(
             currentIndex: tabsRouter.activeIndex,
             onTap: tabsRouter.setActiveIndex,
-            items: const [
+            items:  [
               BottomNavigationBarItem(
-                label: 'Builder',
-                icon: Icon(Icons.home),
+                label:locale.builder,
+                icon: const Icon(Icons.home),
               ),
               BottomNavigationBarItem(
-                label: 'Library',
-                icon: Icon(Icons.library_books),
+                label: locale.library,
+                icon: const Icon(Icons.library_books),
               ),
               BottomNavigationBarItem(
-                label: 'Settings',
-                icon: Icon(Icons.settings),
+                label: locale.settings,
+                icon: const Icon(Icons.settings),
               ),
             ],
           );

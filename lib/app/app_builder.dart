@@ -1,21 +1,18 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gin_app_runner/gin_app_runner.dart';
 
+import '../l10n/generated/app_localizations.dart';
 import 'presentation/router/app_router_mixin.dart';
 import 'presentation/theme/theme.dart';
 
-/// Основная конфигурация нашего приложения.
 class MainAppBuilder extends MaterialAppBuilder
     with AppRouterMixin, DevicePreviewBuilder {
   MainAppBuilder()
       : super(
           config: MaterialAppBuilderConfig(
-            locale: const Locale('en'),
-            supportedLocales: [const Locale('en')],
-            localizationsDelegates: <LocalizationsDelegate>[
-              DefaultCupertinoLocalizations.delegate,
-            ],
+            locale: const Locale('ru'),
+            localizationsDelegates: AppLocalizations.localizationsDelegates,
+            supportedLocales: AppLocalizations.supportedLocales,
             themeMode: ThemeMode.light,
             title: "AppName",
             theme: lightThemeData,
