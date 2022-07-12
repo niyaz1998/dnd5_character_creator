@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 
 import '../../../library_character_data/domain/entity/ability_score_entity.dart';
 import '../../../library_character_data/domain/entity/alignment_entity.dart';
+import '../../../library_character_data/domain/entity/language_entity.dart';
 import '../../../library_character_data/presentation/components/dnd_entity_info_cards/ability_score_info_card.dart';
 import '../../../library_character_data/presentation/components/dnd_entity_info_cards/alignment_info_card.dart';
+import '../../../library_character_data/presentation/components/dnd_entity_info_cards/language_info_card.dart';
 import '../../domain/entities/base/dnd_base_entity.dart';
 
 class DndEntityCard extends StatelessWidget {
@@ -21,6 +23,8 @@ class DndEntityCard extends StatelessWidget {
       return AbilityScoreInfoCard(abilityScore: entity);
     } else if (entity is AlignmentEntity) {
       return AlignmentInfoCard(alignment: entity);
+    } else if (entity is LanguageEntity) {
+      return LanguageInfoCard(languageEntity: entity);
     }
     return Column(
       children: [
