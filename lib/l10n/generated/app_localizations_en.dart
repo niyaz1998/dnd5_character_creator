@@ -8,7 +8,7 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
-  String get dnd => 'дында';
+  String get dnd => 'DnD5e';
 
   @override
   String get builder => 'Builder';
@@ -18,4 +18,61 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get settings => 'Settings';
+
+  @override
+  String choiceListTitle(String type, int amount) {
+    return '$type. Выберите $amount из';
+  }
+
+  @override
+  String get isUsedForSkills => 'Is used for skills';
+
+  @override
+  String abbreviationIs(String abbreviation) {
+    return 'Abbreviation: $abbreviation';
+  }
+
+  @override
+  String get startingProficiencies => 'Starting proficiencies';
+
+  @override
+  String get startingEquipment => 'Starting equipment';
+
+  @override
+  String get personality => 'Personality';
+
+  @override
+  String languageType(String rarity) {
+    return 'Rarity type is $rarity';
+  }
+
+  @override
+  String languageScript(String script) {
+    return 'Uses $script script';
+  }
+
+  @override
+  String typicalSpeakers(String speakers) {
+    return 'Typical speakers are $speakers';
+  }
+
+  @override
+  String proficiencyGeneralType(String speakers) {
+    return 'General category is {type}';
+  }
+
+  @override
+  String get classesStartsWithProficiency => 'Classes that start with this proficiency:';
+
+  @override
+  String get noClassStartsWithProficiency => 'No classes that start with this proficiency';
+
+  @override
+  String get racesStartsWithProficiency => 'Races that start with this proficiency:';
+
+  @override
+  String get noRaceStartsWithProficiency => 'No races that start with this proficiency';
+
+  @override
+  String get skillBasedOn => 'Based on';
 }

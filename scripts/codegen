@@ -1,1 +1,2 @@
 fvm flutter packages pub run build_runner build --delete-conflicting-outputs
+fvm flutter pub pub run intl_translation:generate_from_arb --output-dir=lib/l10n  --no-use-deferred-loading lib/app_localizations.dart l10n/app_localizations_*.arb

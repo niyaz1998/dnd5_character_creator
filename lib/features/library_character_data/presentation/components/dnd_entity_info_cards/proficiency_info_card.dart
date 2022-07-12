@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../app/presentation/widgets/common/gin_separated_column.dart';
+import '../../../../../app/utils/app_context.dart';
 import '../../../../library/domain/entities/base/reference_base_entity.dart';
 import '../../../../library/presentation/components/widely_used/dnd_base_entity_link.dart';
 import '../../../domain/entity/proficiency_entity.dart';
@@ -15,6 +16,7 @@ class ProficiencyInfoCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var locale = context.appLocale;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -24,15 +26,15 @@ class ProficiencyInfoCard extends StatelessWidget {
         ),
         const SizedBox(height: 20),
         _StartsWithProficiencyList(
-          usersPresentText: 'Races that start with this proficiency:',
+          usersPresentText: locale.racesStartsWithProficiency,
           entities: proficiencyEntity.races,
-          noUsersPresentText: 'No races that start with this proficiency',
+          noUsersPresentText: locale.noRaceStartsWithProficiency,
         ),
         const SizedBox(height: 20),
         _StartsWithProficiencyList(
-          usersPresentText: 'Classes that start with this proficiency:',
+          usersPresentText: locale.classesStartsWithProficiency,
           entities: proficiencyEntity.classes,
-          noUsersPresentText: 'No classes that start with this proficiency',
+          noUsersPresentText: locale.noClassStartsWithProficiency,
         ),
       ],
     );

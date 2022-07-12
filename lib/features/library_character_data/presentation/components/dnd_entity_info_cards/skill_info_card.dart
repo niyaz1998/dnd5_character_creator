@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../../../app/utils/app_context.dart';
 import '../../../../library/presentation/components/widely_used/dnd_base_entity_link.dart';
 import '../../../../library/presentation/components/widely_used/dnd_description_info_card.dart';
 import '../../../domain/entity/skill_entity.dart';
@@ -14,6 +15,7 @@ class SkillInfoCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var locale = context.appLocale;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -23,7 +25,7 @@ class SkillInfoCard extends StatelessWidget {
           children: [
             Flexible(
               child: Text(
-                'Based on',
+                locale.skillBasedOn,
                 style: Theme.of(context).textTheme.bodyMedium,
               ),
             ),

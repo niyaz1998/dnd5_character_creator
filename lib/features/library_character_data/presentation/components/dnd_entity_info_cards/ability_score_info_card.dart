@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../app/presentation/widgets/common/gin_separated_column.dart';
+import '../../../../../app/utils/app_context.dart';
 import '../../../../library/presentation/components/widely_used/dnd_base_entity_link.dart';
 import '../../../../library/presentation/components/widely_used/dnd_description_info_card.dart';
 import '../../../domain/entity/ability_score_entity.dart';
@@ -15,15 +16,17 @@ class AbilityScoreInfoCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var locale = context.appLocale;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         DndDescriptionInfoCard(described: abilityScore),
         const SizedBox(height: 30),
         Text(
-          'Is used for',
+          locale.isUsedForSkills,
           style: Theme.of(context).textTheme.titleMedium,
         ),
+        const SizedBox(height: 10),
         GinSeparatedColumn(
           itemCount: abilityScore.skills.length,
           itemBuilder: (context, index) => Align(

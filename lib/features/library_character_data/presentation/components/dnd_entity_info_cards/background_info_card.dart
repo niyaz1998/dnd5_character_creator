@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../app/presentation/widgets/common/gin_separated_column.dart';
+import '../../../../../app/utils/app_context.dart';
 import '../../../../library/presentation/components/widely_used/dnd_choice_list.dart';
 import '../../../../library/presentation/components/widely_used/dnd_reference_list.dart';
 import '../../../domain/entity/background/background_entity.dart';
@@ -15,15 +16,16 @@ class BackgroundInfoCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var locale = context.appLocale;
     return Column(
       children: [
         DndReferenceList(
-          title: 'Starting proficiencies',
+          title: locale.startingProficiencies,
           links: background.startingProficiencies,
         ),
         const SizedBox(height: 10),
         DndReferenceList(
-          title: 'Starting equipment',
+          title: locale.startingEquipment,
           links: background.startingEquipment,
         ),
         const SizedBox(height: 10),
@@ -40,7 +42,7 @@ class BackgroundInfoCard extends StatelessWidget {
           ),
         const SizedBox(height: 10),
         Text(
-          'Personality',
+          locale.personality,
           style: Theme.of(context).textTheme.titleMedium,
         ),
         const SizedBox(height: 8),
