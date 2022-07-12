@@ -32,7 +32,10 @@ class CategoryPage extends GinBasePage {
   @override
   Widget buildPageContent(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(leading: const AutoLeadingButton()),
+      appBar: AppBar(
+        leading: const AutoLeadingButton(),
+        title: Text(libraryCategoryEntity.localeKey),
+      ),
       body: SafeArea(
         child: AsyncFieldBuilder<LibraryCategoryCubit, LibraryCategoryState,
             List<ReferenceBaseEntity>>(
