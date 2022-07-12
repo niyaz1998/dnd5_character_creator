@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../library/presentation/components/dnd_description_info_card.dart';
+import '../../../../library/presentation/components/widely_used/dnd_description_info_card.dart';
 import '../../../domain/entity/alignment_entity.dart';
 
 class AlignmentInfoCard extends StatelessWidget {

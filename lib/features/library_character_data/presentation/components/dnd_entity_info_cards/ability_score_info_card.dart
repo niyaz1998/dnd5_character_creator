@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../app/presentation/widgets/common/gin_separated_column.dart';
-import '../../../../library/presentation/components/dnd_base_entity_link.dart';
+import '../../../../library/presentation/components/widely_used/dnd_base_entity_link.dart';
 import '../../../domain/entity/ability_score_entity.dart';
 
 class AbilityScoreInfoCard extends StatelessWidget {

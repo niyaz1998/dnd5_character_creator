@@ -1,8 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../app/presentation/router/app_router.dart';
-import '../../domain/entities/base/reference_base_entity.dart';
+import '../../../../../app/presentation/router/app_router.dart';
+import '../../../domain/entities/base/reference_base_entity.dart';
 
 class DndBaseEntityLink extends StatelessWidget {
   const DndBaseEntityLink({

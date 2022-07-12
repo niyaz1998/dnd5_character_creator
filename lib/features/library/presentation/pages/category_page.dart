@@ -8,7 +8,7 @@ import '../../../../di/service_locator.dart';
 import '../../domain/entities/base/reference_base_entity.dart';
 import '../../domain/entities/library_category_entity.dart';
 import '../../domain/state/library_category/library_category_cubit.dart';
-import '../components/category_item_card.dart';
+import '../components/category/category_item_card.dart';
 
 class CategoryPage extends GinBasePage {
   const CategoryPage({

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../app/presentation/widgets/common/gin_separated_column.dart';
-import '../../domain/entities/base/reference_base_entity.dart';
+import '../../../../../app/presentation/widgets/common/gin_separated_column.dart';
+import '../../../domain/entities/base/reference_base_entity.dart';
 import 'dnd_base_entity_link.dart';
 
 class DndReferenceList extends StatelessWidget {
