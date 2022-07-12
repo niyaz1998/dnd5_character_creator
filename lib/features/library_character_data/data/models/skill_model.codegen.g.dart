@@ -12,8 +12,9 @@ SkillModel _$SkillModelFromJson(Map<String, dynamic> json) => SkillModel(
       url: json['url'] as String,
       index: json['index'] as String,
       name: json['name'] as String,
-      description:
-          const DescriptionConverter().fromJson(json['desc'] as Object),
+      description: json['desc'] == null
+          ? []
+          : const DescriptionConverter().fromJson(json['desc'] as Object),
     );
 
 Map<String, dynamic> _$SkillModelToJson(SkillModel instance) =>

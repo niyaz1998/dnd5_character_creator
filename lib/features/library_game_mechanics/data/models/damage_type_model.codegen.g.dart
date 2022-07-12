@@ -10,8 +10,9 @@ DamageTypeModel _$DamageTypeModelFromJson(Map<String, dynamic> json) =>
     DamageTypeModel(
       index: json['index'] as String,
       url: json['url'] as String,
-      description:
-          const DescriptionConverter().fromJson(json['desc'] as Object),
+      description: json['desc'] == null
+          ? []
+          : const DescriptionConverter().fromJson(json['desc'] as Object),
       name: json['name'] as String,
     );
 

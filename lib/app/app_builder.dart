@@ -5,7 +5,6 @@ import '../l10n/generated/app_localizations.dart';
 import 'presentation/router/app_router_mixin.dart';
 import 'presentation/theme/theme.dart';
 
-/// Основная конфигурация нашего приложения.
 class MainAppBuilder extends MaterialAppBuilder
     with AppRouterMixin, DevicePreviewBuilder {
   MainAppBuilder()

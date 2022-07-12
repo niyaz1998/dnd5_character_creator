@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$LibraryCategoryState {
-  AsyncField<List<ReferenceBaseModel>> get field =>
+  AsyncField<List<ReferenceBaseEntity<DndBaseEntity>>> get field =>
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -29,7 +29,7 @@ abstract class $LibraryCategoryStateCopyWith<$Res> {
   factory $LibraryCategoryStateCopyWith(LibraryCategoryState value,
           $Res Function(LibraryCategoryState) then) =
       _$LibraryCategoryStateCopyWithImpl<$Res>;
-  $Res call({AsyncField<List<ReferenceBaseModel>> field});
+  $Res call({AsyncField<List<ReferenceBaseEntity<DndBaseEntity>>> field});
 }
 
 /// @nodoc
@@ -49,7 +49,7 @@ class _$LibraryCategoryStateCopyWithImpl<$Res>
       field: field == freezed
           ? _value.field
           : field // ignore: cast_nullable_to_non_nullable
-              as AsyncField<List<ReferenceBaseModel>>,
+              as AsyncField<List<ReferenceBaseEntity<DndBaseEntity>>>,
     ));
   }
 }
@@ -61,7 +61,7 @@ abstract class _$$_LibraryCategoryStateCopyWith<$Res>
           $Res Function(_$_LibraryCategoryState) then) =
       __$$_LibraryCategoryStateCopyWithImpl<$Res>;
   @override
-  $Res call({AsyncField<List<ReferenceBaseModel>> field});
+  $Res call({AsyncField<List<ReferenceBaseEntity<DndBaseEntity>>> field});
 }
 
 /// @nodoc
@@ -83,7 +83,7 @@ class __$$_LibraryCategoryStateCopyWithImpl<$Res>
       field: field == freezed
           ? _value.field
           : field // ignore: cast_nullable_to_non_nullable
-              as AsyncField<List<ReferenceBaseModel>>,
+              as AsyncField<List<ReferenceBaseEntity<DndBaseEntity>>>,
     ));
   }
 }
@@ -92,11 +92,12 @@ class __$$_LibraryCategoryStateCopyWithImpl<$Res>
 
 class _$_LibraryCategoryState implements _LibraryCategoryState {
   const _$_LibraryCategoryState(
-      {this.field = const AsyncField<List<ReferenceBaseModel>>.nothing()});
+      {this.field = const AsyncField<
+          List<ReferenceBaseEntity<DndBaseEntity>>>.nothing()});
 
   @override
   @JsonKey()
-  final AsyncField<List<ReferenceBaseModel>> field;
+  final AsyncField<List<ReferenceBaseEntity<DndBaseEntity>>> field;
 
   @override
   String toString() {
@@ -124,11 +125,11 @@ class _$_LibraryCategoryState implements _LibraryCategoryState {
 
 abstract class _LibraryCategoryState implements LibraryCategoryState {
   const factory _LibraryCategoryState(
-          {final AsyncField<List<ReferenceBaseModel>> field}) =
+          {final AsyncField<List<ReferenceBaseEntity<DndBaseEntity>>> field}) =
       _$_LibraryCategoryState;
 
   @override
-  AsyncField<List<ReferenceBaseModel>> get field =>
+  AsyncField<List<ReferenceBaseEntity<DndBaseEntity>>> get field =>
       throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)

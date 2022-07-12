@@ -2,13 +2,13 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../app/data/models/base/reference_base_model.codegen.dart';
 import '../../../../app/presentation/page/gin_base_page.dart';
 import '../../../../app/presentation/widgets/common/async_field_builder.dart';
 import '../../../../di/service_locator.dart';
+import '../../domain/entities/base/reference_base_entity.dart';
 import '../../domain/entities/library_category_entity.dart';
 import '../../domain/state/library_category/library_category_cubit.dart';
-import '../components/category_item_card.dart';
+import '../components/category/category_item_card.dart';
 
 class CategoryPage extends GinBasePage {
   const CategoryPage({
@@ -32,10 +32,13 @@ class CategoryPage extends GinBasePage {
   @override
   Widget buildPageContent(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(leading: const AutoLeadingButton()),
+      appBar: AppBar(
+        leading: const AutoLeadingButton(),
+        title: Text(libraryCategoryEntity.localeKey),
+      ),
       body: SafeArea(
         child: AsyncFieldBuilder<LibraryCategoryCubit, LibraryCategoryState,
-            List<ReferenceBaseModel>>(
+            List<ReferenceBaseEntity>>(
           fieldGetter: (state) => state.field,
           dataBuilder: (data) => ListView.builder(
             padding: const EdgeInsets.all(20),

@@ -9,8 +9,8 @@ import 'package:injectable/injectable.dart' as _i2;
 
 import '../app/enviroment/env_config.dart' as _i6;
 import '../app/network/dio_container.dart' as _i4;
-import '../app/network/dnd5e_api.dart' as _i5;
 import '../app/presentation/router/app_router.dart' as _i3;
+import '../features/library/data/api/dnd5e_api.dart' as _i5;
 import '../features/library/data/repositories/library_category_repo_impl.dart'
     as _i8;
 import '../features/library/domain/repositories/library_repo.dart' as _i7;

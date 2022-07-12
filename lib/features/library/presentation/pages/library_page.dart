@@ -6,7 +6,7 @@ import '../../../../app/presentation/widgets/common/async_field_builder.dart';
 import '../../../../di/service_locator.dart';
 import '../../domain/entities/library_category_entity.dart';
 import '../../domain/state/library_categories/library_categories_cubit.dart';
-import '../components/category_card.dart';
+import '../components/category/category_card.dart';
 
 class LibraryPage extends GinBasePage {
   const LibraryPage({Key? key}) : super(key: key);

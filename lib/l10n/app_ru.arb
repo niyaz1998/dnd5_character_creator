@@ -1,6 +1,72 @@
 {
-  "dnd": "дында",
+  "dnd": "DnD5e",
   "builder": "Персонаж",
   "library": "Библиотека",
-  "settings": "Настройки"
+  "settings": "Настройки",
+  "choiceListTitle": "{type}. Choose {amount} from",
+  "@choiceListTitle": {
+    "type": "text",
+    "placeholders": {
+      "type": {
+        "type": "String"
+      },
+      "amount": {
+        "type": "int"
+      }
+    }
+  },
+  "isUsedForSkills": "Основа для навыков",
+  "abbreviationIs": "Сокращение: {abbreviation}",
+  "@abbreviationIs": {
+    "type": "text",
+    "placeholders": {
+      "abbreviation": {
+        "type": "String"
+      }
+    }
+  },
+  "startingProficiencies": "Стартовые умения",
+  "startingEquipment": "Стартовое снаряжение",
+  "personality": "Личность",
+  "languageType": "Редкость языка {rarity}",
+  "@languageType": {
+    "type": "rarity",
+    "placeholders": {
+      "rarity": {
+        "type": "String"
+      }
+    }
+  },
+  "languageScript": "Использует {script} письменность",
+  "@languageScript": {
+    "type": "text",
+    "placeholders": {
+      "script": {
+        "type": "String"
+      }
+    }
+  },
+  "typicalSpeakers": "Список рас, говорящих на языке: {speakers}",
+  "@typicalSpeakers": {
+    "type": "text",
+    "placeholders": {
+      "speakers": {
+        "type": "String"
+      }
+    }
+  },
+  "proficiencyGeneralType" : "Общая категория умения: {type}",
+  "@proficiencyGeneralType": {
+    "type": "text",
+    "placeholders": {
+      "speakers": {
+        "type": "String"
+      }
+    }
+  },
+  "classesStartsWithProficiency": "Является стартовым умением классов(а):",
+  "noClassStartsWithProficiency": "Не является стартовым умением ни одного класса",
+  "racesStartsWithProficiency": "Является стартовым умением рас(ы):",
+  "noRaceStartsWithProficiency": "Не является стартовым умением ни одной расы",
+  "skillBasedOn": "Зависит от"
 }

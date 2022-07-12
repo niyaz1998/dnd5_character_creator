@@ -1,7 +1,9 @@
 import 'package:json_annotation/json_annotation.dart';
 
-import '../../../../app/data/models/base/description_base_model.codegen.dart';
-import '../../../../app/data/models/json_parsers/description_parser.dart';
+import '../../../../app/data/util/enum_util.dart';
+import '../../../library/data/models/base/description_base_model.codegen.dart';
+import '../../../library/data/models/json_parsers/description_parser.dart';
+import '../../domain/entity/language_entity.dart';
 
 part 'language_model.codegen.g.dart';
 
@@ -31,4 +33,19 @@ class LanguageModel extends DescribedBaseModel {
 
   @override
   Map<String, dynamic> toJson() => _$LanguageModelToJson(this);
+}
+
+extension LanguageToEntity on LanguageModel {
+  LanguageEntity toEntity() => LanguageEntity(
+        type: enumFromString(LanguageType.values, type)!,
+        script: script,
+        typicalSpeakers: typicalSpeakers,
+        index: index,
+        name: name,
+        description: description,
+      );
+}
+
+extension LanguageListToEntity on List<LanguageModel> {
+  List<LanguageEntity> toEntity() => map((e) => e.toEntity()).toList();
 }
