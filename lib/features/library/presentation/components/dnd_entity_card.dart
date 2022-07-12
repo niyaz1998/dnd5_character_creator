@@ -6,8 +6,8 @@ import '../../../library_character_data/presentation/components/dnd_entity_info_
 import '../../../library_character_data/presentation/components/dnd_entity_info_cards/alignment_info_card.dart';
 import '../../domain/entities/base/dnd_base_entity.dart';
 
-class DndBaseEntityInfo extends StatelessWidget {
-  const DndBaseEntityInfo({
+class DndEntityCard extends StatelessWidget {
+  const DndEntityCard({
     Key? key,
     required this.dndBaseEntity,
   }) : super(key: key);

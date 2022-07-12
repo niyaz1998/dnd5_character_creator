@@ -27,7 +27,8 @@ BackgroundModel _$BackgroundModelFromJson(Map<String, dynamic> json) =>
           ? null
           : ChoiceBaseModel.fromJson(
               json['languageOptions'] as Map<String, dynamic>),
-      feature: json['feature'],
+      feature: BackgroundFeatureModel.fromJson(
+          json['feature'] as Map<String, dynamic>),
       personalityTraits:
           json['personalityTraits'] as Map<String, dynamic>? ?? {},
       ideals: ChoiceBaseModel.fromJson(json['ideals'] as Map<String, dynamic>),
