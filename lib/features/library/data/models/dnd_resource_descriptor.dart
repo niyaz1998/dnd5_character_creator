@@ -4,6 +4,7 @@ import '../../../library_character_data/data/models/background_model.codegen.dar
 import '../../../library_character_data/data/models/language_model.codegen.dart';
 import '../../../library_character_data/data/models/proficiency_model.codegen.dart';
 import '../../../library_character_data/data/models/skill_model.codegen.dart';
+import '../../../library_equipment/data/models/equipment_model.codegen.dart';
 
 class DndResourceDescriptor {
   const DndResourceDescriptor({
@@ -42,6 +43,11 @@ class DndResourceDescriptor {
           localeKey: 'skills',
           path: 'skills',
           type: SkillModel,
+        ),
+        EquipmentModel: DndResourceDescriptor(
+          localeKey: 'equipment',
+          path: 'equipment',
+          type: EquipmentModel,
         ),
       };
 
