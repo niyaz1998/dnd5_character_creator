@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../app/data/models/base/reference_base_model.codegen.dart';
 import '../../../../app/presentation/router/app_router.dart';
@@ -27,7 +28,7 @@ class CategoryItemCard extends StatelessWidget {
       },
       child: Card(
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: EdgeInsets.all(8.h),
           child: Text(
             referenceBaseModel.name,
           ),

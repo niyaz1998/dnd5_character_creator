@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../app/data/models/base/reference_base_model.codegen.dart';
 import '../../../../app/presentation/page/gin_base_page.dart';
@@ -38,7 +39,7 @@ class CategoryPage extends GinBasePage {
             List<ReferenceBaseModel>>(
           fieldGetter: (state) => state.field,
           dataBuilder: (data) => ListView.builder(
-            padding: const EdgeInsets.all(20),
+            padding: EdgeInsets.all(20.h),
             itemCount: data.length,
             itemBuilder: (BuildContext context, int index) => CategoryItemCard(
               referenceBaseModel: data[index],

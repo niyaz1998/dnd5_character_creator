@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../app/presentation/page/gin_base_page.dart';
 import '../../../../app/presentation/widgets/common/async_field_builder.dart';
@@ -29,7 +30,7 @@ class LibraryPage extends GinBasePage {
             List<LibraryCategoryEntity>>(
           fieldGetter: (state) => state.field,
           dataBuilder: (data) => ListView(
-            padding: const EdgeInsets.all(20),
+            padding: EdgeInsets.all(20.h),
             children: data
                 .map((e) => CategoryCard(libraryCategoryEntity: e))
                 .toList(),

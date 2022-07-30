@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../app/presentation/router/app_router.dart';
 import '../../domain/entities/library_category_entity.dart';
@@ -22,7 +23,7 @@ class CategoryCard extends StatelessWidget {
           ));
         },
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: EdgeInsets.all(16.h),
           child: Row(
             children: [
               Expanded(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gin_app_logger/gin_app_logger.dart';
 
 import '../../presentation/widgets/common/gin_error_builder.dart';
@@ -82,7 +83,7 @@ class AsyncField<T> {
   }) {
     if (hasError) {
       return Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding: EdgeInsets.all(20.h),
         child: GinErrorBuilder(
           onRefreshPressed: onRefreshPressed,
           refreshReasonKey: error!.rawError.toString(),

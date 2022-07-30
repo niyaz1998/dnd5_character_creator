@@ -7,7 +7,7 @@ import 'presentation/theme/theme.dart';
 
 /// Основная конфигурация нашего приложения.
 class MainAppBuilder extends MaterialAppBuilder
-    with AppRouterMixin, DevicePreviewBuilder {
+    with AppRouterMixin, DevicePreviewBuilder, ScreenUtilPreviewBuilder {
   MainAppBuilder()
       : super(
           config: MaterialAppBuilderConfig(
@@ -29,4 +29,7 @@ class MainAppBuilder extends MaterialAppBuilder
 
   @override
   bool get enabledDevicePreviewBuilder => false;
+
+  @override
+  bool get enabledScreenUtilBuilder => true;
 }
