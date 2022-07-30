@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'equipment_model.codegen.dart';
+part of 'equipment_armor_model.codegen.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-EquipmentModel _$EquipmentModelFromJson(Map<String, dynamic> json) =>
-    EquipmentModel(
+EquipmentArmorModel _$EquipmentArmorModelFromJson(Map<String, dynamic> json) =>
+    EquipmentArmorModel(
       url: json['url'] as String,
       index: json['index'] as String,
       name: json['name'] as String,
@@ -17,9 +17,14 @@ EquipmentModel _$EquipmentModelFromJson(Map<String, dynamic> json) =>
           .map((e) => ReferenceBaseModel.fromJson(e as Map<String, dynamic>))
           .toList(),
       cost: CostModel.fromJson(json['cost'] as Map<String, dynamic>),
+      weight: (json['weight'] as num).toDouble(),
+      armorCategory: json['armor_category'] as String,
+      strMinimum: json['str_minimum'] as String,
+      stealthDisadvantage: json['stealth_disadvantage'] as bool,
     );
 
-Map<String, dynamic> _$EquipmentModelToJson(EquipmentModel instance) =>
+Map<String, dynamic> _$EquipmentArmorModelToJson(
+        EquipmentArmorModel instance) =>
     <String, dynamic>{
       'index': instance.index,
       'name': instance.name,
@@ -27,4 +32,8 @@ Map<String, dynamic> _$EquipmentModelToJson(EquipmentModel instance) =>
       'desc': const DescriptionConverter().toJson(instance.description),
       'equipment_category': instance.equipmentCategory,
       'cost': instance.cost,
+      'armor_category': instance.armorCategory,
+      'str_minimum': instance.strMinimum,
+      'stealth_disadvantage': instance.stealthDisadvantage,
+      'weight': instance.weight,
     };

@@ -6,7 +6,7 @@ import '../../../../features/library_character_data/data/models/background_model
 import '../../../../features/library_character_data/data/models/language_model.codegen.dart';
 import '../../../../features/library_character_data/data/models/proficiency_model.codegen.dart';
 import '../../../../features/library_character_data/data/models/skill_model.codegen.dart';
-import '../../../../features/library_equipment/data/models/equipment_model.codegen.dart';
+import '../../../../features/library_equipment/data/models/equipment_weapon_model.codegen.dart';
 import '../base/description_base_model.codegen.dart';
 import '../base/reference_base_model.codegen.dart';
 
@@ -33,8 +33,10 @@ class ResourceListModelConverter<T extends ReferenceBaseModel>
         return DescribedBaseModel.fromJson(json) as T;
       case ReferenceBaseModel:
         return ReferenceBaseModel.fromJson(json) as T;
-      case EquipmentModel:
-        return EquipmentModel.fromJson(json) as T;
+      // case EquipmentModel:
+      //   return EquipmentModel.fromJson(json) as T;
+      case EquipmentWeaponModel:
+        return EquipmentWeaponModel.fromJson(json) as T;
     }
 
     throw ArgumentError('not supported ReferenceBaseModel by JsonConverter');
