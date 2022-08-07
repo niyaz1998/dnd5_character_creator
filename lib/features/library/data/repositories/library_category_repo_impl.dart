@@ -19,43 +19,12 @@ import '../../domain/entities/library_category_entity.dart';
 import '../../domain/repositories/library_repo.dart';
 import '../api/dnd5e_api.dart';
 import '../models/base/reference_base_model.codegen.dart';
+import 'resource_descriptors.dart';
 
 @LazySingleton(as: LibraryRepo)
 class LibraryRepoImpl extends LibraryRepo {
-  static List<LibraryCategoryEntity> get resourceDescriptors => const [
-        LibraryCategoryEntity(
-          localeKey: 'ability-scores',
-          path: 'ability-scores',
-          domainType: AbilityScoreEntity,
-        ),
-        LibraryCategoryEntity(
-          localeKey: 'alignments',
-          path: 'alignments',
-          domainType: AlignmentEntity,
-        ),
-        /*
-        LibraryCategoryEntity(
-          localeKey: 'backgrounds',
-          path: 'backgrounds',
-          domainType: BackgroundEntity,
-        ),
-        */
-        LibraryCategoryEntity(
-          localeKey: 'languages',
-          path: 'languages',
-          domainType: LanguageEntity,
-        ),
-        LibraryCategoryEntity(
-          localeKey: 'proficiencies',
-          path: 'proficiencies',
-          domainType: ProficiencyEntity,
-        ),
-        LibraryCategoryEntity(
-          localeKey: 'skills',
-          path: 'skills',
-          domainType: SkillEntity,
-        ),
-      ];
+  static List<LibraryCategoryEntity> get resourceDescriptors =>
+      resourceDescriptorsConst;
 
   LibraryRepoImpl(this.api);
 
