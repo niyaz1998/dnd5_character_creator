@@ -1,6 +1,72 @@
 {
-  "dnd": "дында",
+  "dnd": "DnD5e",
   "builder": "Builder",
   "library": "Library",
-  "settings": "Settings"
+  "settings": "Settings",
+  "choiceListTitle": "{type}. Выберите {amount} из",
+  "@choiceListTitle": {
+    "type": "text",
+    "placeholders": {
+      "type": {
+        "type": "String"
+      },
+      "amount": {
+        "type": "int"
+      }
+    }
+  },
+  "isUsedForSkills": "Is used for skills",
+  "abbreviationIs": "Abbreviation: {abbreviation}",
+  "@abbreviationIs": {
+    "type": "text",
+    "placeholders": {
+      "abbreviation": {
+        "type": "String"
+      }
+    }
+  },
+  "startingProficiencies": "Starting proficiencies",
+  "startingEquipment": "Starting equipment",
+  "personality": "Personality",
+  "languageType": "Rarity type is {rarity}",
+  "@languageType": {
+    "type": "text",
+    "placeholders": {
+      "rarity": {
+        "type": "String"
+      }
+    }
+  },
+  "languageScript": "Uses {script} script",
+  "@languageScript": {
+    "type": "text",
+    "placeholders": {
+      "script": {
+        "type": "String"
+      }
+    }
+  },
+  "typicalSpeakers": "Typical speakers are {speakers}",
+  "@typicalSpeakers": {
+    "type": "text",
+    "placeholders": {
+      "speakers": {
+        "type": "String"
+      }
+    }
+  },
+  "proficiencyGeneralType" : "General category is {type}",
+  "@proficiencyGeneralType": {
+    "type": "text",
+    "placeholders": {
+      "speakers": {
+        "type": "String"
+      }
+    }
+  },
+  "classesStartsWithProficiency": "Classes that start with this proficiency:",
+  "noClassStartsWithProficiency": "No classes that start with this proficiency",
+  "racesStartsWithProficiency": "Races that start with this proficiency:",
+  "noRaceStartsWithProficiency": "No races that start with this proficiency",
+  "skillBasedOn": "Based on"
 }

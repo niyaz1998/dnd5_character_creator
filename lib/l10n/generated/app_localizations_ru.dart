@@ -8,7 +8,7 @@ class AppLocalizationsRu extends AppLocalizations {
   AppLocalizationsRu([String locale = 'ru']) : super(locale);
 
   @override
-  String get dnd => 'дында';
+  String get dnd => 'DnD5e';
 
   @override
   String get builder => 'Персонаж';
@@ -18,4 +18,61 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get settings => 'Настройки';
+
+  @override
+  String choiceListTitle(String type, int amount) {
+    return '$type. Choose $amount from';
+  }
+
+  @override
+  String get isUsedForSkills => 'Основа для навыков';
+
+  @override
+  String abbreviationIs(String abbreviation) {
+    return 'Сокращение: $abbreviation';
+  }
+
+  @override
+  String get startingProficiencies => 'Стартовые умения';
+
+  @override
+  String get startingEquipment => 'Стартовое снаряжение';
+
+  @override
+  String get personality => 'Личность';
+
+  @override
+  String languageType(String rarity) {
+    return 'Редкость языка $rarity';
+  }
+
+  @override
+  String languageScript(String script) {
+    return 'Использует $script письменность';
+  }
+
+  @override
+  String typicalSpeakers(String speakers) {
+    return 'Список рас, говорящих на языке: $speakers';
+  }
+
+  @override
+  String proficiencyGeneralType(String speakers) {
+    return 'Общая категория умения: {type}';
+  }
+
+  @override
+  String get classesStartsWithProficiency => 'Является стартовым умением классов(а):';
+
+  @override
+  String get noClassStartsWithProficiency => 'Не является стартовым умением ни одного класса';
+
+  @override
+  String get racesStartsWithProficiency => 'Является стартовым умением рас(ы):';
+
+  @override
+  String get noRaceStartsWithProficiency => 'Не является стартовым умением ни одной расы';
+
+  @override
+  String get skillBasedOn => 'Зависит от';
 }

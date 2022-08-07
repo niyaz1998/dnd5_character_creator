@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../domain/cubit/gin_cubit.dart';
+import '../../../domain/cubit/gin_base_cubit.dart';
 import '../../../domain/model/async_field.dart';
 
-class AsyncFieldBuilder<B extends GinCubit<S>, S, D> extends StatelessWidget {
+class AsyncFieldBuilder<B extends GinBaseCubit<S>, S, D> extends StatelessWidget {
   const AsyncFieldBuilder({
     Key? key,
     required this.fieldGetter,

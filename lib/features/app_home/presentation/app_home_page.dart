@@ -22,9 +22,9 @@ class AppHomePage extends StatelessWidget {
           return BottomNavigationBar(
             currentIndex: tabsRouter.activeIndex,
             onTap: tabsRouter.setActiveIndex,
-            items:  [
+            items: [
               BottomNavigationBarItem(
-                label:locale.builder,
+                label: locale.builder,
                 icon: const Icon(Icons.home),
               ),
               BottomNavigationBarItem(

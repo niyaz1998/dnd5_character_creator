@@ -1,8 +1,9 @@
 import 'package:flutter/foundation.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-import '../../../../app/data/models/base/description_base_model.codegen.dart';
-import '../../../../app/data/models/json_parsers/description_parser.dart';
+import '../../../library/data/models/base/description_base_model.codegen.dart';
+import '../../../library/data/models/json_parsers/description_parser.dart';
+import '../../domain/entities/condition_entity.dart';
 
 part 'condition_model.codegen.g.dart';
 
@@ -21,4 +22,16 @@ class ConditionModel extends DescribedBaseModel {
 
   @override
   Map<String, dynamic> toJson() => _$ConditionModelToJson(this);
+}
+
+extension ConditionToEntity on ConditionModel {
+  ConditionEntity toEntity() => ConditionEntity(
+        description: description,
+        index: index,
+        name: name,
+      );
+}
+
+extension ConditionListToEntity on List<ConditionModel> {
+  List<ConditionEntity> toEntity() => map((e) => e.toEntity()).toList();
 }

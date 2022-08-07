@@ -16,8 +16,9 @@ LanguageModel _$LanguageModelFromJson(Map<String, dynamic> json) =>
       url: json['url'] as String,
       index: json['index'] as String,
       name: json['name'] as String,
-      description:
-          const DescriptionConverter().fromJson(json['desc'] as Object),
+      description: json['desc'] == null
+          ? []
+          : const DescriptionConverter().fromJson(json['desc'] as Object),
     );
 
 Map<String, dynamic> _$LanguageModelToJson(LanguageModel instance) =>
