@@ -78,7 +78,8 @@ class LibraryRepoImpl extends LibraryRepo {
         return api
             .dndRequest<SkillModel>(baseLink.url)
             .then((value) => value.toEntity());
+      default:
+        throw 'not found domain to data DTO relation';
     }
-    throw 'not found domain to data DTO relation';
   }
 }
