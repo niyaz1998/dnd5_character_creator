@@ -75,4 +75,40 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get skillBasedOn => 'Зависит от';
+
+  @override
+  String spellRange(String range) {
+    return 'Дальность заклинания: $range';
+  }
+
+  @override
+  String get spellComponents => 'Компоненты заклинания: ';
+
+  @override
+  String materialComponent(Object components) {
+    return 'Материальный(е) компонент(ы): $components';
+  }
+
+  @override
+  String spellDuration(String duration) {
+    return 'Длительность: $duration';
+  }
+
+  @override
+  String castTime(String duration) {
+    return 'Время накладывания: $duration';
+  }
+
+  @override
+  String spellLevel(String level) {
+    return 'Уровень заклинания: $level';
+  }
+
+  @override
+  String attackType(String type) {
+    return 'Тип атаки: $type';
+  }
+
+  @override
+  String get damageType => 'Тип урона: ';
 }

@@ -13,6 +13,8 @@ import '../../../library_character_data/domain/entity/background/background_enti
 import '../../../library_character_data/domain/entity/language_entity.dart';
 import '../../../library_character_data/domain/entity/proficiency_entity.dart';
 import '../../../library_character_data/domain/entity/skill_entity.dart';
+import '../../../library_spells/data/spell_model.codegen.dart';
+import '../../../library_spells/domain/spell_entity.dart';
 import '../../domain/entities/base/dnd_base_entity.dart';
 import '../../domain/entities/base/reference_base_entity.dart';
 import '../../domain/entities/library_category_entity.dart';
@@ -54,6 +56,11 @@ class LibraryRepoImpl extends LibraryRepo {
           localeKey: 'skills',
           path: 'skills',
           domainType: SkillEntity,
+        ),
+        LibraryCategoryEntity(
+          localeKey: 'spells',
+          path: 'spells',
+          domainType: SpellEntity,
         ),
       ];
 
@@ -108,6 +115,10 @@ class LibraryRepoImpl extends LibraryRepo {
       case SkillEntity:
         return api
             .dndRequest<SkillModel>(baseLink.url)
+            .then((value) => value.toEntity());
+      case SpellEntity:
+        return api
+            .dndRequest<SpellModel>(baseLink.url)
             .then((value) => value.toEntity());
     }
     throw 'not found domain to data DTO relation';

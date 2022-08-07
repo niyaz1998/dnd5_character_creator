@@ -2,7 +2,6 @@ import 'package:json_annotation/json_annotation.dart';
 
 import '../../../../app/data/util/enum_util.dart';
 import '../../../library/data/models/base/description_base_model.codegen.dart';
-import '../../../library/data/models/json_parsers/description_parser.dart';
 import '../../domain/entity/language_entity.dart';
 
 part 'language_model.codegen.g.dart';

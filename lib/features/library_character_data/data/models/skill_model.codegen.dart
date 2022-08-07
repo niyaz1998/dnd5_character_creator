@@ -2,7 +2,6 @@ import 'package:json_annotation/json_annotation.dart';
 
 import '../../../library/data/models/base/description_base_model.codegen.dart';
 import '../../../library/data/models/base/reference_base_model.codegen.dart';
-import '../../../library/data/models/json_parsers/description_parser.dart';
 import '../../domain/entity/skill_entity.dart';
 
 part 'skill_model.codegen.g.dart';

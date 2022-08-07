@@ -10,6 +10,8 @@ import '../../../library_character_data/presentation/components/dnd_entity_info_
 import '../../../library_character_data/presentation/components/dnd_entity_info_cards/language_info_card.dart';
 import '../../../library_character_data/presentation/components/dnd_entity_info_cards/proficiency_info_card.dart';
 import '../../../library_character_data/presentation/components/dnd_entity_info_cards/skill_info_card.dart';
+import '../../../library_spells/domain/spell_entity.dart';
+import '../../../library_spells/presentation/spell_entity_info_card.dart';
 import '../../domain/entities/base/dnd_base_entity.dart';
 
 class DndEntityCard extends StatelessWidget {
@@ -33,6 +35,8 @@ class DndEntityCard extends StatelessWidget {
       return ProficiencyInfoCard(proficiencyEntity: entity);
     } else if (entity is SkillEntity) {
       return SkillInfoCard(skillEntity: entity);
+    } else if (entity is SpellEntity) {
+      return SpellEntityInfoCard(spellEntity: entity);
     }
     return Column(
       children: [

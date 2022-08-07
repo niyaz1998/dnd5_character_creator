@@ -2,7 +2,6 @@ import 'package:flutter/foundation.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 import '../../../library/data/models/base/description_base_model.codegen.dart';
-import '../../../library/data/models/json_parsers/description_parser.dart';
 import '../../domain/entities/magic_school_entity.dart';
 
 part 'magic_school_model.codegen.g.dart';
