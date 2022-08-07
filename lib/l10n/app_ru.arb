@@ -68,5 +68,25 @@
   "noClassStartsWithProficiency": "Не является стартовым умением ни одного класса",
   "racesStartsWithProficiency": "Является стартовым умением рас(ы):",
   "noRaceStartsWithProficiency": "Не является стартовым умением ни одной расы",
-  "skillBasedOn": "Зависит от"
+  "skillBasedOn": "Зависит от",
+  "hitDieSize" : "Размер кости 1d{hitDie}",
+  "@hitDieSize": {
+    "type": "text",
+    "placeholders": {
+      "hitDie": {
+        "type": "String"
+      }
+    }
+  },
+  "subclasses": "Подклассы",
+  "savingThrows": "Спасброски",
+  "classAbleToCastFrom": "Класс способен использовать заклинания с {level}-го уровня",
+  "@classAbleToCastFrom": {
+    "type": "text",
+    "placeholders": {
+      "level": {
+        "type": "String"
+      }
+    }
+  }
 }

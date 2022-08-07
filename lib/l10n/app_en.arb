@@ -55,11 +55,11 @@
       }
     }
   },
-  "proficiencyGeneralType" : "General category is {type}",
+  "proficiencyGeneralType" : "General category is {categoryType}",
   "@proficiencyGeneralType": {
     "type": "text",
     "placeholders": {
-      "speakers": {
+      "categoryType": {
         "type": "String"
       }
     }
@@ -68,5 +68,25 @@
   "noClassStartsWithProficiency": "No classes that start with this proficiency",
   "racesStartsWithProficiency": "Races that start with this proficiency:",
   "noRaceStartsWithProficiency": "No races that start with this proficiency",
-  "skillBasedOn": "Based on"
+  "skillBasedOn": "Based on",
+  "hitDieSize" : "Hit die size 1d{hitDie}",
+  "@hitDieSize": {
+    "type": "text",
+    "placeholders": {
+      "hitDie": {
+        "type": "String"
+      }
+    }
+  },
+  "subclasses": "Subclasses",
+  "savingThrows": "Saving throws",
+  "classAbleToCastFrom": "Class is able to cast spell from {level} level",
+  "@classAbleToCastFrom": {
+    "type": "text",
+    "placeholders": {
+      "level": {
+        "type": "String"
+      }
+    }
+  }
 }

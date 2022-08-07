@@ -3,6 +3,7 @@ import '../../../library_character_data/domain/entity/alignment_entity.dart';
 import '../../../library_character_data/domain/entity/language_entity.dart';
 import '../../../library_character_data/domain/entity/proficiency_entity.dart';
 import '../../../library_character_data/domain/entity/skill_entity.dart';
+import '../../../library_class/domain/entities/dnd_class_entity.dart';
 import '../../domain/entities/library_category_entity.dart';
 
 List<LibraryCategoryEntity> resourceDescriptorsConst = const [
@@ -37,5 +38,10 @@ List<LibraryCategoryEntity> resourceDescriptorsConst = const [
     localeKey: 'skills',
     path: 'skills',
     domainType: SkillEntity,
+  ),
+  LibraryCategoryEntity(
+    localeKey: 'classes',
+    path: 'classes',
+    domainType: DndClassEntity,
   ),
 ];
