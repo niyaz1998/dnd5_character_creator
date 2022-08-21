@@ -1,6 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 
-import '../../../../app/data/models/base/reference_base_model.codegen.dart';
+import '../../../library/data/models/base/reference_base_model.codegen.dart';
+import '../../domain/entity/proficiency_entity.dart';
 
 part 'proficiency_model.codegen.g.dart';
 
@@ -33,4 +34,19 @@ class ProficiencyModel extends ReferenceBaseModel {
 
   @override
   Map<String, dynamic> toJson() => _$ProficiencyModelToJson(this);
+}
+
+extension ProficiencyToEntity on ProficiencyModel {
+  ProficiencyEntity toEntity() => ProficiencyEntity(
+        type: type,
+        classes: classes.toEntity(),
+        races: races.toEntity(),
+        index: index,
+        name: name,
+        reference: reference,
+      );
+}
+
+extension ProficiencyListToEntity on List<ProficiencyModel> {
+  List<ProficiencyEntity> toEntity() => map((e) => e.toEntity()).toList();
 }

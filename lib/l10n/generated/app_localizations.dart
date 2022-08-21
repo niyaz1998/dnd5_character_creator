@@ -97,7 +97,7 @@ abstract class AppLocalizations {
   /// No description provided for @dnd.
   ///
   /// In ru, this message translates to:
-  /// **'дында'**
+  /// **'DnD5e'**
   String get dnd;
 
   /// No description provided for @builder.
@@ -117,6 +117,96 @@ abstract class AppLocalizations {
   /// In ru, this message translates to:
   /// **'Настройки'**
   String get settings;
+
+  /// No description provided for @choiceListTitle.
+  ///
+  /// In ru, this message translates to:
+  /// **'{type}. Choose {amount} from'**
+  String choiceListTitle(String type, int amount);
+
+  /// No description provided for @isUsedForSkills.
+  ///
+  /// In ru, this message translates to:
+  /// **'Основа для навыков'**
+  String get isUsedForSkills;
+
+  /// No description provided for @abbreviationIs.
+  ///
+  /// In ru, this message translates to:
+  /// **'Сокращение: {abbreviation}'**
+  String abbreviationIs(String abbreviation);
+
+  /// No description provided for @startingProficiencies.
+  ///
+  /// In ru, this message translates to:
+  /// **'Стартовые умения'**
+  String get startingProficiencies;
+
+  /// No description provided for @startingEquipment.
+  ///
+  /// In ru, this message translates to:
+  /// **'Стартовое снаряжение'**
+  String get startingEquipment;
+
+  /// No description provided for @personality.
+  ///
+  /// In ru, this message translates to:
+  /// **'Личность'**
+  String get personality;
+
+  /// No description provided for @languageType.
+  ///
+  /// In ru, this message translates to:
+  /// **'Редкость языка {rarity}'**
+  String languageType(String rarity);
+
+  /// No description provided for @languageScript.
+  ///
+  /// In ru, this message translates to:
+  /// **'Использует {script} письменность'**
+  String languageScript(String script);
+
+  /// No description provided for @typicalSpeakers.
+  ///
+  /// In ru, this message translates to:
+  /// **'Список рас, говорящих на языке: {speakers}'**
+  String typicalSpeakers(String speakers);
+
+  /// No description provided for @proficiencyGeneralType.
+  ///
+  /// In ru, this message translates to:
+  /// **'Общая категория умения: {type}'**
+  String proficiencyGeneralType(String speakers);
+
+  /// No description provided for @classesStartsWithProficiency.
+  ///
+  /// In ru, this message translates to:
+  /// **'Является стартовым умением классов(а):'**
+  String get classesStartsWithProficiency;
+
+  /// No description provided for @noClassStartsWithProficiency.
+  ///
+  /// In ru, this message translates to:
+  /// **'Не является стартовым умением ни одного класса'**
+  String get noClassStartsWithProficiency;
+
+  /// No description provided for @racesStartsWithProficiency.
+  ///
+  /// In ru, this message translates to:
+  /// **'Является стартовым умением рас(ы):'**
+  String get racesStartsWithProficiency;
+
+  /// No description provided for @noRaceStartsWithProficiency.
+  ///
+  /// In ru, this message translates to:
+  /// **'Не является стартовым умением ни одной расы'**
+  String get noRaceStartsWithProficiency;
+
+  /// No description provided for @skillBasedOn.
+  ///
+  /// In ru, this message translates to:
+  /// **'Зависит от'**
+  String get skillBasedOn;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

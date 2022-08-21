@@ -10,8 +10,9 @@ MagicSchoolModel _$MagicSchoolModelFromJson(Map<String, dynamic> json) =>
     MagicSchoolModel(
       index: json['index'] as String,
       url: json['url'] as String,
-      description:
-          const DescriptionConverter().fromJson(json['desc'] as Object),
+      description: json['desc'] == null
+          ? []
+          : const DescriptionConverter().fromJson(json['desc'] as Object),
       name: json['name'] as String,
     );
 
