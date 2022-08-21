@@ -1,10 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../app/presentation/router/app_router.dart';
-import '../../../../app/utils/screen_util_utils/gin_edge_insets.dart';
-import '../../domain/entities/library_category_entity.dart';
 import '../../../../../app/presentation/router/app_router.dart';
+import '../../../../../app/utils/screen_util_utils/gin_edge_insets.dart';
 import '../../../domain/entities/library_category_entity.dart';
 
 class CategoryCard extends StatelessWidget {

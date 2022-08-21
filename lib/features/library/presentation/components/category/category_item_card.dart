@@ -2,11 +2,8 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../app/presentation/router/app_router.dart';
+import '../../../../../app/utils/screen_util_utils/gin_edge_insets.dart';
 import '../../../domain/entities/base/reference_base_entity.dart';
-import '../../../../app/data/models/base/reference_base_model.codegen.dart';
-import '../../../../app/presentation/router/app_router.dart';
-import '../../../../app/utils/screen_util_utils/gin_edge_insets.dart';
-import '../../domain/state/library_category/library_category_cubit.dart';
 
 class CategoryItemCard extends StatelessWidget {
   const CategoryItemCard({
