@@ -14,7 +14,11 @@ import '../../../library_character_data/domain/entity/language_entity.dart';
 import '../../../library_character_data/domain/entity/proficiency_entity.dart';
 import '../../../library_character_data/domain/entity/skill_entity.dart';
 import '../../../library_game_mechanics/data/models/condition_model.codegen.dart';
+import '../../../library_game_mechanics/data/models/damage_type_model.codegen.dart';
+import '../../../library_game_mechanics/data/models/magic_school_model.codegen.dart';
 import '../../../library_game_mechanics/domain/entities/condition_entity.dart';
+import '../../../library_game_mechanics/domain/entities/damage_type_entity.dart';
+import '../../../library_game_mechanics/domain/entities/magic_school_entity.dart';
 import '../../domain/entities/base/dnd_base_entity.dart';
 import '../../domain/entities/base/reference_base_entity.dart';
 import '../../domain/entities/library_category_entity.dart';
@@ -61,6 +65,16 @@ class LibraryRepoImpl extends LibraryRepo {
           localeKey: 'conditions',
           path: 'conditions',
           domainType: ConditionEntity,
+        ),
+        LibraryCategoryEntity(
+          localeKey: 'damage types',
+          path: 'damage-types',
+          domainType: DamageTypeEntity,
+        ),
+        LibraryCategoryEntity(
+          localeKey: 'magic schools',
+          path: 'magic-schools',
+          domainType: MagicSchoolEntity,
         ),
       ];
 
@@ -119,6 +133,14 @@ class LibraryRepoImpl extends LibraryRepo {
       case ConditionEntity:
         return api
             .dndRequest<ConditionModel>(baseLink.url)
+            .then((value) => value.toEntity());
+      case DamageTypeEntity:
+        return api
+            .dndRequest<DamageTypeModel>(baseLink.url)
+            .then((value) => value.toEntity());
+      case MagicSchoolEntity:
+        return api
+            .dndRequest<MagicSchoolModel>(baseLink.url)
             .then((value) => value.toEntity());
     }
     throw 'not found domain to data DTO relation';

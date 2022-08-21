@@ -7,6 +7,8 @@ import '../../../../library_character_data/data/models/language_model.codegen.da
 import '../../../../library_character_data/data/models/proficiency_model.codegen.dart';
 import '../../../../library_character_data/data/models/skill_model.codegen.dart';
 import '../../../../library_game_mechanics/data/models/condition_model.codegen.dart';
+import '../../../../library_game_mechanics/data/models/damage_type_model.codegen.dart';
+import '../../../../library_game_mechanics/data/models/magic_school_model.codegen.dart';
 import '../base/description_base_model.codegen.dart';
 import '../base/reference_base_model.codegen.dart';
 
@@ -35,6 +37,10 @@ class ResourceListModelConverter<T extends ReferenceBaseModel>
         return ReferenceBaseModel.fromJson(json) as T;
       case ConditionModel:
         return ConditionModel.fromJson(json) as T;
+      case DamageTypeModel:
+        return DamageTypeModel.fromJson(json) as T;
+      case MagicSchoolModel:
+        return MagicSchoolModel.fromJson(json) as T;
     }
 
     throw ArgumentError('not supported ReferenceBaseModel by JsonConverter');
