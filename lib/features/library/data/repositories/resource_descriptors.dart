@@ -18,6 +18,7 @@ List<LibraryCategoryEntity> resourceDescriptorsConst = const [
     domainType: AlignmentEntity,
   ),
   /*
+  предыстории как то криво работают, позже разберусь
         LibraryCategoryEntity(
           localeKey: 'backgrounds',
           path: 'backgrounds',
