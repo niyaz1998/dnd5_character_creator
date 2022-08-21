@@ -6,6 +6,7 @@ import '../../../../app/domain/model/async_field.dart';
 import '../../../library/domain/entities/base/reference_base_entity.dart';
 import '../../../library/domain/entities/library_category_entity.dart';
 import '../../../library/domain/repositories/library_repo.dart';
+import '../entity/spell_entity.dart';
 import 'spell_search_state.codegen.dart';
 export 'spell_search_state.codegen.dart';
 
@@ -27,7 +28,8 @@ class SpellSearchCubit extends GinBaseCubit<SpellSearchState> {
       updater: (value) => emit(state.copyWith(field: value)));
 
   void changeSpellLevel(int spellLevel) {
-    if (spellLevel > 0 && spellLevel < 10) {
+    if (spellLevel >= SpellEntity.minSpellLevel &&
+        spellLevel <= SpellEntity.maxSpellLevel) {
       emit(state.copyWith(spellLevel: spellLevel));
       init();
     }
