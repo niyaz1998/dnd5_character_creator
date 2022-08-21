@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gin_app_logger/gin_app_logger.dart';
 
 import '../../presentation/widgets/common/gin_error_builder.dart';
 import '../../presentation/widgets/common/gin_loader.dart';
+import '../../utils/screen_util_utils/gin_edge_insets.dart';
 import 'gin_error.dart';
 
 typedef FieldUpdater<T> = void Function(AsyncField<T> field);
@@ -83,7 +83,7 @@ class AsyncField<T> {
   }) {
     if (hasError) {
       return Padding(
-        padding: EdgeInsets.all(20.h),
+        padding: GinEdgeInsets.all(20),
         child: GinErrorBuilder(
           onRefreshPressed: onRefreshPressed,
           refreshReasonKey: error!.rawError.toString(),

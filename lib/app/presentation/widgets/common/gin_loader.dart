@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../utils/screen_util_utils/gin_sized_box.dart';
 
 class GinLoader extends StatelessWidget {
   const GinLoader({
@@ -13,9 +14,9 @@ class GinLoader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: alignment,
-      child: SizedBox(
-        height: 24.h,
-        width: 24.w,
+      child: GinSizedBox(
+        height: 24,
+        width: 24,
         child: CircularProgressIndicator(
           valueColor: AlwaysStoppedAnimation(
             Theme.of(context).colorScheme.primary,
