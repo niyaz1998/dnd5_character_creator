@@ -1,5 +1,7 @@
-import '../../library/domain/entities/base/description_base_entity.dart';
-import '../../library/domain/entities/base/reference_base_entity.dart';
+
+
+import '../../../library/domain/entities/base/description_base_entity.dart';
+import '../../../library/domain/entities/base/reference_base_entity.dart';
 import 'spell_damage_entity.dart';
 
 class SpellEntity extends DescribedBaseEntity {

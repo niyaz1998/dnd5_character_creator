@@ -1,8 +1,8 @@
 import 'package:json_annotation/json_annotation.dart';
 
-import '../../library/data/models/base/description_base_model.codegen.dart';
-import '../../library/data/models/base/reference_base_model.codegen.dart';
-import '../domain/spell_entity.dart';
+import '../../../library/data/models/base/description_base_model.codegen.dart';
+import '../../../library/data/models/base/reference_base_model.codegen.dart';
+import '../../domain/entity/spell_entity.dart';
 import 'spell_damage_model.codegen.dart';
 
 part 'spell_model.codegen.g.dart';

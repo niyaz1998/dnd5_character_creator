@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../domain/spell_entity.dart';
+import '../../domain/entity/spell_entity.dart';
 
 class SpellComponentsIcon extends StatelessWidget {
   const SpellComponentsIcon({

@@ -2,9 +2,9 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 
-import '../../../app/utils/app_context.dart';
-import '../../library/presentation/components/widely_used/dnd_base_entity_link.dart';
-import '../domain/spell_damage_entity.dart';
+import '../../../../app/utils/app_context.dart';
+import '../../../library/presentation/components/widely_used/dnd_base_entity_link.dart';
+import '../../domain/entity/spell_damage_entity.dart';
 
 class SpellDamage extends StatelessWidget {
   const SpellDamage({

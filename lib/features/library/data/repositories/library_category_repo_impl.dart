@@ -13,8 +13,8 @@ import '../../../library_character_data/domain/entity/background/background_enti
 import '../../../library_character_data/domain/entity/language_entity.dart';
 import '../../../library_character_data/domain/entity/proficiency_entity.dart';
 import '../../../library_character_data/domain/entity/skill_entity.dart';
-import '../../../library_spells/data/spell_model.codegen.dart';
-import '../../../library_spells/domain/spell_entity.dart';
+import '../../../library_spells/data/models/spell_model.codegen.dart';
+import '../../../library_spells/domain/entity/spell_entity.dart';
 import '../../domain/entities/base/dnd_base_entity.dart';
 import '../../domain/entities/base/reference_base_entity.dart';
 import '../../domain/entities/library_category_entity.dart';
@@ -122,5 +122,18 @@ class LibraryRepoImpl extends LibraryRepo {
             .then((value) => value.toEntity());
     }
     throw 'not found domain to data DTO relation';
+  }
+
+  @override
+  Future<List<ReferenceBaseEntity<SpellEntity>>> fetchSpells(
+    LibraryCategoryEntity category,
+    int spellLevel,
+  ) {
+    return api.dndRequestList<ReferenceBaseModel>(
+      '/api/${category.path}',
+      queryParameters: {
+        'level': [spellLevel]
+      },
+    ).then((value) => value.toEntity());
   }
 }

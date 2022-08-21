@@ -10,8 +10,8 @@ import '../../../library_character_data/presentation/components/dnd_entity_info_
 import '../../../library_character_data/presentation/components/dnd_entity_info_cards/language_info_card.dart';
 import '../../../library_character_data/presentation/components/dnd_entity_info_cards/proficiency_info_card.dart';
 import '../../../library_character_data/presentation/components/dnd_entity_info_cards/skill_info_card.dart';
-import '../../../library_spells/domain/spell_entity.dart';
-import '../../../library_spells/presentation/spell_entity_info_card.dart';
+import '../../../library_spells/domain/entity/spell_entity.dart';
+import '../../../library_spells/presentation/components/spell_entity_info_card.dart';
 import '../../domain/entities/base/dnd_base_entity.dart';
 
 class DndEntityCard extends StatelessWidget {

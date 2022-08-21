@@ -1,4 +1,4 @@
-import '../../library/domain/entities/base/reference_base_entity.dart';
+import '../../../library/domain/entities/base/reference_base_entity.dart';
 
 class SpellDamageEntity {
   SpellDamageEntity({
