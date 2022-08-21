@@ -211,7 +211,7 @@ abstract class AppLocalizations {
   /// No description provided for @hitDieSize.
   ///
   /// In ru, this message translates to:
-  /// **'Размер кости 1d{hitDie}'**
+  /// **'Размер кости {hitDie}'**
   String hitDieSize(String hitDie);
 
   /// No description provided for @subclasses.
