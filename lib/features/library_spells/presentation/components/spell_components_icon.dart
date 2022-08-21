@@ -25,13 +25,13 @@ class SpellComponentsIcon extends StatelessWidget {
           text = 'R';
         }
         break;
-      case SpellComponent.V:
+      case SpellComponent.verbal:
         text = 'V';
         break;
-      case SpellComponent.S:
+      case SpellComponent.somatic:
         text = 'S';
         break;
-      case SpellComponent.M:
+      case SpellComponent.material:
         text = 'M';
         break;
     }

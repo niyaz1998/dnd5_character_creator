@@ -50,11 +50,11 @@ class SpellEntity extends DescribedBaseEntity {
 
 enum SpellComponent {
   /// verbal - надо говорить
-  V,
+  verbal,
 
   /// somatic - надо махать руками
-  S,
+  somatic,
 
   /// material - нужен предмет
-  M,
+  material,
 }

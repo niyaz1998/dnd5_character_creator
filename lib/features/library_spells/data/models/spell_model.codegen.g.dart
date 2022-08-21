@@ -57,7 +57,7 @@ Map<String, dynamic> _$SpellModelToJson(SpellModel instance) =>
     };
 
 const _$SpellComponentModelEnumMap = {
-  SpellComponentModel.V: 'V',
-  SpellComponentModel.S: 'S',
-  SpellComponentModel.M: 'M',
+  SpellComponentModel.verbal: 'V',
+  SpellComponentModel.somatic: 'S',
+  SpellComponentModel.material: 'M',
 };
