@@ -25,7 +25,7 @@ class DndSpellCastingInfoCard extends StatelessWidget {
         dividerColor: Colors.transparent,
       ),
       child: ExpansionTile(
-        tilePadding: const EdgeInsets.all(0),
+        tilePadding: EdgeInsets.zero,
         title: Text(
           locale.classAbleToCastFrom(spellCasting.level.toString()),
           style: Theme.of(context).textTheme.bodyMedium,
@@ -35,7 +35,7 @@ class DndSpellCastingInfoCard extends StatelessWidget {
             itemCount: spellCasting.info.length,
             itemBuilder: (context, infoIndex) {
               return ExpansionTile(
-                tilePadding: const EdgeInsets.all(0),
+                tilePadding: EdgeInsets.zero,
                 title: Text(
                   spellCasting.info[infoIndex].name,
                   style: Theme.of(context).textTheme.bodyMedium,
