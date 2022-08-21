@@ -31,10 +31,10 @@ abstract class GinEdgeInsets {
   }
 
   static EdgeInsets only({
-    required double? left,
-    required double? top,
-    required double? right,
-    required double? bottom,
+    double? left,
+    double? top,
+    double? right,
+    double? bottom,
   }) {
     return EdgeInsets.only(
       left: left?.w ?? 0,
@@ -44,13 +44,11 @@ abstract class GinEdgeInsets {
     );
   }
 
-  static EdgeInsets zero() {
-    return EdgeInsets.zero;
-  }
+  static EdgeInsets zero = EdgeInsets.zero;
 
   static EdgeInsets symmetric({
-    required double? vertical,
-    required double? horizontal,
+    double? vertical,
+    double? horizontal,
   }) {
     return EdgeInsets.symmetric(
         vertical: vertical?.h ?? 0, horizontal: horizontal?.w ?? 0);
