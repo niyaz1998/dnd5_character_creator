@@ -78,7 +78,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String hitDieSize(String hitDie) {
-    return 'Hit die size 1d${hitDie}';
+    return 'Hit die size $hitDie';
   }
 
   @override

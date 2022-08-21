@@ -69,7 +69,7 @@
   "racesStartsWithProficiency": "Races that start with this proficiency:",
   "noRaceStartsWithProficiency": "No races that start with this proficiency",
   "skillBasedOn": "Based on",
-  "hitDieSize" : "Hit die size 1d{hitDie}",
+  "hitDieSize" : "Hit die size {hitDie}",
   "@hitDieSize": {
     "type": "text",
     "placeholders": {

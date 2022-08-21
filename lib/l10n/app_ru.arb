@@ -69,7 +69,7 @@
   "racesStartsWithProficiency": "Является стартовым умением рас(ы):",
   "noRaceStartsWithProficiency": "Не является стартовым умением ни одной расы",
   "skillBasedOn": "Зависит от",
-  "hitDieSize" : "Размер кости 1d{hitDie}",
+  "hitDieSize" : "Размер кости {hitDie}",
   "@hitDieSize": {
     "type": "text",
     "placeholders": {

@@ -78,7 +78,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String hitDieSize(String hitDie) {
-    return 'Размер кости 1d${hitDie}';
+    return 'Размер кости $hitDie';
   }
 
   @override
