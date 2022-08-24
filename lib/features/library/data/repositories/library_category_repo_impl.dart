@@ -13,14 +13,14 @@ import '../../../library_character_data/domain/entity/background/background_enti
 import '../../../library_character_data/domain/entity/language_entity.dart';
 import '../../../library_character_data/domain/entity/proficiency_entity.dart';
 import '../../../library_character_data/domain/entity/skill_entity.dart';
+import '../../../library_class/data/models/dnd_class_model.codegen.dart';
+import '../../../library_class/domain/entities/dnd_class_entity.dart';
 import '../../../library_game_mechanics/data/models/condition_model.codegen.dart';
 import '../../../library_game_mechanics/data/models/damage_type_model.codegen.dart';
 import '../../../library_game_mechanics/data/models/magic_school_model.codegen.dart';
 import '../../../library_game_mechanics/domain/entities/condition_entity.dart';
 import '../../../library_game_mechanics/domain/entities/damage_type_entity.dart';
 import '../../../library_game_mechanics/domain/entities/magic_school_entity.dart';
-import '../../../library_class/data/models/dnd_class_model.codegen.dart';
-import '../../../library_class/domain/entities/dnd_class_entity.dart';
 import '../../domain/entities/base/dnd_base_entity.dart';
 import '../../domain/entities/base/reference_base_entity.dart';
 import '../../domain/entities/library_category_entity.dart';
@@ -33,55 +33,6 @@ import 'resource_descriptors.dart';
 class LibraryRepoImpl extends LibraryRepo {
   static List<LibraryCategoryEntity> get resourceDescriptors =>
       resourceDescriptorsConst;
-  static List<LibraryCategoryEntity> get resourceDescriptors => const [
-        LibraryCategoryEntity(
-          localeKey: 'ability-scores',
-          path: 'ability-scores',
-          domainType: AbilityScoreEntity,
-        ),
-        LibraryCategoryEntity(
-          localeKey: 'alignments',
-          path: 'alignments',
-          domainType: AlignmentEntity,
-        ),
-        /*
-        LibraryCategoryEntity(
-          localeKey: 'backgrounds',
-          path: 'backgrounds',
-          domainType: BackgroundEntity,
-        ),
-        */
-        LibraryCategoryEntity(
-          localeKey: 'languages',
-          path: 'languages',
-          domainType: LanguageEntity,
-        ),
-        LibraryCategoryEntity(
-          localeKey: 'proficiencies',
-          path: 'proficiencies',
-          domainType: ProficiencyEntity,
-        ),
-        LibraryCategoryEntity(
-          localeKey: 'skills',
-          path: 'skills',
-          domainType: SkillEntity,
-        ),
-        LibraryCategoryEntity(
-          localeKey: 'conditions',
-          path: 'conditions',
-          domainType: ConditionEntity,
-        ),
-        LibraryCategoryEntity(
-          localeKey: 'damage types',
-          path: 'damage-types',
-          domainType: DamageTypeEntity,
-        ),
-        LibraryCategoryEntity(
-          localeKey: 'magic schools',
-          path: 'magic-schools',
-          domainType: MagicSchoolEntity,
-        ),
-      ];
 
   LibraryRepoImpl(this.api);
 
@@ -139,9 +90,6 @@ class LibraryRepoImpl extends LibraryRepo {
         return api
             .dndRequest<DndClassModel>(baseLink.url)
             .then((value) => value.toEntity());
-      default:
-        throw 'not found domain to data DTO relation';
-    }
       case ConditionEntity:
         return api
             .dndRequest<ConditionModel>(baseLink.url)
@@ -154,7 +102,8 @@ class LibraryRepoImpl extends LibraryRepo {
         return api
             .dndRequest<MagicSchoolModel>(baseLink.url)
             .then((value) => value.toEntity());
+      default:
+        throw 'not found domain to data DTO relation';
     }
-    throw 'not found domain to data DTO relation';
   }
 }

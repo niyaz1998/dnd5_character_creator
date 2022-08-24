@@ -10,14 +10,14 @@ import '../../../library_character_data/presentation/components/dnd_entity_info_
 import '../../../library_character_data/presentation/components/dnd_entity_info_cards/language_info_card.dart';
 import '../../../library_character_data/presentation/components/dnd_entity_info_cards/proficiency_info_card.dart';
 import '../../../library_character_data/presentation/components/dnd_entity_info_cards/skill_info_card.dart';
+import '../../../library_class/domain/entities/dnd_class_entity.dart';
+import '../../../library_class/presentation/presentation/components/dnd_entity_info_cards/dnd_class_info_card.dart';
 import '../../../library_game_mechanics/domain/entities/condition_entity.dart';
 import '../../../library_game_mechanics/domain/entities/damage_type_entity.dart';
 import '../../../library_game_mechanics/domain/entities/magic_school_entity.dart';
 import '../../../library_game_mechanics/presentation/components/condition_info_card.dart';
 import '../../../library_game_mechanics/presentation/components/damage_type_info_card.dart';
 import '../../../library_game_mechanics/presentation/components/magic_school_info_card.dart';
-import '../../../library_class/domain/entities/dnd_class_entity.dart';
-import '../../../library_class/presentation/presentation/components/dnd_entity_info_cards/dnd_class_info_card.dart';
 import '../../domain/entities/base/dnd_base_entity.dart';
 
 class DndEntityCard extends StatelessWidget {
