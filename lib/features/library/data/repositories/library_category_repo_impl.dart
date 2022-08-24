@@ -13,49 +13,20 @@ import '../../../library_character_data/domain/entity/background/background_enti
 import '../../../library_character_data/domain/entity/language_entity.dart';
 import '../../../library_character_data/domain/entity/proficiency_entity.dart';
 import '../../../library_character_data/domain/entity/skill_entity.dart';
+import '../../../library_class/data/models/dnd_class_model.codegen.dart';
+import '../../../library_class/domain/entities/dnd_class_entity.dart';
 import '../../domain/entities/base/dnd_base_entity.dart';
 import '../../domain/entities/base/reference_base_entity.dart';
 import '../../domain/entities/library_category_entity.dart';
 import '../../domain/repositories/library_repo.dart';
 import '../api/dnd5e_api.dart';
 import '../models/base/reference_base_model.codegen.dart';
+import 'resource_descriptors.dart';
 
 @LazySingleton(as: LibraryRepo)
 class LibraryRepoImpl extends LibraryRepo {
-  static List<LibraryCategoryEntity> get resourceDescriptors => const [
-        LibraryCategoryEntity(
-          localeKey: 'ability-scores',
-          path: 'ability-scores',
-          domainType: AbilityScoreEntity,
-        ),
-        LibraryCategoryEntity(
-          localeKey: 'alignments',
-          path: 'alignments',
-          domainType: AlignmentEntity,
-        ),
-        /*
-        LibraryCategoryEntity(
-          localeKey: 'backgrounds',
-          path: 'backgrounds',
-          domainType: BackgroundEntity,
-        ),
-        */
-        LibraryCategoryEntity(
-          localeKey: 'languages',
-          path: 'languages',
-          domainType: LanguageEntity,
-        ),
-        LibraryCategoryEntity(
-          localeKey: 'proficiencies',
-          path: 'proficiencies',
-          domainType: ProficiencyEntity,
-        ),
-        LibraryCategoryEntity(
-          localeKey: 'skills',
-          path: 'skills',
-          domainType: SkillEntity,
-        ),
-      ];
+  static List<LibraryCategoryEntity> get resourceDescriptors =>
+      resourceDescriptorsConst;
 
   LibraryRepoImpl(this.api);
 
@@ -109,7 +80,12 @@ class LibraryRepoImpl extends LibraryRepo {
         return api
             .dndRequest<SkillModel>(baseLink.url)
             .then((value) => value.toEntity());
+      case DndClassEntity:
+        return api
+            .dndRequest<DndClassModel>(baseLink.url)
+            .then((value) => value.toEntity());
+      default:
+        throw 'not found domain to data DTO relation';
     }
-    throw 'not found domain to data DTO relation';
   }
 }
