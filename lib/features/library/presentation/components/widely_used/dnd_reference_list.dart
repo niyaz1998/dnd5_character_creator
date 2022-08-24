@@ -16,6 +16,9 @@ class DndReferenceList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (links.isEmpty) {
+      return const SizedBox();
+    }
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [

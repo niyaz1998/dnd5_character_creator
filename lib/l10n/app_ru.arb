@@ -26,7 +26,11 @@
     }
   },
   "startingProficiencies": "Стартовые умения",
+  "startingProficiencyOptions": "Опции стартовых умений",
   "startingEquipment": "Стартовое снаряжение",
+  "startingLanguages": "Стартовые языки",
+  "startingTraits": "Особенности",
+  "subraces": "Подрасы",
   "personality": "Личность",
   "languageType": "Редкость языка {rarity}",
   "@languageType": {
@@ -141,6 +145,21 @@
     "type": "text",
     "placeholders": {
       "level": {
+        "type": "String"
+      }
+    }
+  },
+  "raceInfo": "Скорость {speed} футов\nРазмер: {size}\nВозраст: {age}",
+  "@raceInfo": {
+    "type": "text",
+    "placeholders": {
+      "speed": {
+        "type": "String"
+      },
+      "size": {
+        "type": "String"
+      },
+      "age": {
         "type": "String"
       }
     }

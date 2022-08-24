@@ -21,6 +21,10 @@ import '../../../library_game_mechanics/data/models/magic_school_model.codegen.d
 import '../../../library_game_mechanics/domain/entities/condition_entity.dart';
 import '../../../library_game_mechanics/domain/entities/damage_type_entity.dart';
 import '../../../library_game_mechanics/domain/entities/magic_school_entity.dart';
+import '../../../library_races/data/models/race_model.dart';
+import '../../../library_races/data/models/sub_race_model.dart';
+import '../../../library_races/domain/entities/race/race_entity.dart';
+import '../../../library_races/domain/entities/race/sub_race_entity.dart';
 import '../../../library_spells/data/models/spell_model.codegen.dart';
 import '../../../library_spells/domain/entity/spell_entity.dart';
 import '../../domain/entities/base/dnd_base_entity.dart';
@@ -107,6 +111,14 @@ class LibraryRepoImpl extends LibraryRepo {
       case MagicSchoolEntity:
         return api
             .dndRequest<MagicSchoolModel>(baseLink.url)
+            .then((value) => value.toEntity());
+      case RaceEntity:
+        return api
+            .dndRequest<RaceModel>(baseLink.url)
+            .then((value) => value.toEntity());
+      case SubRaceEntity:
+        return api
+            .dndRequest<SubRaceModel>(baseLink.url)
             .then((value) => value.toEntity());
       default:
         throw 'not found domain to data DTO relation';

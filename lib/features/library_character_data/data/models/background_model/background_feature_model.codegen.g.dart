@@ -13,15 +13,11 @@ BackgroundFeatureModel _$BackgroundFeatureModelFromJson(
       description: json['desc'] == null
           ? []
           : const DescriptionConverter().fromJson(json['desc'] as Object),
-      index: json['index'] as String,
-      url: json['url'] as String,
     );
 
 Map<String, dynamic> _$BackgroundFeatureModelToJson(
         BackgroundFeatureModel instance) =>
     <String, dynamic>{
-      'index': instance.index,
-      'name': instance.name,
-      'url': instance.url,
       'desc': const DescriptionConverter().toJson(instance.description),
+      'name': instance.name,
     };

@@ -36,7 +36,19 @@ class AppLocalizationsRu extends AppLocalizations {
   String get startingProficiencies => 'Стартовые умения';
 
   @override
+  String get startingProficiencyOptions => 'Опции стартовых умений';
+
+  @override
   String get startingEquipment => 'Стартовое снаряжение';
+
+  @override
+  String get startingLanguages => 'Стартовые языки';
+
+  @override
+  String get startingTraits => 'Особенности';
+
+  @override
+  String get subraces => 'Подрасы';
 
   @override
   String get personality => 'Личность';
@@ -77,22 +89,6 @@ class AppLocalizationsRu extends AppLocalizations {
   String get skillBasedOn => 'Зависит от';
 
   @override
-  String hitDieSize(String hitDie) {
-    return 'Размер кости $hitDie';
-  }
-
-  @override
-  String get subclasses => 'Подклассы';
-
-  @override
-  String get savingThrows => 'Спасброски';
-
-  @override
-  String classAbleToCastFrom(String level) {
-    return 'Класс способен использовать заклинания с $level-го уровня';
-  }
-
-  @override
   String spellRange(String range) {
     return 'Дальность заклинания: $range';
   }
@@ -127,4 +123,25 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get damageType => 'Тип урона: ';
+
+  @override
+  String hitDieSize(String hitDie) {
+    return 'Размер кости $hitDie';
+  }
+
+  @override
+  String get subclasses => 'Подклассы';
+
+  @override
+  String get savingThrows => 'Спасброски';
+
+  @override
+  String classAbleToCastFrom(String level) {
+    return 'Класс способен использовать заклинания с $level-го уровня';
+  }
+
+  @override
+  String raceInfo(String speed, String size, String age) {
+    return 'Скорость $speed футов\nРазмер: $size\nВозраст: $age';
+  }
 }

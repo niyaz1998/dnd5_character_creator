@@ -18,6 +18,10 @@ import '../../../library_game_mechanics/domain/entities/magic_school_entity.dart
 import '../../../library_game_mechanics/presentation/components/condition_info_card.dart';
 import '../../../library_game_mechanics/presentation/components/damage_type_info_card.dart';
 import '../../../library_game_mechanics/presentation/components/magic_school_info_card.dart';
+import '../../../library_races/domain/entities/race/race_entity.dart';
+import '../../../library_races/domain/entities/race/sub_race_entity.dart';
+import '../../../library_races/presentation/components/race_info_card.dart';
+import '../../../library_races/presentation/components/sub_race_info_card.dart';
 import '../../../library_spells/domain/entity/spell_entity.dart';
 import '../../../library_spells/presentation/components/spell_entity_info_card.dart';
 import '../../domain/entities/base/dnd_base_entity.dart';
@@ -53,6 +57,10 @@ class DndEntityCard extends StatelessWidget {
       return DamageTypeInfoCard(damageType: entity);
     } else if (entity is MagicSchoolEntity) {
       return MagicSchoolInfoCard(magicSchool: entity);
+    } else if (entity is RaceEntity) {
+      return RaceInfoCard(race: entity);
+    } else if (entity is SubRaceEntity) {
+      return SubRaceInfoCard(subRace: entity);
     }
     return Column(
       children: [

@@ -20,7 +20,6 @@ class ProficiencyEntity extends DndBaseEntity {
   /// Classes that start with this proficiency
   final List<ReferenceBaseEntity> classes;
 
-  /// TODO: add expected type
   /// Races that start with this proficiency
   final List<ReferenceBaseEntity<RaceEntity>> races;
 

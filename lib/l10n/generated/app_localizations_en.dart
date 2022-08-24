@@ -36,7 +36,19 @@ class AppLocalizationsEn extends AppLocalizations {
   String get startingProficiencies => 'Starting proficiencies';
 
   @override
+  String get startingProficiencyOptions => 'Starting proficiency options';
+
+  @override
   String get startingEquipment => 'Starting equipment';
+
+  @override
+  String get startingLanguages => 'Starting languages';
+
+  @override
+  String get startingTraits => 'Traits';
+
+  @override
+  String get subraces => 'Subraces';
 
   @override
   String get personality => 'Personality';
@@ -77,22 +89,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get skillBasedOn => 'Based on';
 
   @override
-  String hitDieSize(String hitDie) {
-    return 'Hit die size $hitDie';
-  }
-
-  @override
-  String get subclasses => 'Subclasses';
-
-  @override
-  String get savingThrows => 'Saving throws';
-
-  @override
-  String classAbleToCastFrom(String level) {
-    return 'Class is able to cast spell from $level level';
-  }
-
-  @override
   String spellRange(String range) {
     return 'Spell range: $range';
   }
@@ -127,4 +123,25 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get damageType => 'Damage type: ';
+
+  @override
+  String hitDieSize(String hitDie) {
+    return 'Hit die size $hitDie';
+  }
+
+  @override
+  String get subclasses => 'Subclasses';
+
+  @override
+  String get savingThrows => 'Saving throws';
+
+  @override
+  String classAbleToCastFrom(String level) {
+    return 'Class is able to cast spell from $level level';
+  }
+
+  @override
+  String raceInfo(String speed, String size, String age) {
+    return 'Speed $speed feet\nSize: $size\nAge: $age';
+  }
 }

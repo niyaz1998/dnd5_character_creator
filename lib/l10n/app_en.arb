@@ -26,7 +26,11 @@
     }
   },
   "startingProficiencies": "Starting proficiencies",
+  "startingProficiencyOptions": "Starting proficiency options",
   "startingEquipment": "Starting equipment",
+  "startingLanguages": "Starting languages",
+  "startingTraits": "Traits",
+  "subraces": "Subraces",
   "personality": "Personality",
   "languageType": "Rarity type is {rarity}",
   "@languageType": {
@@ -141,6 +145,21 @@
     "type": "text",
     "placeholders": {
       "level": {
+        "type": "String"
+      }
+    }
+  },
+  "raceInfo": "Speed {speed} feet\nSize: {size}\nAge: {age}",
+  "@raceInfo": {
+    "type": "text",
+    "placeholders": {
+      "speed": {
+        "type": "String"
+      },
+      "size": {
+        "type": "String"
+      },
+      "age": {
         "type": "String"
       }
     }

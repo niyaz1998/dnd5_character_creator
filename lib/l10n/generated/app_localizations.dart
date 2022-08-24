@@ -142,11 +142,35 @@ abstract class AppLocalizations {
   /// **'Стартовые умения'**
   String get startingProficiencies;
 
+  /// No description provided for @startingProficiencyOptions.
+  ///
+  /// In ru, this message translates to:
+  /// **'Опции стартовых умений'**
+  String get startingProficiencyOptions;
+
   /// No description provided for @startingEquipment.
   ///
   /// In ru, this message translates to:
   /// **'Стартовое снаряжение'**
   String get startingEquipment;
+
+  /// No description provided for @startingLanguages.
+  ///
+  /// In ru, this message translates to:
+  /// **'Стартовые языки'**
+  String get startingLanguages;
+
+  /// No description provided for @startingTraits.
+  ///
+  /// In ru, this message translates to:
+  /// **'Особенности'**
+  String get startingTraits;
+
+  /// No description provided for @subraces.
+  ///
+  /// In ru, this message translates to:
+  /// **'Подрасы'**
+  String get subraces;
 
   /// No description provided for @personality.
   ///
@@ -279,6 +303,12 @@ abstract class AppLocalizations {
   /// In ru, this message translates to:
   /// **'Класс способен использовать заклинания с {level}-го уровня'**
   String classAbleToCastFrom(String level);
+
+  /// No description provided for @raceInfo.
+  ///
+  /// In ru, this message translates to:
+  /// **'Скорость {speed} футов\nРазмер: {size}\nВозраст: {age}'**
+  String raceInfo(String speed, String size, String age);
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

@@ -1,9 +1,9 @@
-import '../../../../library/domain/entities/base/description_base_entity.dart';
-
-class BackgroundFeatureEntity extends DescribedBaseEntity {
+class BackgroundFeatureEntity {
   const BackgroundFeatureEntity({
-    required super.description,
-    required super.index,
-    required super.name,
+    required this.description,
+    required this.name,
   });
+
+  final List<String> description;
+  final String name;
 }

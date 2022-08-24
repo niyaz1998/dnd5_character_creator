@@ -8,39 +8,28 @@ part 'background_feature_model.codegen.g.dart';
 
 @JsonSerializable(fieldRename: FieldRename.snake)
 @immutable
-class BackgroundFeatureModel extends DescribedBaseModel {
+class BackgroundFeatureModel {
   const BackgroundFeatureModel({
-    required super.name,
-    required super.description,
-    required super.index,
-    required super.url,
+    required this.name,
+    required this.description,
   });
 
   factory BackgroundFeatureModel.fromJson(Map<String, dynamic> json) =>
       _$BackgroundFeatureModelFromJson(json);
 
-  @override
+  @JsonKey(name: 'desc', defaultValue: [])
+  @DescriptionConverter()
+  final List<String> description;
+  final String name;
+
   Map<String, dynamic> toJson() => _$BackgroundFeatureModelToJson(this);
 }
 
 extension BackgroundFeatureToEntity on BackgroundFeatureModel {
   BackgroundFeatureEntity toEntity() => BackgroundFeatureEntity(
         description: description,
-        index: index,
         name: name,
       );
-
-  BackgroundFeatureEntity? tryToEntity() {
-    try {
-      return BackgroundFeatureEntity(
-        description: description,
-        index: index,
-        name: name,
-      );
-    } catch (_) {
-      return null;
-    }
-  }
 }
 
 extension BackgroundFeatureListToEntity on List<BackgroundFeatureModel> {

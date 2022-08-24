@@ -1,7 +1,9 @@
 import '../../../../library/domain/entities/base/choice_base_entity.dart';
 import '../../../../library/domain/entities/base/reference_base_entity.dart';
 import '../../../../library_character_data/domain/entity/proficiency_entity.dart';
+import '../trait_entity.dart';
 import 'race_base_interface.dart';
+import 'sub_race_entity.dart';
 
 class RaceEntity extends RaceBaseInterface {
   const RaceEntity({
@@ -26,8 +28,8 @@ class RaceEntity extends RaceBaseInterface {
   final String age;
   final String size;
   final String sizeDescription;
-  final ChoiceBaseEntity<ProficiencyEntity> startingProficiencyOptions;
+  final ChoiceBaseEntity<ProficiencyEntity>? startingProficiencyOptions;
   final String languageDesc;
-  final List<ReferenceBaseEntity> traits;
-  final List<ReferenceBaseEntity> subRaces;
+  final List<ReferenceBaseEntity<TraitEntity>> traits;
+  final List<ReferenceBaseEntity<SubRaceEntity>> subRaces;
 }

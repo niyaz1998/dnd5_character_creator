@@ -10,6 +10,8 @@ import '../../../../library_class/data/models/dnd_class_model.codegen.dart';
 import '../../../../library_game_mechanics/data/models/condition_model.codegen.dart';
 import '../../../../library_game_mechanics/data/models/damage_type_model.codegen.dart';
 import '../../../../library_game_mechanics/data/models/magic_school_model.codegen.dart';
+import '../../../../library_races/data/models/race_model.dart';
+import '../../../../library_races/data/models/sub_race_model.dart';
 import '../../../../library_spells/data/models/spell_model.codegen.dart';
 import '../base/description_base_model.codegen.dart';
 import '../base/reference_base_model.codegen.dart';
@@ -47,6 +49,10 @@ class ResourceListModelConverter<T extends ReferenceBaseModel>
         return DamageTypeModel.fromJson(json) as T;
       case MagicSchoolModel:
         return MagicSchoolModel.fromJson(json) as T;
+      case RaceModel:
+        return RaceModel.fromJson(json) as T;
+      case SubRaceModel:
+        return SubRaceModel.fromJson(json) as T;
     }
 
     throw ArgumentError('not supported ReferenceBaseModel by JsonConverter');

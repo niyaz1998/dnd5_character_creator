@@ -9,24 +9,27 @@ class DndChoiceList extends StatelessWidget {
   const DndChoiceList({
     Key? key,
     required this.choice,
+    this.title,
   }) : super(key: key);
 
   final ChoiceBaseInterface choice;
+  final String? title;
 
   @override
   Widget build(BuildContext context) {
     var choiceLocal = choice;
     var locale = context.appLocale;
+    var titleText = title ?? locale.choiceListTitle(choice.type, choice.choose);
     if (choiceLocal is ChoiceBaseEntity) {
       return DndReferenceList(
         links: choiceLocal.from,
-        title: locale.choiceListTitle(choice.type, choice.choose),
+        title: titleText,
       );
     } else if (choiceLocal is ChoiceStringBaseEntity) {
       return Column(
         children: [
           Text(
-            locale.choiceListTitle(choice.type, choice.choose),
+            titleText,
             style: Theme.of(context).textTheme.titleMedium,
           ),
           GinSeparatedColumn(
