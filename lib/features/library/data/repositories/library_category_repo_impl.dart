@@ -13,6 +13,8 @@ import '../../../library_character_data/domain/entity/background/background_enti
 import '../../../library_character_data/domain/entity/language_entity.dart';
 import '../../../library_character_data/domain/entity/proficiency_entity.dart';
 import '../../../library_character_data/domain/entity/skill_entity.dart';
+import '../../../library_class/data/models/dnd_class_model.codegen.dart';
+import '../../../library_class/domain/entities/dnd_class_entity.dart';
 import '../../../library_spells/data/models/spell_model.codegen.dart';
 import '../../../library_spells/domain/entity/spell_entity.dart';
 import '../../domain/entities/base/dnd_base_entity.dart';
@@ -21,6 +23,7 @@ import '../../domain/entities/library_category_entity.dart';
 import '../../domain/repositories/library_repo.dart';
 import '../api/dnd5e_api.dart';
 import '../models/base/reference_base_model.codegen.dart';
+import 'resource_descriptors.dart';
 
 @LazySingleton(as: LibraryRepo)
 class LibraryRepoImpl extends LibraryRepo {
@@ -63,6 +66,8 @@ class LibraryRepoImpl extends LibraryRepo {
           domainType: SpellEntity,
         ),
       ];
+  static List<LibraryCategoryEntity> get resourceDescriptors =>
+      resourceDescriptorsConst;
 
   LibraryRepoImpl(this.api);
 
@@ -116,6 +121,13 @@ class LibraryRepoImpl extends LibraryRepo {
         return api
             .dndRequest<SkillModel>(baseLink.url)
             .then((value) => value.toEntity());
+      case DndClassEntity:
+        return api
+            .dndRequest<DndClassModel>(baseLink.url)
+            .then((value) => value.toEntity());
+      default:
+        throw 'not found domain to data DTO relation';
+    }
       case SpellEntity:
         return api
             .dndRequest<SpellModel>(baseLink.url)

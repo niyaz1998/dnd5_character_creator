@@ -77,6 +77,22 @@ class AppLocalizationsRu extends AppLocalizations {
   String get skillBasedOn => 'Зависит от';
 
   @override
+  String hitDieSize(String hitDie) {
+    return 'Размер кости $hitDie';
+  }
+
+  @override
+  String get subclasses => 'Подклассы';
+
+  @override
+  String get savingThrows => 'Спасброски';
+
+  @override
+  String classAbleToCastFrom(String level) {
+    return 'Класс способен использовать заклинания с $level-го уровня';
+  }
+
+  @override
   String spellRange(String range) {
     return 'Дальность заклинания: $range';
   }

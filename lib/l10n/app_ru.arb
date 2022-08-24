@@ -124,5 +124,25 @@
       }
     }
   },
-  "damageType" : "Тип урона: "
+  "damageType" : "Тип урона: ",
+  "hitDieSize" : "Размер кости {hitDie}",
+  "@hitDieSize": {
+    "type": "text",
+    "placeholders": {
+      "hitDie": {
+        "type": "String"
+      }
+    }
+  },
+  "subclasses": "Подклассы",
+  "savingThrows": "Спасброски",
+  "classAbleToCastFrom": "Класс способен использовать заклинания с {level}-го уровня",
+  "@classAbleToCastFrom": {
+    "type": "text",
+    "placeholders": {
+      "level": {
+        "type": "String"
+      }
+    }
+  }
 }

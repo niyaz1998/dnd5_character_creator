@@ -255,6 +255,30 @@ abstract class AppLocalizations {
   /// In ru, this message translates to:
   /// **'Тип урона: '**
   String get damageType;
+
+  /// No description provided for @hitDieSize.
+  ///
+  /// In ru, this message translates to:
+  /// **'Размер кости {hitDie}'**
+  String hitDieSize(String hitDie);
+
+  /// No description provided for @subclasses.
+  ///
+  /// In ru, this message translates to:
+  /// **'Подклассы'**
+  String get subclasses;
+
+  /// No description provided for @savingThrows.
+  ///
+  /// In ru, this message translates to:
+  /// **'Спасброски'**
+  String get savingThrows;
+
+  /// No description provided for @classAbleToCastFrom.
+  ///
+  /// In ru, this message translates to:
+  /// **'Класс способен использовать заклинания с {level}-го уровня'**
+  String classAbleToCastFrom(String level);
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

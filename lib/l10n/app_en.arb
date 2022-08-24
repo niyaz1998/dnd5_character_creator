@@ -55,11 +55,11 @@
       }
     }
   },
-  "proficiencyGeneralType" : "General category is {type}",
+  "proficiencyGeneralType" : "General category is {categoryType}",
   "@proficiencyGeneralType": {
     "type": "text",
     "placeholders": {
-      "speakers": {
+      "categoryType": {
         "type": "String"
       }
     }
@@ -124,5 +124,25 @@
       }
     }
   },
-  "damageType" : "Damage type: "
+  "damageType" : "Damage type: ",
+  "hitDieSize" : "Hit die size {hitDie}",
+  "@hitDieSize": {
+    "type": "text",
+    "placeholders": {
+      "hitDie": {
+        "type": "String"
+      }
+    }
+  },
+  "subclasses": "Subclasses",
+  "savingThrows": "Saving throws",
+  "classAbleToCastFrom": "Class is able to cast spell from {level} level",
+  "@classAbleToCastFrom": {
+    "type": "text",
+    "placeholders": {
+      "level": {
+        "type": "String"
+      }
+    }
+  }
 }

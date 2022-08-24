@@ -7,6 +7,7 @@ import '../../../../library_character_data/data/models/language_model.codegen.da
 import '../../../../library_character_data/data/models/proficiency_model.codegen.dart';
 import '../../../../library_character_data/data/models/skill_model.codegen.dart';
 import '../../../../library_spells/data/models/spell_model.codegen.dart';
+import '../../../../library_class/data/models/dnd_class_model.codegen.dart';
 import '../base/description_base_model.codegen.dart';
 import '../base/reference_base_model.codegen.dart';
 
@@ -33,6 +34,8 @@ class ResourceListModelConverter<T extends ReferenceBaseModel>
         return DescribedBaseModel.fromJson(json) as T;
       case ReferenceBaseModel:
         return ReferenceBaseModel.fromJson(json) as T;
+      case DndClassModel:
+        return DndClassModel.fromJson(json) as T;
       case SpellModel:
         return SpellModel.fromJson(json) as T;
     }
