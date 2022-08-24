@@ -4,10 +4,10 @@ import '../../../library_character_data/domain/entity/language_entity.dart';
 import '../../../library_character_data/domain/entity/proficiency_entity.dart';
 import '../../../library_character_data/domain/entity/skill_entity.dart';
 import '../../../library_class/domain/entities/dnd_class_entity.dart';
-import '../../../library_spells/domain/entity/spell_entity.dart';
 import '../../../library_game_mechanics/domain/entities/condition_entity.dart';
 import '../../../library_game_mechanics/domain/entities/damage_type_entity.dart';
 import '../../../library_game_mechanics/domain/entities/magic_school_entity.dart';
+import '../../../library_spells/domain/entity/spell_entity.dart';
 import '../../domain/entities/library_category_entity.dart';
 
 List<LibraryCategoryEntity> resourceDescriptorsConst = const [
