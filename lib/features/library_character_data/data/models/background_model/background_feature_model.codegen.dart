@@ -2,7 +2,6 @@ import 'package:flutter/foundation.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 import '../../../../library/data/models/base/description_base_model.codegen.dart';
-import '../../../../library/data/models/json_parsers/description_parser.dart';
 import '../../../domain/entity/background/background_feature_entity.dart';
 
 part 'background_feature_model.codegen.g.dart';

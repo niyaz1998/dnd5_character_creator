@@ -21,6 +21,8 @@ import '../../../library_game_mechanics/data/models/magic_school_model.codegen.d
 import '../../../library_game_mechanics/domain/entities/condition_entity.dart';
 import '../../../library_game_mechanics/domain/entities/damage_type_entity.dart';
 import '../../../library_game_mechanics/domain/entities/magic_school_entity.dart';
+import '../../../library_spells/data/models/spell_model.codegen.dart';
+import '../../../library_spells/domain/entity/spell_entity.dart';
 import '../../domain/entities/base/dnd_base_entity.dart';
 import '../../domain/entities/base/reference_base_entity.dart';
 import '../../domain/entities/library_category_entity.dart';
@@ -90,6 +92,10 @@ class LibraryRepoImpl extends LibraryRepo {
         return api
             .dndRequest<DndClassModel>(baseLink.url)
             .then((value) => value.toEntity());
+      case SpellEntity:
+        return api
+            .dndRequest<SpellModel>(baseLink.url)
+            .then((value) => value.toEntity());
       case ConditionEntity:
         return api
             .dndRequest<ConditionModel>(baseLink.url)
@@ -105,5 +111,18 @@ class LibraryRepoImpl extends LibraryRepo {
       default:
         throw 'not found domain to data DTO relation';
     }
+  }
+
+  @override
+  Future<List<ReferenceBaseEntity<SpellEntity>>> fetchSpells(
+    LibraryCategoryEntity category,
+    int spellLevel,
+  ) {
+    return api.dndRequestList<ReferenceBaseModel>(
+      '/api/${category.path}',
+      queryParameters: {
+        'level': [spellLevel]
+      },
+    ).then((value) => value.toEntity());
   }
 }

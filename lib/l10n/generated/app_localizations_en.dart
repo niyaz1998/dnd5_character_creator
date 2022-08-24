@@ -91,4 +91,40 @@ class AppLocalizationsEn extends AppLocalizations {
   String classAbleToCastFrom(String level) {
     return 'Class is able to cast spell from $level level';
   }
+
+  @override
+  String spellRange(String range) {
+    return 'Spell range: $range';
+  }
+
+  @override
+  String get spellComponents => 'Spell components: ';
+
+  @override
+  String materialComponent(Object components) {
+    return 'Material component(s): $components';
+  }
+
+  @override
+  String spellDuration(String duration) {
+    return 'Duration: $duration';
+  }
+
+  @override
+  String castTime(String duration) {
+    return 'Cast time: $duration';
+  }
+
+  @override
+  String spellLevel(String level) {
+    return 'Spell level: $level';
+  }
+
+  @override
+  String attackType(String type) {
+    return 'Attack type: $type';
+  }
+
+  @override
+  String get damageType => 'Damage type: ';
 }
