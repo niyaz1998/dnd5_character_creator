@@ -6,8 +6,8 @@ import '../../../../library_character_data/data/models/background_model/backgrou
 import '../../../../library_character_data/data/models/language_model.codegen.dart';
 import '../../../../library_character_data/data/models/proficiency_model.codegen.dart';
 import '../../../../library_character_data/data/models/skill_model.codegen.dart';
-import '../../../../library_spells/data/models/spell_model.codegen.dart';
 import '../../../../library_class/data/models/dnd_class_model.codegen.dart';
+import '../../../../library_spells/data/models/spell_model.codegen.dart';
 import '../base/description_base_model.codegen.dart';
 import '../base/reference_base_model.codegen.dart';
 

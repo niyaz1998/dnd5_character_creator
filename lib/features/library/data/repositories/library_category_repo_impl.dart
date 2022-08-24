@@ -27,45 +27,6 @@ import 'resource_descriptors.dart';
 
 @LazySingleton(as: LibraryRepo)
 class LibraryRepoImpl extends LibraryRepo {
-  static List<LibraryCategoryEntity> get resourceDescriptors => const [
-        LibraryCategoryEntity(
-          localeKey: 'ability-scores',
-          path: 'ability-scores',
-          domainType: AbilityScoreEntity,
-        ),
-        LibraryCategoryEntity(
-          localeKey: 'alignments',
-          path: 'alignments',
-          domainType: AlignmentEntity,
-        ),
-        /*
-        LibraryCategoryEntity(
-          localeKey: 'backgrounds',
-          path: 'backgrounds',
-          domainType: BackgroundEntity,
-        ),
-        */
-        LibraryCategoryEntity(
-          localeKey: 'languages',
-          path: 'languages',
-          domainType: LanguageEntity,
-        ),
-        LibraryCategoryEntity(
-          localeKey: 'proficiencies',
-          path: 'proficiencies',
-          domainType: ProficiencyEntity,
-        ),
-        LibraryCategoryEntity(
-          localeKey: 'skills',
-          path: 'skills',
-          domainType: SkillEntity,
-        ),
-        LibraryCategoryEntity(
-          localeKey: 'spells',
-          path: 'spells',
-          domainType: SpellEntity,
-        ),
-      ];
   static List<LibraryCategoryEntity> get resourceDescriptors =>
       resourceDescriptorsConst;
 
@@ -125,15 +86,13 @@ class LibraryRepoImpl extends LibraryRepo {
         return api
             .dndRequest<DndClassModel>(baseLink.url)
             .then((value) => value.toEntity());
-      default:
-        throw 'not found domain to data DTO relation';
-    }
       case SpellEntity:
         return api
             .dndRequest<SpellModel>(baseLink.url)
             .then((value) => value.toEntity());
+      default:
+        throw 'not found domain to data DTO relation';
     }
-    throw 'not found domain to data DTO relation';
   }
 
   @override
