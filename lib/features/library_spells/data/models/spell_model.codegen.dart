@@ -50,13 +50,16 @@ class SpellModel extends DescribedBaseModel {
 
 enum SpellComponentModel {
   /// verbal - надо говорить
-  verbal,
+  @JsonValue('V')
+  V,
 
   /// somatic - надо махать руками
-  somatic,
+  @JsonValue('S')
+  S,
 
   /// material - нужен предмет
-  material,
+  @JsonValue('M')
+  M,
 }
 
 extension SpellToEntity on SpellModel {
@@ -86,11 +89,11 @@ extension SpellListToEntity on List<SpellModel> {
 extension SpellComponentToEntity on SpellComponentModel {
   SpellComponent toEntity() {
     switch (this) {
-      case SpellComponentModel.verbal:
+      case SpellComponentModel.V:
         return SpellComponent.verbal;
-      case SpellComponentModel.somatic:
+      case SpellComponentModel.S:
         return SpellComponent.somatic;
-      case SpellComponentModel.material:
+      case SpellComponentModel.M:
         return SpellComponent.material;
     }
   }
