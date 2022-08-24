@@ -58,7 +58,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String proficiencyGeneralType(String speakers) {
-    return 'General category is {type}';
+    return 'General category is {categoryType}';
   }
 
   @override
@@ -75,4 +75,20 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get skillBasedOn => 'Based on';
+
+  @override
+  String hitDieSize(String hitDie) {
+    return 'Hit die size $hitDie';
+  }
+
+  @override
+  String get subclasses => 'Subclasses';
+
+  @override
+  String get savingThrows => 'Saving throws';
+
+  @override
+  String classAbleToCastFrom(String level) {
+    return 'Class is able to cast spell from $level level';
+  }
 }

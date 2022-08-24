@@ -40,7 +40,7 @@ class LibraryItemPage extends GinBasePage {
           AsyncFieldBuilder<LibraryItemCubit, LibraryItemState, DndBaseEntity>(
         fieldGetter: (state) => state.field,
         dataBuilder: (data) {
-          return Padding(
+          return SingleChildScrollView(
             padding: const EdgeInsets.all(20),
             child: DndEntityCard(dndBaseEntity: data),
           );

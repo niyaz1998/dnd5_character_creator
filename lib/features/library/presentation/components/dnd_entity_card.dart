@@ -16,6 +16,8 @@ import '../../../library_game_mechanics/domain/entities/magic_school_entity.dart
 import '../../../library_game_mechanics/presentation/components/condition_info_card.dart';
 import '../../../library_game_mechanics/presentation/components/damage_type_info_card.dart';
 import '../../../library_game_mechanics/presentation/components/magic_school_info_card.dart';
+import '../../../library_class/domain/entities/dnd_class_entity.dart';
+import '../../../library_class/presentation/presentation/components/dnd_entity_info_cards/dnd_class_info_card.dart';
 import '../../domain/entities/base/dnd_base_entity.dart';
 
 class DndEntityCard extends StatelessWidget {
@@ -39,6 +41,8 @@ class DndEntityCard extends StatelessWidget {
       return ProficiencyInfoCard(proficiencyEntity: entity);
     } else if (entity is SkillEntity) {
       return SkillInfoCard(skillEntity: entity);
+    } else if (entity is DndClassEntity) {
+      return DndClassInfoCard(dndClassEntity: entity);
     } else if (entity is ConditionEntity) {
       return ConditionInfoCard(conditionEntity: entity);
     } else if (entity is DamageTypeEntity) {
