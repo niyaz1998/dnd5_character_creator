@@ -69,6 +69,62 @@
   "racesStartsWithProficiency": "Races that start with this proficiency:",
   "noRaceStartsWithProficiency": "No races that start with this proficiency",
   "skillBasedOn": "Based on",
+  "spellRange" : "Spell range: {range}",
+  "@spellRange": {
+    "type": "text",
+    "placeholders": {
+      "range": {
+        "type": "String"
+      }
+    }
+  },
+  "spellComponents" : "Spell components: ",
+  "materialComponent" : "Material component(s): {components}",
+  "@materialComponent": {
+    "type": "text",
+    "placeholders": {
+      "components": {
+        "type": "String"
+      }
+    }
+  },
+  "spellDuration" : "Duration: {duration}",
+  "@spellDuration": {
+    "type": "text",
+    "placeholders": {
+      "duration": {
+        "type": "String"
+      }
+    }
+  },
+  "castTime" : "Cast time: {duration}",
+  "@castTime": {
+    "type": "text",
+    "placeholders": {
+      "duration": {
+        "type": "String"
+      }
+    }
+  },
+  "spellLevel" : "Spell level: {level}",
+  "@spellLevel": {
+    "type": "text",
+    "placeholders": {
+      "level": {
+        "type": "String"
+      }
+    }
+  },
+  "attackType" : "Attack type: {type}",
+  "@attackType": {
+    "type": "text",
+    "placeholders": {
+      "type": {
+        "type": "String"
+      }
+    }
+  },
+  "damageType" : "Damage type: ",
   "hitDieSize" : "Hit die size {hitDie}",
   "@hitDieSize": {
     "type": "text",

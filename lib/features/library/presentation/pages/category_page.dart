@@ -5,13 +5,36 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../app/presentation/page/gin_base_page.dart';
 import '../../../../app/presentation/widgets/common/async_field_builder.dart';
 import '../../../../di/service_locator.dart';
+import '../../../library_spells/domain/entity/spell_entity.dart';
+import '../../../library_spells/presentation/page/spell_search_screen.dart';
 import '../../domain/entities/base/reference_base_entity.dart';
 import '../../domain/entities/library_category_entity.dart';
 import '../../domain/state/library_category/library_category_cubit.dart';
 import '../components/category/category_item_card.dart';
 
-class CategoryPage extends GinBasePage {
+class CategoryPage extends StatelessWidget {
   const CategoryPage({
+    Key? key,
+    required this.libraryCategoryEntity,
+  }) : super(key: key);
+
+  final LibraryCategoryEntity libraryCategoryEntity;
+
+  @override
+  Widget build(BuildContext context) {
+    if (libraryCategoryEntity.domainType == SpellEntity) {
+      return SearchSpellsListView(
+        libraryCategoryEntity: libraryCategoryEntity,
+      );
+    }
+    return _DefaultCategoryPage(
+      libraryCategoryEntity: libraryCategoryEntity,
+    );
+  }
+}
+
+class _DefaultCategoryPage extends GinBasePage {
+  const _DefaultCategoryPage({
     Key? key,
     required this.libraryCategoryEntity,
   }) : super(key: key);

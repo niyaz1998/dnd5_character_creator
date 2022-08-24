@@ -4,6 +4,7 @@ import '../../../library_character_data/domain/entity/language_entity.dart';
 import '../../../library_character_data/domain/entity/proficiency_entity.dart';
 import '../../../library_character_data/domain/entity/skill_entity.dart';
 import '../../../library_class/domain/entities/dnd_class_entity.dart';
+import '../../../library_spells/domain/entity/spell_entity.dart';
 import '../../domain/entities/library_category_entity.dart';
 
 List<LibraryCategoryEntity> resourceDescriptorsConst = const [
@@ -24,7 +25,7 @@ List<LibraryCategoryEntity> resourceDescriptorsConst = const [
           path: 'backgrounds',
           domainType: BackgroundEntity,
         ),
-        */
+  */
   LibraryCategoryEntity(
     localeKey: 'languages',
     path: 'languages',
@@ -44,5 +45,10 @@ List<LibraryCategoryEntity> resourceDescriptorsConst = const [
     localeKey: 'classes',
     path: 'classes',
     domainType: DndClassEntity,
+  ),
+  LibraryCategoryEntity(
+    localeKey: 'spells',
+    path: 'spells',
+    domainType: SpellEntity,
   ),
 ];

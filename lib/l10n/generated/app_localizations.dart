@@ -208,6 +208,54 @@ abstract class AppLocalizations {
   /// **'Зависит от'**
   String get skillBasedOn;
 
+  /// No description provided for @spellRange.
+  ///
+  /// In ru, this message translates to:
+  /// **'Дальность заклинания: {range}'**
+  String spellRange(String range);
+
+  /// No description provided for @spellComponents.
+  ///
+  /// In ru, this message translates to:
+  /// **'Компоненты заклинания: '**
+  String get spellComponents;
+
+  /// No description provided for @materialComponent.
+  ///
+  /// In ru, this message translates to:
+  /// **'Материальный(е) компонент(ы): {components}'**
+  String materialComponent(Object components);
+
+  /// No description provided for @spellDuration.
+  ///
+  /// In ru, this message translates to:
+  /// **'Длительность: {duration}'**
+  String spellDuration(String duration);
+
+  /// No description provided for @castTime.
+  ///
+  /// In ru, this message translates to:
+  /// **'Время накладывания: {duration}'**
+  String castTime(String duration);
+
+  /// No description provided for @spellLevel.
+  ///
+  /// In ru, this message translates to:
+  /// **'Уровень заклинания: {level}'**
+  String spellLevel(String level);
+
+  /// No description provided for @attackType.
+  ///
+  /// In ru, this message translates to:
+  /// **'Тип атаки: {type}'**
+  String attackType(String type);
+
+  /// No description provided for @damageType.
+  ///
+  /// In ru, this message translates to:
+  /// **'Тип урона: '**
+  String get damageType;
+
   /// No description provided for @hitDieSize.
   ///
   /// In ru, this message translates to:
