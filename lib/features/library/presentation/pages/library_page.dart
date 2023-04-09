@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../app/presentation/page/gin_base_page.dart';
 import '../../../../app/presentation/widgets/common/async_field_builder.dart';
+import '../../../../app/utils/screen_util_utils/gin_edge_insets.dart';
 import '../../../../di/service_locator.dart';
 import '../../domain/entities/library_category_entity.dart';
 import '../../domain/state/library_categories/library_categories_cubit.dart';
@@ -29,7 +30,7 @@ class LibraryPage extends GinBasePage {
             List<LibraryCategoryEntity>>(
           fieldGetter: (state) => state.field,
           dataBuilder: (data) => ListView(
-            padding: const EdgeInsets.all(20),
+            padding: GinEdgeInsets.all(20),
             children: data
                 .map((e) => CategoryCard(libraryCategoryEntity: e))
                 .toList(),

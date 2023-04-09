@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../utils/screen_util_utils/gin_sized_box.dart';
+
 class GinLoader extends StatelessWidget {
   const GinLoader({
     Key? key,
@@ -12,7 +14,7 @@ class GinLoader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: alignment,
-      child: SizedBox(
+      child: GinSizedBox(
         height: 24,
         width: 24,
         child: CircularProgressIndicator(

@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../app/presentation/page/gin_base_page.dart';
 import '../../../../app/presentation/widgets/common/async_field_builder.dart';
+import '../../../../app/utils/screen_util_utils/gin_edge_insets.dart';
 import '../../../../di/service_locator.dart';
 import '../../../library_spells/domain/entity/spell_entity.dart';
 import '../../../library_spells/presentation/page/spell_search_screen.dart';
@@ -64,7 +65,7 @@ class _DefaultCategoryPage extends GinBasePage {
             List<ReferenceBaseEntity>>(
           fieldGetter: (state) => state.field,
           dataBuilder: (data) => ListView.builder(
-            padding: const EdgeInsets.all(20),
+            padding: GinEdgeInsets.all(20),
             itemCount: data.length,
             itemBuilder: (BuildContext context, int index) => CategoryItemCard(
               referenceBaseModel: data[index],
